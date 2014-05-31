@@ -10,8 +10,25 @@ namespace MySoccer.Datos
 {
     public class datControlBaseDatos
     {
+
+        public MY_SOCCER_CON CrearConexion()
+        {
+            MY_SOCCER_CON mNuevaConexion = new MY_SOCCER_CON();
+            return mNuevaConexion;
+        }
+
         public void AgregarUsuario()
         {
+            USUARIO mNuevoUsuario = new USUARIO { Nombre = "Jorge", Apellido = "Bolaños", Fecha_Nacimiento = DateTime.Now.Date };
+            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+
+            mConexionMySoccer.Database.Connection.Open();
+
+            mConexionMySoccer.USUARIO.Add(mNuevoUsuario);
+            mConexionMySoccer.SaveChanges();
+
+            mConexionMySoccer.Database.Connection.Close();
         }
+
     }
 }

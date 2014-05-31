@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySoccer.Dominio", "MySocce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySoccer.Datos", "MySoccer.Datos\MySoccer.Datos.csproj", "{008DC06F-A56F-4184-80A8-5DE6AC397872}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySoccer.GUI", "MySoccer\MySoccer.GUI\MySoccer.GUI.csproj", "{205649E7-0DF6-48E0-AE87-2A6DE2D5B141}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySoccer.GUI", "MySoccer.GUI\MySoccer.GUI.csproj", "{205649E7-0DF6-48E0-AE87-2A6DE2D5B141}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

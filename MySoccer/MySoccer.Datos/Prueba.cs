@@ -10,7 +10,7 @@ namespace MySoccer.Datos
     {
         static void Main()
         {
-            MY_SOCCER_CONEXION x = new MY_SOCCER_CONEXION();
+            MY_SOCCER_CON x = new MY_SOCCER_CON();
             USUARIO mNuevoUsuario = new USUARIO();
             mNuevoUsuario.Nombre = "NEY";
             mNuevoUsuario.Apellido = "ROJAS";

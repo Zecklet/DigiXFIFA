@@ -35,3 +35,8 @@ C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Microsoft.Owin.xml
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\NHibernate.xml
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\TINA-ORM.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Tina.MsSql.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Xpand.ExpressApp.NH.Core.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Xpand.ExpressApp.NH.DataLayer.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Xpand.ExpressApp.NH.dll
