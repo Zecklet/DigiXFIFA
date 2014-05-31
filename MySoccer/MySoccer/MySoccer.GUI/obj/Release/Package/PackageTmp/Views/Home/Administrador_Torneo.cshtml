@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Administrador_Torneo";
+    Layout = "~/Views/Layouts/_Administrador.cshtml";
+}
+
+<div class="uk-width-9-10 uk-push-1-10">
+    <div class="uk-grid">
+        <div class="uk-width-1-4">
+            <div class="uk-button-dropdown" data-uk-dropdown="">
+                <button class="uk-button uk-button-large uk-button-primary">#torneo&nbsp<i class="uk-icon-caret-down"></i></button>
+                <div class="uk-dropdown">
+                    <ul class="uk-nav uk-nav-dropdown"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="uk-width-1-4 uk-push-2-4 uk-text-right">
+            <a class="uk-button uk-button-primary uk-text-break" href="@Url.Action("Administrador_Equipo")"><i class="uk-icon-plus">&nbsp</i>Agregar equipo</a>
+        </div>
+    </div>
+    <table class="uk-table">
+        <tr>
+            <th></th>
+            <th>Nombre del equipo</th>
+            <th>Nombre de la federación</th>
+            <th>Fecha de asociación a la X-FIFA</th>
+        </tr>
+    </table>
+</div> 

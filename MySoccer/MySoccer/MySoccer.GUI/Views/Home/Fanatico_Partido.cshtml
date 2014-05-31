@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Fanatico_Partido";
+    Layout = "~/Views/Layouts/_Fanatico.cshtml";
+}
+
+<div class="uk-width-9-10 uk-container-center">
+    <div class="uk-grid">
+        <div class="uk-width-1-3">
+            <h2>Fanáticos</h2>
+            <dl class="uk-description-list uk-description-list-line">
+                <dt>#nombredeusuario</dt>
+                <dd>#comentario</dd>
+                <dt>#nombredeusuario</dt>
+                <dd>#comentario</dd>
+            </dl>
+        </div>
+        <div class="uk-width-2-3">
+            <h2>Minuto a minuto</h2>
+            <div class="uk-scrollable-box">
+                <div class="uk-panel-box uk-width-1-1">
+                    <button class="uk-button uk-button-mini uk-align-right"><i class="uk-icon-times"></i></button>
+                    <br />
+                    <label>#comentario</label>
+                </div>
+                <br />
+            </div> <br />
+            <div class="uk-grid">
+                <div class="uk-width-1-2">
+                    <ul class="uk-subnav uk-subnav-pill uk-align-center" data-uk-switcher="{connect:'#equipo1'}">
+                        <li class="uk-active"><a href="#">Titulares</a></li>
+                        <li><a href="#">Reserva</a></li>
+                    </ul>
+                    <ul id="equipo1" class="uk-switcher">
+                        <li class="uk-active">
+                            <div class="uk-scrollable-box">
+                                <ul class="uk-list uk-list-striped">
+                                    <li>#jugador 1</li>
+                                    <li>#jugador 2</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="uk-active">
+                            <div class="uk-scrollable-box">
+                                <ul class="uk-list uk-list-striped">
+                                    <li>#jugador 1</li>
+                                    <li>#jugador 2</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-2">
+                    <ul class="uk-subnav uk-subnav-pill uk-align-center" data-uk-switcher="{connect:'#equipo2'}">
+                        <li class="uk-active"><a href="#">Titulares</a></li>
+                        <li><a href="#">Reserva</a></li>
+                    </ul>
+                    <ul id="equipo2" class="uk-switcher">
+                        <li class="uk-active">
+                            <div class="uk-scrollable-box">
+                                <ul class="uk-list uk-list-striped">
+                                    <li><a href="@Url.Action("Fanatico_Jugador")">#jugador 1</a></li>
+                                    <li>#jugador 2</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="uk-active">
+                            <div class="uk-scrollable-box">
+                                <ul class="uk-list uk-list-striped">
+                                    <li>#jugador 1</li>
+                                    <li>#jugador 2</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+</div>

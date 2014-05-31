@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Administrador_Perfil";
+    Layout = "~/Views/Layouts/_Administrador.cshtml";
+}
+
+<div class="uk-width-8-10 uk-push-2-10">
+    <h1>#nombre de usuario</h1>
+    <br />
+</div>
+<div class="uk-grid">
+    <div class="uk-width-3-10 uk-push-2-10">
+        <label>Correo electrónico</label>
+        <br />
+        <label>Fecha de nacimiento</label>
+        <br />
+        <label>Fecha de inscripción</label>
+    </div>
+    <div class="uk-width-5-10 uk-push-1-10">
+        <label>#correoelectronico</label>
+        <br />
+        <label>#fechadenacimiento</label>
+        <br />
+        <label>#nombredeusuario</label>
+        <br />
+        <br />
+        <div class="uk-width-1-3 uk-push-1-3">
+            <a class="uk-button uk-button-primary uk-text-break" href="@Url.Action("Administrador_Registro")"><i class="uk-icon-magic">&nbsp</i>Editar perfil</a>
+        </div>
+    </div>
+</div>

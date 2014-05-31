@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Fanatico_Calendario";
+    Layout = "~/Views/Layouts/_Fanatico.cshtml";
+}
+
+<div class="uk-width-9-10 uk-push-1-10">
+    <div class="uk-width-1-4">
+        <div class="uk-button-dropdown" data-uk-dropdown="">
+            <button class="uk-button uk-button-large uk-button-primary">#torneo&nbsp<i class="uk-icon-caret-down"></i></button>
+            <div class="uk-dropdown">
+                <ul class="uk-nav uk-nav-dropdown"></ul>
+            </div>
+        </div>
+    </div>
+    <table class="uk-table">
+        <tr>
+            <th>Equipo 1</th>
+            <th>Equipo 2</th>
+            <th>Marcador</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Fase</th>
+            <th>Sede</th>
+            <th>Asistencia</th>
+        </tr>
+    </table>
+    <div class="uk-width-1-3 uk-push-2-3 uk-text-right">
+        <a class="uk-button uk-button-primary uk-text-break" href="@Url.Action("Fanatico_Partido")"><i class="uk-icon-comment">&nbsp</i>Ver</a>
+    </div>
+</div>

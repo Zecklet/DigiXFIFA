@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Fanatico_Perfil";
+    Layout = "~/Views/Layouts/_Fanatico.cshtml";
+}
+
+<div class="uk-grid">
+    <div class="uk-width-1-3 uk-push-1-6">
+        <img src="#" alt="Alternate Text" />
+    </div>
+    <div class="uk-width-2-3 uk-vertical-align-middle">
+        <h1>#nombre de usuario</h1>
+    </div>
+</div>
+<br />
+<div class="uk-grid">
+    <div class="uk-width-3-10 uk-push-1-10">
+        <label>Género</label>
+        <br />
+        <label>País</label>
+        <br />
+        <label>Fecha de nacimiento</label>
+        <br />
+        <label>Correo electrónico</label>
+        <br />
+        <label>Equipo favorito</label>
+        <br />
+        <label>Fecha de inscripción</label>
+    </div>
+    <div class="uk-width-3-10 uk-push-1-10">
+        <label>#genero</label>
+        <br />
+        <label>#pais</label>
+        <br />
+        <label>#fechadenacimiento</label>
+        <br />
+        <label>#correoelectronico</label>
+        <br />
+        <label>#equipofavorito</label>
+        <br />
+        <label>#fechadeinscripcion</label>
+    </div>
+    <div class="uk-width-3-10 uk-push-1-10">
+        <label>Descripción personal</label>
+        <br />
+        <label>#descripcionpersonal</label>
+    </div>
+</div>
+<div class="uk-width-1-3 uk-push-2-4 ">
+    <br />
+    <a class="uk-button uk-button-primary uk-text-break uk-align-right" href="@Url.Action("Fanatico_Registro")"><i class="uk-icon-magic">&nbsp</i>Editar</a>
+</div>

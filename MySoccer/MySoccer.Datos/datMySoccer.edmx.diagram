@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b3af15ed79e04adf913a8676be61d0c7" Name="Diagram1">
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.ACCION" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.ADMINISTRADOR" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.ARDUINO" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.COMENTARIO" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.COMENTARIO_ESTADISTICO" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.CUENTA" Width="1.5" PointX="7.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.EQUIPO" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.FANATICO" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.JUGADOR" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.NARRADOR" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.PAIS" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.PARTIDO_REGISTRADO" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.RECHAZADO" Width="1.5" PointX="8.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.RESERVA" Width="1.5" PointX="9.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.RESULTADO_PARTIDO" Width="1.5" PointX="7.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.SEDE" Width="1.5" PointX="9.375" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.TITULAR" Width="1.5" PointX="10.625" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_SOCCER_MODEL.USUARIO" Width="1.5" PointX="11.125" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="MY_SOCCER_MODEL.FK_COMENTARIO_ESTADISTICO_ACCION" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_SOCCER_MODEL.FK_COMENTARIO_NARRADOR" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_SOCCER_MODEL.PFK_COMENTARIO_FANATICO" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_SOCCER_MODEL.FK_COMENTARIO_ESTADISTICO_EQUIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_SOCCER_MODEL.FK_Equipo_1_PARTIDO_REGISTRADO_EQUIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_SOCCER_MODEL.FK_Equipo_2_PARTIDO_REGISTRADO_EQUIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_SOCCER_MODEL.FK_FANATICO_EQUIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_SOCCER_MODEL.FK_JUGADOR_EQUIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_SOCCER_MODEL.FK_PARTIDO_REGISTRADO_NARRADOR" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,7 @@
+C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Presentador\obj\Debug\MySoccer.Presentador.csprojResolveAssemblyReference.cache
+C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Presentador\bin\Debug\MySoccer.Presentador.dll
+C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Presentador\bin\Debug\MySoccer.Presentador.pdb
+C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Presentador\bin\Debug\MySoccer.Dominio.dll
+C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Presentador\bin\Debug\MySoccer.Dominio.pdb
+C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Presentador\obj\Debug\MySoccer.Presentador.dll
+C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Presentador\obj\Debug\MySoccer.Presentador.pdb
