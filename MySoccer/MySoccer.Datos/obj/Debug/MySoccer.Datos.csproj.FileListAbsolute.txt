@@ -35,3 +35,4 @@ C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Microsoft.Owin.xml
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\NHibernate.xml
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.pdb
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.csprojResolveAssemblyReference.cache

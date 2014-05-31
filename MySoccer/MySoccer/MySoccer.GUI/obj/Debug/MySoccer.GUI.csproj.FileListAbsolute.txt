@@ -156,3 +156,46 @@ C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\EntityFramework.dll
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\MySoccer.Datos.pdb
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\EntityFramework.xml
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\MySoccer.GUI.dll.config
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\MySoccer.GUI.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\MySoccer.GUI.pdb
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\MySoccer.Dominio.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\Newtonsoft.Json.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Net.Http.Formatting.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.Helpers.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.Http.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.Http.WebHost.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.Mvc.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.Razor.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.WebPages.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.WebPages.Razor.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\MySoccer.Datos.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\EntityFramework.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\MySoccer.Dominio.pdb
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\Newtonsoft.Json.xml
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Net.Http.Formatting.xml
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.Helpers.xml
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.Http.xml
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.Http.WebHost.xml
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.Mvc.xml
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.Razor.xml
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.WebPages.xml
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\System.Web.WebPages.Razor.xml
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\MySoccer.Datos.pdb
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\EntityFramework.xml
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\es\System.Web.Http.resources.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\es\System.Web.Razor.resources.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\obj\Debug\MySoccer.GUI.csprojResolveAssemblyReference.cache
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\obj\Debug\MySoccer.GUI.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer\MySoccer.GUI\obj\Debug\MySoccer.GUI.pdb

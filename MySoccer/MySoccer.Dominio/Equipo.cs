@@ -8,7 +8,6 @@ namespace MySoccer.Dominio
 {
     public class Equipo
     {
-        public int cIdentificador { get; set; }
         public String cNombreFederacion { get; set; }
         public String cRutaFoto { get; set; }
         public String cFechaAsociacionXFIFA { get; set; }

@@ -12,3 +12,12 @@ C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Dominio\bin\Debu
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Dominio\bin\Debug\MySoccer.Datos.pdb
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Dominio\bin\Debug\EntityFramework.xml
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Dominio\obj\Debug\MySoccer.Dominio.pdb
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Dominio\bin\Debug\MySoccer.Dominio.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Dominio\bin\Debug\MySoccer.Dominio.pdb
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Dominio\bin\Debug\MySoccer.Datos.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Dominio\bin\Debug\EntityFramework.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Dominio\bin\Debug\MySoccer.Datos.pdb
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Dominio\bin\Debug\EntityFramework.xml
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Dominio\obj\Debug\MySoccer.Dominio.csprojResolveAssemblyReference.cache
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Dominio\obj\Debug\MySoccer.Dominio.dll
+C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Dominio\obj\Debug\MySoccer.Dominio.pdb

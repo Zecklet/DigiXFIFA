@@ -1,0 +1,72 @@
+<estadistica timestamp="31/05/2014 16:09:12" estado="0">
+  <partido anio="0" resultado="2">
+    <equipo pais="506">
+      <jugador pasaportexfifa="100" tiempoactivo="90">
+        <accion tiempo="0" tipo="0" />
+      </jugador>
+      <jugador pasaportexfifa="101" tiempoactivo="90">
+        <accion tiempo="5" tipo="1" />
+      </jugador>
+      <jugador pasaportexfifa="102" tiempoactivo="90">
+        <accion tiempo="10" tipo="2" />
+      </jugador>
+      <jugador pasaportexfifa="103" tiempoactivo="90">
+        <accion tiempo="15" tipo="3" />
+      </jugador>
+      <jugador pasaportexfifa="104" tiempoactivo="90">
+        <accion tiempo="20" tipo="4" />
+      </jugador>
+      <jugador pasaportexfifa="105" tiempoactivo="90">
+        <accion tiempo="25" tipo="5" />
+      </jugador>
+      <jugador pasaportexfifa="106" tiempoactivo="30" />
+      <jugador pasaportexfifa="117" tiempoactivo="60" />
+      <jugador pasaportexfifa="107" tiempoactivo="90">
+        <accion tiempo="35" tipo="7" />
+      </jugador>
+      <jugador pasaportexfifa="108" tiempoactivo="90">
+        <accion tiempo="40" tipo="8" />
+      </jugador>
+      <jugador pasaportexfifa="109" tiempoactivo="90">
+        <accion tiempo="45" tipo="9" />
+      </jugador>
+      <jugador pasaportexfifa="110" tiempoactivo="90">
+        <accion tiempo="50" tipo="10" />
+      </jugador>
+    </equipo>
+    <equipo pais="1012">
+      <jugador pasaportexfifa="200" tiempoactivo="90">
+        <accion tiempo="0" tipo="0" />
+      </jugador>
+      <jugador pasaportexfifa="201" tiempoactivo="90">
+        <accion tiempo="5" tipo="1" />
+      </jugador>
+      <jugador pasaportexfifa="202" tiempoactivo="90">
+        <accion tiempo="10" tipo="2" />
+      </jugador>
+      <jugador pasaportexfifa="203" tiempoactivo="90">
+        <accion tiempo="15" tipo="3" />
+      </jugador>
+      <jugador pasaportexfifa="204" tiempoactivo="90">
+        <accion tiempo="20" tipo="4" />
+      </jugador>
+      <jugador pasaportexfifa="205" tiempoactivo="90">
+        <accion tiempo="25" tipo="5" />
+      </jugador>
+      <jugador pasaportexfifa="206" tiempoactivo="30" />
+      <jugador pasaportexfifa="217" tiempoactivo="60" />
+      <jugador pasaportexfifa="207" tiempoactivo="90">
+        <accion tiempo="35" tipo="7" />
+      </jugador>
+      <jugador pasaportexfifa="208" tiempoactivo="90">
+        <accion tiempo="40" tipo="8" />
+      </jugador>
+      <jugador pasaportexfifa="209" tiempoactivo="90">
+        <accion tiempo="45" tipo="9" />
+      </jugador>
+      <jugador pasaportexfifa="210" tiempoactivo="90">
+        <accion tiempo="50" tipo="10" />
+      </jugador>
+    </equipo>
+  </partido>
+</estadistica>

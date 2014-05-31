@@ -15,6 +15,6 @@ namespace MySoccer.Dominio
         public Equipo cEquipo2 { get; set; }
         public int cIDSede { get; set; } //Evaluar si hacemos objeto sede
         public Narrador cNarrador { get; set; }
-        public List<ComentarioEstadistico> cComentarios { get; set; }
+        public ResultadoPartido cResultadoPartido { get; set; }
     }
 }
