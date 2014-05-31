@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>TINA-ORM-MSSQL</id>
+    <version>0.1.0</version>
+    <title>TinaORM.MsSql</title>
+    <authors>Michael Azarkevich</authors>
+    <owners>Michael Azarkevich</owners>
+    <projectUrl>https://github.com/MichaelAz/TINA-ORM</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This is the Microsoft SQL Server adapter for TINA-ORM.
+
+TINA-ORM (This Is Not An ORM) is a NoSQL-ish interface to SQL databases (Including Microsoft SQL Server and MySQL) inspired by RavenDB.
+
+Tina works with POCOs (Plain Old CLR Objects). That means no custom attributes, no enforced conventions and zero ceremony. Batteries and a coupon for a free hug included.</description>
+    <dependencies>
+      <dependency id="TINA-ORM" version="0.3.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework="" />
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Data" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Data.DataSetExtensions" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Web.Extensions" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework="" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

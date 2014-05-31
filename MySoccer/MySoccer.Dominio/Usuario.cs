@@ -17,7 +17,7 @@ namespace MySoccer.Dominio
 
         public void DesactivarCuenta()
         {
-            cCuenta.cEstado = false;
+            this.cCuenta.cEstado = false;
         }
 
         public void ActivarCuenta()

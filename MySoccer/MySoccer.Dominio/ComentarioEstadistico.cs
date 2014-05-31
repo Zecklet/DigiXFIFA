@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MySoccer.Dominio
 {
-    class ComentarioEstadistico
+    public class ComentarioEstadistico
     {
         public int cTiempo { get; set; } //Consultar si puede ser float! (Sr.DM)
         public Jugador cJugador1 { get; set; }

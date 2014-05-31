@@ -16,23 +16,17 @@ namespace MySoccer.Datos
     {
         public EQUIPO()
         {
-            this.COMENTARIO_ESTADISTICO = new HashSet<COMENTARIO_ESTADISTICO>();
-            this.PARTIDO_REGISTRADO = new HashSet<PARTIDO_REGISTRADO>();
-            this.PARTIDO_REGISTRADO1 = new HashSet<PARTIDO_REGISTRADO>();
-            this.FANATICO = new HashSet<FANATICO>();
             this.JUGADOR = new HashSet<JUGADOR>();
+            this.PERFIL_ESTADISTICO = new HashSet<PERFIL_ESTADISTICO>();
         }
     
         public int PK_Equipo { get; set; }
-        public string Nombre_Federacion { get; set; }
-        public string Foto { get; set; }
-        public System.DateTime Fecha_Asociacion_XFIFA { get; set; }
+        public string Nombre { get; set; }
+        public bool De_Selecion { get; set; }
         public int FK_Pais { get; set; }
     
-        public virtual ICollection<COMENTARIO_ESTADISTICO> COMENTARIO_ESTADISTICO { get; set; }
-        public virtual ICollection<PARTIDO_REGISTRADO> PARTIDO_REGISTRADO { get; set; }
-        public virtual ICollection<PARTIDO_REGISTRADO> PARTIDO_REGISTRADO1 { get; set; }
-        public virtual ICollection<FANATICO> FANATICO { get; set; }
+        public virtual PAIS PAIS { get; set; }
         public virtual ICollection<JUGADOR> JUGADOR { get; set; }
+        public virtual ICollection<PERFIL_ESTADISTICO> PERFIL_ESTADISTICO { get; set; }
     }
 }

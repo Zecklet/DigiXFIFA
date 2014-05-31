@@ -14,7 +14,11 @@ namespace MySoccer.Datos
     
     public partial class ADMINISTRADOR
     {
-        public int PK_FK_Administrador { get; set; }
-        public string Correo_Electronico { get; set; }
+        public int PK_FK_Cuenta { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public System.DateTime Fecha_Nacimiento { get; set; }
+    
+        public virtual CUENTA CUENTA { get; set; }
     }
 }

@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MY_SOCCER_MODEL.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACCION">
+    <Key>
+      <PropertyRef Name="PK_Accion" />
+    </Key>
+    <Property Name="PK_Accion" Type="int" Nullable="false" />
+    <Property Name="Nombre_Accion" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ADMINISTRADOR">
+    <Key>
+      <PropertyRef Name="PK_FK_Administrador" />
+    </Key>
+    <Property Name="PK_FK_Administrador" Type="int" Nullable="false" />
+    <Property Name="Correo_Electronico" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ARDUINO">
+    <Key>
+      <PropertyRef Name="PK_IP" />
+    </Key>
+    <Property Name="PK_IP" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FK_Sede" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COMENTARIO">
+    <Key>
+      <PropertyRef Name="PK_Comentario" />
+    </Key>
+    <Property Name="PK_Comentario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comentario" Type="varchar" MaxLength="140" Nullable="false" />
+    <Property Name="Tiempo" Type="int" Nullable="false" />
+    <Property Name="FK_Partido_Registrado" Type="int" Nullable="false" />
+    <Property Name="FK_Narrador" Type="int" Nullable="false" />
+    <Property Name="FK_Fanatico" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COMENTARIO_ESTADISTICO">
+    <Key>
+      <PropertyRef Name="PK_Comentario_Estadistico" />
+    </Key>
+    <Property Name="PK_Comentario_Estadistico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tiempo" Type="int" Nullable="false" />
+    <Property Name="FK_Jugador_1" Type="int" Nullable="false" />
+    <Property Name="FK_Jugador_2" Type="int" Nullable="false" />
+    <Property Name="FK_Equipo" Type="int" Nullable="false" />
+    <Property Name="FK_Partido" Type="int" Nullable="false" />
+    <Property Name="FK_Accion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUENTA">
+    <Key>
+      <PropertyRef Name="PK_FK_Cuenta" />
+    </Key>
+    <Property Name="PK_FK_Cuenta" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+    <Property Name="Nombre_Usuario" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Contraseña" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Fecha_Inscripcion" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EQUIPO">
+    <Key>
+      <PropertyRef Name="PK_Equipo" />
+    </Key>
+    <Property Name="PK_Equipo" Type="int" Nullable="false" />
+    <Property Name="Nombre_Federacion" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Foto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fecha_Asociacion_XFIFA" Type="date" Nullable="false" />
+    <Property Name="FK_Pais" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FANATICO">
+    <Key>
+      <PropertyRef Name="PK_FK_Fanatico" />
+    </Key>
+    <Property Name="PK_FK_Fanatico" Type="int" Nullable="false" />
+    <Property Name="Correo_Electronico" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Genero" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Foto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FK_Pais" Type="int" Nullable="false" />
+    <Property Name="FK_Equipo_Favorito" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JUGADOR">
+    <Key>
+      <PropertyRef Name="PK_Jugador" />
+    </Key>
+    <Property Name="PK_Jugador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Jugador_MyHistory" Type="int" Nullable="false" />
+    <Property Name="FK_Equipo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NARRADOR">
+    <Key>
+      <PropertyRef Name="PK_FK_Narrador" />
+    </Key>
+    <Property Name="PK_FK_Narrador" Type="int" Nullable="false" />
+    <Property Name="Genero" Type="int" Nullable="false" />
+    <Property Name="Foto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Anos_Experiencia" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PAIS">
+    <Key>
+      <PropertyRef Name="PK_Pais" />
+    </Key>
+    <Property Name="PK_Pais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PARTIDO_REGISTRADO">
+    <Key>
+      <PropertyRef Name="PK_Partido_Registrado" />
+    </Key>
+    <Property Name="PK_Partido_Registrado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Hora" Type="time" Precision="7" Nullable="false" />
+    <Property Name="id_Torneo_MyHistory" Type="int" Nullable="false" />
+    <Property Name="FK_Equipo_1" Type="int" Nullable="false" />
+    <Property Name="FK_Equipo_2" Type="int" Nullable="false" />
+    <Property Name="FK_Sede" Type="int" Nullable="false" />
+    <Property Name="FK_Narrador" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RECHAZADO">
+    <Key>
+      <PropertyRef Name="Pasaporte_XFIFA" />
+    </Key>
+    <Property Name="Pasaporte_XFIFA" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Intentos_Ingreso" Type="int" />
+  </EntityType>
+  <EntityType Name="RESERVA">
+    <Key>
+      <PropertyRef Name="PK_FK_Partido_Registrado" />
+      <PropertyRef Name="PK_FK_Jugador" />
+    </Key>
+    <Property Name="PK_FK_Partido_Registrado" Type="int" Nullable="false" />
+    <Property Name="PK_FK_Jugador" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RESULTADO_PARTIDO">
+    <Key>
+      <PropertyRef Name="PK_FK_Resultado_Partido" />
+    </Key>
+    <Property Name="PK_FK_Resultado_Partido" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="bit" />
+    <Property Name="Asistencia" Type="int" />
+    <Property Name="Marcador_Equipo_1" Type="int" />
+    <Property Name="Marcador_Equipo_2" Type="int" />
+  </EntityType>
+  <EntityType Name="SEDE">
+    <Key>
+      <PropertyRef Name="PK_Sede" />
+    </Key>
+    <Property Name="PK_Sede" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TITULAR">
+    <Key>
+      <PropertyRef Name="PK_FK_Partido_Registrado" />
+      <PropertyRef Name="PK_FK_Jugador" />
+    </Key>
+    <Property Name="PK_FK_Partido_Registrado" Type="int" Nullable="false" />
+    <Property Name="PK_FK_Jugador" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="PK_Usuario" />
+    </Key>
+    <Property Name="PK_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Fecha_Nacimiento" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_COMENTARIO_ESTADISTICO_ACCION">
+    <End Role="ACCION" Type="Self.ACCION" Multiplicity="1" />
+    <End Role="COMENTARIO_ESTADISTICO" Type="Self.COMENTARIO_ESTADISTICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACCION">
+        <PropertyRef Name="PK_Accion" />
+      </Principal>
+      <Dependent Role="COMENTARIO_ESTADISTICO">
+        <PropertyRef Name="FK_Accion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMENTARIO_ESTADISTICO_EQUIPO">
+    <End Role="EQUIPO" Type="Self.EQUIPO" Multiplicity="1" />
+    <End Role="COMENTARIO_ESTADISTICO" Type="Self.COMENTARIO_ESTADISTICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EQUIPO">
+        <PropertyRef Name="PK_Equipo" />
+      </Principal>
+      <Dependent Role="COMENTARIO_ESTADISTICO">
+        <PropertyRef Name="FK_Equipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMENTARIO_NARRADOR">
+    <End Role="NARRADOR" Type="Self.NARRADOR" Multiplicity="1" />
+    <End Role="COMENTARIO" Type="Self.COMENTARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NARRADOR">
+        <PropertyRef Name="PK_FK_Narrador" />
+      </Principal>
+      <Dependent Role="COMENTARIO">
+        <PropertyRef Name="FK_Narrador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipo_1_PARTIDO_REGISTRADO_EQUIPO">
+    <End Role="EQUIPO" Type="Self.EQUIPO" Multiplicity="1" />
+    <End Role="PARTIDO_REGISTRADO" Type="Self.PARTIDO_REGISTRADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EQUIPO">
+        <PropertyRef Name="PK_Equipo" />
+      </Principal>
+      <Dependent Role="PARTIDO_REGISTRADO">
+        <PropertyRef Name="FK_Equipo_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipo_2_PARTIDO_REGISTRADO_EQUIPO">
+    <End Role="EQUIPO" Type="Self.EQUIPO" Multiplicity="1" />
+    <End Role="PARTIDO_REGISTRADO" Type="Self.PARTIDO_REGISTRADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EQUIPO">
+        <PropertyRef Name="PK_Equipo" />
+      </Principal>
+      <Dependent Role="PARTIDO_REGISTRADO">
+        <PropertyRef Name="FK_Equipo_2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FANATICO_EQUIPO">
+    <End Role="EQUIPO" Type="Self.EQUIPO" Multiplicity="1" />
+    <End Role="FANATICO" Type="Self.FANATICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EQUIPO">
+        <PropertyRef Name="PK_Equipo" />
+      </Principal>
+      <Dependent Role="FANATICO">
+        <PropertyRef Name="FK_Equipo_Favorito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JUGADOR_EQUIPO">
+    <End Role="EQUIPO" Type="Self.EQUIPO" Multiplicity="1" />
+    <End Role="JUGADOR" Type="Self.JUGADOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EQUIPO">
+        <PropertyRef Name="PK_Equipo" />
+      </Principal>
+      <Dependent Role="JUGADOR">
+        <PropertyRef Name="FK_Equipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PARTIDO_REGISTRADO_NARRADOR">
+    <End Role="NARRADOR" Type="Self.NARRADOR" Multiplicity="1" />
+    <End Role="PARTIDO_REGISTRADO" Type="Self.PARTIDO_REGISTRADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NARRADOR">
+        <PropertyRef Name="PK_FK_Narrador" />
+      </Principal>
+      <Dependent Role="PARTIDO_REGISTRADO">
+        <PropertyRef Name="FK_Narrador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PFK_COMENTARIO_FANATICO">
+    <End Role="FANATICO" Type="Self.FANATICO" Multiplicity="1" />
+    <End Role="COMENTARIO" Type="Self.COMENTARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FANATICO">
+        <PropertyRef Name="PK_FK_Fanatico" />
+      </Principal>
+      <Dependent Role="COMENTARIO">
+        <PropertyRef Name="FK_Fanatico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MY_SOCCER_MODELStoreContainer">
+    <EntitySet Name="ACCION" EntityType="Self.ACCION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADMINISTRADOR" EntityType="Self.ADMINISTRADOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ARDUINO" EntityType="Self.ARDUINO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMENTARIO" EntityType="Self.COMENTARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMENTARIO_ESTADISTICO" EntityType="Self.COMENTARIO_ESTADISTICO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUENTA" EntityType="Self.CUENTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EQUIPO" EntityType="Self.EQUIPO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FANATICO" EntityType="Self.FANATICO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JUGADOR" EntityType="Self.JUGADOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NARRADOR" EntityType="Self.NARRADOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAIS" EntityType="Self.PAIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PARTIDO_REGISTRADO" EntityType="Self.PARTIDO_REGISTRADO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RECHAZADO" EntityType="Self.RECHAZADO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESERVA" EntityType="Self.RESERVA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESULTADO_PARTIDO" EntityType="Self.RESULTADO_PARTIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEDE" EntityType="Self.SEDE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TITULAR" EntityType="Self.TITULAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_COMENTARIO_ESTADISTICO_ACCION" Association="Self.FK_COMENTARIO_ESTADISTICO_ACCION">
+      <End Role="ACCION" EntitySet="ACCION" />
+      <End Role="COMENTARIO_ESTADISTICO" EntitySet="COMENTARIO_ESTADISTICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMENTARIO_ESTADISTICO_EQUIPO" Association="Self.FK_COMENTARIO_ESTADISTICO_EQUIPO">
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+      <End Role="COMENTARIO_ESTADISTICO" EntitySet="COMENTARIO_ESTADISTICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMENTARIO_NARRADOR" Association="Self.FK_COMENTARIO_NARRADOR">
+      <End Role="NARRADOR" EntitySet="NARRADOR" />
+      <End Role="COMENTARIO" EntitySet="COMENTARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipo_1_PARTIDO_REGISTRADO_EQUIPO" Association="Self.FK_Equipo_1_PARTIDO_REGISTRADO_EQUIPO">
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+      <End Role="PARTIDO_REGISTRADO" EntitySet="PARTIDO_REGISTRADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipo_2_PARTIDO_REGISTRADO_EQUIPO" Association="Self.FK_Equipo_2_PARTIDO_REGISTRADO_EQUIPO">
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+      <End Role="PARTIDO_REGISTRADO" EntitySet="PARTIDO_REGISTRADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FANATICO_EQUIPO" Association="Self.FK_FANATICO_EQUIPO">
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+      <End Role="FANATICO" EntitySet="FANATICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JUGADOR_EQUIPO" Association="Self.FK_JUGADOR_EQUIPO">
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+      <End Role="JUGADOR" EntitySet="JUGADOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PARTIDO_REGISTRADO_NARRADOR" Association="Self.FK_PARTIDO_REGISTRADO_NARRADOR">
+      <End Role="NARRADOR" EntitySet="NARRADOR" />
+      <End Role="PARTIDO_REGISTRADO" EntitySet="PARTIDO_REGISTRADO" />
+    </AssociationSet>
+    <AssociationSet Name="PFK_COMENTARIO_FANATICO" Association="Self.PFK_COMENTARIO_FANATICO">
+      <End Role="FANATICO" EntitySet="FANATICO" />
+      <End Role="COMENTARIO" EntitySet="COMENTARIO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

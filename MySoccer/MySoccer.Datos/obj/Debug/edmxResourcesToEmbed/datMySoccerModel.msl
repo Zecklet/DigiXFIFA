@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MY_HISTORY_MODELStoreContainer" CdmEntityContainer="MY_HISTORY_CONEXION">
+    <EntitySetMapping Name="ADMINISTRADOR">
+      <EntityTypeMapping TypeName="MY_HISTORY_MODEL.ADMINISTRADOR">
+        <MappingFragment StoreEntitySet="ADMINISTRADOR">
+          <ScalarProperty Name="PK_FK_Cuenta" ColumnName="PK_FK_Cuenta" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUENTA">
+      <EntityTypeMapping TypeName="MY_HISTORY_MODEL.CUENTA">
+        <MappingFragment StoreEntitySet="CUENTA">
+          <ScalarProperty Name="PK_Cuenta" ColumnName="PK_Cuenta" />
+          <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="Fecha_Inscripcion" ColumnName="Fecha_Inscripcion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EQUIPO">
+      <EntityTypeMapping TypeName="MY_HISTORY_MODEL.EQUIPO">
+        <MappingFragment StoreEntitySet="EQUIPO">
+          <ScalarProperty Name="PK_Equipo" ColumnName="PK_Equipo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="De_Selecion" ColumnName="De_Selecion" />
+          <ScalarProperty Name="FK_Pais" ColumnName="FK_Pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JUGADOR">
+      <EntityTypeMapping TypeName="MY_HISTORY_MODEL.JUGADOR">
+        <MappingFragment StoreEntitySet="JUGADOR">
+          <ScalarProperty Name="PK_Pasaporte_XFIFA" ColumnName="PK_Pasaporte_XFIFA" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Altura" ColumnName="Altura" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Equipo_Actual" ColumnName="Equipo_Actual" />
+          <ScalarProperty Name="FK_Pais" ColumnName="FK_Pais" />
+          <ScalarProperty Name="FK_Posicion" ColumnName="FK_Posicion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAIS">
+      <EntityTypeMapping TypeName="MY_HISTORY_MODEL.PAIS">
+        <MappingFragment StoreEntitySet="PAIS">
+          <ScalarProperty Name="PK_Pais" ColumnName="PK_Pais" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERFIL_ESTADISTICO">
+      <EntityTypeMapping TypeName="MY_HISTORY_MODEL.PERFIL_ESTADISTICO">
+        <MappingFragment StoreEntitySet="PERFIL_ESTADISTICO">
+          <ScalarProperty Name="PK_FK_Pasaporte_XFIFA" ColumnName="PK_FK_Pasaporte_XFIFA" />
+          <ScalarProperty Name="PK_FK_Equipo" ColumnName="PK_FK_Equipo" />
+          <ScalarProperty Name="PK_FK_Torneo" ColumnName="PK_FK_Torneo" />
+          <ScalarProperty Name="Juegos_Ganados" ColumnName="Juegos_Ganados" />
+          <ScalarProperty Name="Juegos_Perdidos" ColumnName="Juegos_Perdidos" />
+          <ScalarProperty Name="Juegos_Empatados" ColumnName="Juegos_Empatados" />
+          <ScalarProperty Name="Goles" ColumnName="Goles" />
+          <ScalarProperty Name="Tiros_Marco" ColumnName="Tiros_Marco" />
+          <ScalarProperty Name="Asistencias" ColumnName="Asistencias" />
+          <ScalarProperty Name="Recuperaciones" ColumnName="Recuperaciones" />
+          <ScalarProperty Name="Tarjetas_Amarillas" ColumnName="Tarjetas_Amarillas" />
+          <ScalarProperty Name="Tarjetas_Rojas" ColumnName="Tarjetas_Rojas" />
+          <ScalarProperty Name="Penales_Detenidos" ColumnName="Penales_Detenidos" />
+          <ScalarProperty Name="Penales_Cometidos" ColumnName="Penales_Cometidos" />
+          <ScalarProperty Name="Ramates_Salvados" ColumnName="Ramates_Salvados" />
+          <ScalarProperty Name="Nota_XFIFA" ColumnName="Nota_XFIFA" />
+          <ScalarProperty Name="Ano" ColumnName="Ano" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POSICION">
+      <EntityTypeMapping TypeName="MY_HISTORY_MODEL.POSICION">
+        <MappingFragment StoreEntitySet="POSICION">
+          <ScalarProperty Name="PK_Posicion" ColumnName="PK_Posicion" />
+          <ScalarProperty Name="Nombre_Posicion" ColumnName="Nombre_Posicion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TORNEO">
+      <EntityTypeMapping TypeName="MY_HISTORY_MODEL.TORNEO">
+        <MappingFragment StoreEntitySet="TORNEO">
+          <ScalarProperty Name="PK_Torneo" ColumnName="PK_Torneo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cantidad_Jugadores" ColumnName="Cantidad_Jugadores" />
+          <ScalarProperty Name="De_Seleccion" ColumnName="De_Seleccion" />
+          <ScalarProperty Name="De_Copa" ColumnName="De_Copa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

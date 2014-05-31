@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MY_HISTORY_MODEL.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ADMINISTRADOR">
+    <Key>
+      <PropertyRef Name="PK_FK_Cuenta" />
+    </Key>
+    <Property Name="PK_FK_Cuenta" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Fecha_Nacimiento" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUENTA">
+    <Key>
+      <PropertyRef Name="PK_Cuenta" />
+    </Key>
+    <Property Name="PK_Cuenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre_Usuario" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="Contrasena" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="Fecha_Inscripcion" Type="date" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EQUIPO">
+    <Key>
+      <PropertyRef Name="PK_Equipo" />
+    </Key>
+    <Property Name="PK_Equipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="De_Selecion" Type="bit" Nullable="false" />
+    <Property Name="FK_Pais" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JUGADOR">
+    <Key>
+      <PropertyRef Name="PK_Pasaporte_XFIFA" />
+    </Key>
+    <Property Name="PK_Pasaporte_XFIFA" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Fecha_Nacimiento" Type="date" Nullable="false" />
+    <Property Name="Altura" Type="int" Nullable="false" />
+    <Property Name="Peso" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+    <Property Name="Foto" Type="varchar" MaxLength="50" />
+    <Property Name="Equipo_Actual" Type="int" Nullable="false" />
+    <Property Name="FK_Pais" Type="int" Nullable="false" />
+    <Property Name="FK_Posicion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PAIS">
+    <Key>
+      <PropertyRef Name="PK_Pais" />
+    </Key>
+    <Property Name="PK_Pais" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PERFIL_ESTADISTICO">
+    <Key>
+      <PropertyRef Name="PK_FK_Pasaporte_XFIFA" />
+      <PropertyRef Name="PK_FK_Equipo" />
+      <PropertyRef Name="PK_FK_Torneo" />
+    </Key>
+    <Property Name="PK_FK_Pasaporte_XFIFA" Type="int" Nullable="false" />
+    <Property Name="PK_FK_Equipo" Type="int" Nullable="false" />
+    <Property Name="PK_FK_Torneo" Type="int" Nullable="false" />
+    <Property Name="Juegos_Ganados" Type="int" Nullable="false" />
+    <Property Name="Juegos_Perdidos" Type="int" Nullable="false" />
+    <Property Name="Juegos_Empatados" Type="int" Nullable="false" />
+    <Property Name="Goles" Type="int" Nullable="false" />
+    <Property Name="Tiros_Marco" Type="int" Nullable="false" />
+    <Property Name="Asistencias" Type="int" Nullable="false" />
+    <Property Name="Recuperaciones" Type="int" Nullable="false" />
+    <Property Name="Tarjetas_Amarillas" Type="int" Nullable="false" />
+    <Property Name="Tarjetas_Rojas" Type="int" Nullable="false" />
+    <Property Name="Penales_Detenidos" Type="int" Nullable="false" />
+    <Property Name="Penales_Cometidos" Type="int" Nullable="false" />
+    <Property Name="Ramates_Salvados" Type="int" Nullable="false" />
+    <Property Name="Nota_XFIFA" Type="float" Nullable="false" />
+    <Property Name="Ano" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="POSICION">
+    <Key>
+      <PropertyRef Name="PK_Posicion" />
+    </Key>
+    <Property Name="PK_Posicion" Type="int" Nullable="false" />
+    <Property Name="Nombre_Posicion" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TORNEO">
+    <Key>
+      <PropertyRef Name="PK_Torneo" />
+    </Key>
+    <Property Name="PK_Torneo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Cantidad_Jugadores" Type="int" Nullable="false" />
+    <Property Name="De_Seleccion" Type="bit" Nullable="false" />
+    <Property Name="De_Copa" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ADMINISTRADOR_CUENTA">
+    <End Role="CUENTA" Type="Self.CUENTA" Multiplicity="1" />
+    <End Role="ADMINISTRADOR" Type="Self.ADMINISTRADOR" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CUENTA">
+        <PropertyRef Name="PK_Cuenta" />
+      </Principal>
+      <Dependent Role="ADMINISTRADOR">
+        <PropertyRef Name="PK_FK_Cuenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPO_PAIS">
+    <End Role="PAIS" Type="Self.PAIS" Multiplicity="1" />
+    <End Role="EQUIPO" Type="Self.EQUIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAIS">
+        <PropertyRef Name="PK_Pais" />
+      </Principal>
+      <Dependent Role="EQUIPO">
+        <PropertyRef Name="FK_Pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JUGADOR_EQUIPO">
+    <End Role="EQUIPO" Type="Self.EQUIPO" Multiplicity="1" />
+    <End Role="JUGADOR" Type="Self.JUGADOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EQUIPO">
+        <PropertyRef Name="PK_Equipo" />
+      </Principal>
+      <Dependent Role="JUGADOR">
+        <PropertyRef Name="Equipo_Actual" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JUGADOR_PAIS">
+    <End Role="PAIS" Type="Self.PAIS" Multiplicity="1" />
+    <End Role="JUGADOR" Type="Self.JUGADOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAIS">
+        <PropertyRef Name="PK_Pais" />
+      </Principal>
+      <Dependent Role="JUGADOR">
+        <PropertyRef Name="FK_Pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JUGADOR_POSICION">
+    <End Role="POSICION" Type="Self.POSICION" Multiplicity="1" />
+    <End Role="JUGADOR" Type="Self.JUGADOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="POSICION">
+        <PropertyRef Name="PK_Posicion" />
+      </Principal>
+      <Dependent Role="JUGADOR">
+        <PropertyRef Name="FK_Posicion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERFIL_ESTADISTICO_EQUIPO">
+    <End Role="EQUIPO" Type="Self.EQUIPO" Multiplicity="1" />
+    <End Role="PERFIL_ESTADISTICO" Type="Self.PERFIL_ESTADISTICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EQUIPO">
+        <PropertyRef Name="PK_Equipo" />
+      </Principal>
+      <Dependent Role="PERFIL_ESTADISTICO">
+        <PropertyRef Name="PK_FK_Equipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERFIL_ESTADISTICO_JUGADOR">
+    <End Role="JUGADOR" Type="Self.JUGADOR" Multiplicity="1" />
+    <End Role="PERFIL_ESTADISTICO" Type="Self.PERFIL_ESTADISTICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JUGADOR">
+        <PropertyRef Name="PK_Pasaporte_XFIFA" />
+      </Principal>
+      <Dependent Role="PERFIL_ESTADISTICO">
+        <PropertyRef Name="PK_FK_Pasaporte_XFIFA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERFIL_ESTADISTICO_TORNEO">
+    <End Role="TORNEO" Type="Self.TORNEO" Multiplicity="1" />
+    <End Role="PERFIL_ESTADISTICO" Type="Self.PERFIL_ESTADISTICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TORNEO">
+        <PropertyRef Name="PK_Torneo" />
+      </Principal>
+      <Dependent Role="PERFIL_ESTADISTICO">
+        <PropertyRef Name="PK_FK_Torneo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MY_HISTORY_MODELStoreContainer">
+    <EntitySet Name="ADMINISTRADOR" EntityType="Self.ADMINISTRADOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUENTA" EntityType="Self.CUENTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EQUIPO" EntityType="Self.EQUIPO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JUGADOR" EntityType="Self.JUGADOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAIS" EntityType="Self.PAIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PERFIL_ESTADISTICO" EntityType="Self.PERFIL_ESTADISTICO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="POSICION" EntityType="Self.POSICION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TORNEO" EntityType="Self.TORNEO" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ADMINISTRADOR_CUENTA" Association="Self.FK_ADMINISTRADOR_CUENTA">
+      <End Role="CUENTA" EntitySet="CUENTA" />
+      <End Role="ADMINISTRADOR" EntitySet="ADMINISTRADOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPO_PAIS" Association="Self.FK_EQUIPO_PAIS">
+      <End Role="PAIS" EntitySet="PAIS" />
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JUGADOR_EQUIPO" Association="Self.FK_JUGADOR_EQUIPO">
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+      <End Role="JUGADOR" EntitySet="JUGADOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JUGADOR_PAIS" Association="Self.FK_JUGADOR_PAIS">
+      <End Role="PAIS" EntitySet="PAIS" />
+      <End Role="JUGADOR" EntitySet="JUGADOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JUGADOR_POSICION" Association="Self.FK_JUGADOR_POSICION">
+      <End Role="POSICION" EntitySet="POSICION" />
+      <End Role="JUGADOR" EntitySet="JUGADOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERFIL_ESTADISTICO_EQUIPO" Association="Self.FK_PERFIL_ESTADISTICO_EQUIPO">
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+      <End Role="PERFIL_ESTADISTICO" EntitySet="PERFIL_ESTADISTICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERFIL_ESTADISTICO_JUGADOR" Association="Self.FK_PERFIL_ESTADISTICO_JUGADOR">
+      <End Role="JUGADOR" EntitySet="JUGADOR" />
+      <End Role="PERFIL_ESTADISTICO" EntitySet="PERFIL_ESTADISTICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERFIL_ESTADISTICO_TORNEO" Association="Self.FK_PERFIL_ESTADISTICO_TORNEO">
+      <End Role="TORNEO" EntitySet="TORNEO" />
+      <End Role="PERFIL_ESTADISTICO" EntitySet="PERFIL_ESTADISTICO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

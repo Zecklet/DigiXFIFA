@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MySoccer.Dominio
 {
-    class Partido
+    public class Partido
     {
         public String cFecha { get; set; }
         public String cHora { get; set; }

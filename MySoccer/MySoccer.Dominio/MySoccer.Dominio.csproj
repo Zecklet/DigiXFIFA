@@ -41,12 +41,18 @@
   <ItemGroup>
     <Compile Include="Administrador.cs" />
     <Compile Include="AdministrarUsuario.cs" />
+    <Compile Include="ComentarioEstadistico.cs" />
+    <Compile Include="ComentarioTexto.cs" />
     <Compile Include="Cuenta.cs" />
+    <Compile Include="Equipo.cs" />
     <Compile Include="Fanatico.cs" />
+    <Compile Include="Jugador.cs" />
     <Compile Include="Narrador.cs" />
     <Compile Include="ParametrosUsuario.cs" />
-    <Compile Include="Perfil.cs" />
+    <Compile Include="Partido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultadoPartido.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MySoccer.Datos\MySoccer.Datos.csproj">

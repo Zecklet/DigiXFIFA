@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MySoccer.GUI.Models;
-using MySoccer.Presentador;
 using MySoccer.Dominio;
 
 namespace MySoccer.GUI.Controllers
@@ -39,19 +38,23 @@ namespace MySoccer.GUI.Controllers
                 if (ModelState.IsValid)
                 {
                     //regresa a la pantalla de login
+                    String mNombre = pModel.cNombre;
+                    String mApellio = pModel.cApellido;
                     AdministrarUsuario mUsuarios = new AdministrarUsuario();
-                    ParametrosUsuario mParametro = new ParametrosUsuario(pModel.cNombre,pModel.cApellido,
-                        pModel.cNombreUsuario,pModel.cContrasena,pModel.cFechaNacimiento);
+                    ParametrosUsuario mParametro = new ParametrosUsuario(mNombre,
+                        mApellio, pModel.cNombreUsuario,
+                        pModel.cContrasena,pModel.cFechaNacimiento);
                     mParametro.DatosAdministrador(pModel.cCorreoElectronico);
                     mUsuarios.AgregarAdministrador(mParametro);
                     return View("Index");
                 }
+                System.Console.WriteLine(pModel.cNombre);
                 return View("Administrador_Registro",pModel);
 
             }
             catch
             {
-                return View("Administrador_Registro");
+                return View("Administrador_Registro", pModel);
             }
         }
 
@@ -87,7 +90,7 @@ namespace MySoccer.GUI.Controllers
             }
             catch
             {
-                return View("Administrador_Fanatico");
+                return View("Administrador_Fanatico", pModel);
             }
         }
         //-----------------------------------------------------------------\\
@@ -121,7 +124,7 @@ namespace MySoccer.GUI.Controllers
             }
             catch
             {
-                return View("Administrador_Fanatico");
+                return View("Administrador_Fanatico", pModel);
             }
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MySoccer.Dominio
 {
-    class Narrador : Usuario
+    public class Narrador : Usuario
     {
         public Boolean cGenero { get; set; }
         public String cRutaFoto { get; set; }

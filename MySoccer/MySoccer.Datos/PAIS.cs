@@ -14,7 +14,16 @@ namespace MySoccer.Datos
     
     public partial class PAIS
     {
+        public PAIS()
+        {
+            this.EQUIPO = new HashSet<EQUIPO>();
+            this.JUGADOR = new HashSet<JUGADOR>();
+        }
+    
         public int PK_Pais { get; set; }
         public string Nombre { get; set; }
+    
+        public virtual ICollection<EQUIPO> EQUIPO { get; set; }
+        public virtual ICollection<JUGADOR> JUGADOR { get; set; }
     }
 }

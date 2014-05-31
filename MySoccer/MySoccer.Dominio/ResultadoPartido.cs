@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MySoccer.Dominio
 {
-    class ResultadoPartido
+    public class ResultadoPartido
     {
         public Boolean cEstado { get; set; }
         public int cAsistencia { get; set; }

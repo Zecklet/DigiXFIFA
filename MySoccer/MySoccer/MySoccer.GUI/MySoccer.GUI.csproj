@@ -17,8 +17,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -223,10 +223,6 @@
     <ProjectReference Include="..\..\MySoccer.Dominio\MySoccer.Dominio.csproj">
       <Project>{3d9b6808-f34e-4c65-bc08-83366960aff8}</Project>
       <Name>MySoccer.Dominio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\MySoccer.Presentador\MySoccer.Presentador.csproj">
-      <Project>{32674e44-d4f9-447e-9b3b-2b781a70f73e}</Project>
-      <Name>MySoccer.Presentador</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

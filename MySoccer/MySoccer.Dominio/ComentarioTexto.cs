@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MySoccer.Dominio
 {
-    class ComentarioTexto
+    public class ComentarioTexto
     {
         public Usuario cAutor { get; set; }
         public int cTiempo { get; set; }

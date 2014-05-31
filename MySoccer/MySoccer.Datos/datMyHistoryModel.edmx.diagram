@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1394e74c12304292acf95e62aca06715" Name="Diagram1">
+        <EntityTypeShape EntityType="MY_HISTORY_MODEL.ADMINISTRADOR" Width="1.5" PointX="10" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_HISTORY_MODEL.CUENTA" Width="1.5" PointX="7.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_HISTORY_MODEL.EQUIPO" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_HISTORY_MODEL.JUGADOR" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_HISTORY_MODEL.PAIS" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_HISTORY_MODEL.PERFIL_ESTADISTICO" Width="1.5" PointX="7.5" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_HISTORY_MODEL.POSICION" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MY_HISTORY_MODEL.TORNEO" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <AssociationConnector Association="MY_HISTORY_MODEL.FK_ADMINISTRADOR_CUENTA" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_HISTORY_MODEL.FK_EQUIPO_PAIS" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_HISTORY_MODEL.FK_JUGADOR_EQUIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_HISTORY_MODEL.FK_PERFIL_ESTADISTICO_EQUIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_HISTORY_MODEL.FK_JUGADOR_PAIS" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_HISTORY_MODEL.FK_JUGADOR_POSICION" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_HISTORY_MODEL.FK_PERFIL_ESTADISTICO_JUGADOR" ManuallyRouted="false" />
+        <AssociationConnector Association="MY_HISTORY_MODEL.FK_PERFIL_ESTADISTICO_TORNEO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -14,10 +14,25 @@ namespace MySoccer.Datos
     
     public partial class JUGADOR
     {
-        public int PK_Jugador { get; set; }
-        public int Jugador_MyHistory { get; set; }
-        public int FK_Equipo { get; set; }
+        public JUGADOR()
+        {
+            this.PERFIL_ESTADISTICO = new HashSet<PERFIL_ESTADISTICO>();
+        }
+    
+        public int PK_Pasaporte_XFIFA { get; set; }
+        public string Nombre { get; set; }
+        public System.DateTime Fecha_Nacimiento { get; set; }
+        public int Altura { get; set; }
+        public int Peso { get; set; }
+        public bool Estado { get; set; }
+        public string Foto { get; set; }
+        public int Equipo_Actual { get; set; }
+        public int FK_Pais { get; set; }
+        public int FK_Posicion { get; set; }
     
         public virtual EQUIPO EQUIPO { get; set; }
+        public virtual PAIS PAIS { get; set; }
+        public virtual POSICION POSICION { get; set; }
+        public virtual ICollection<PERFIL_ESTADISTICO> PERFIL_ESTADISTICO { get; set; }
     }
 }
