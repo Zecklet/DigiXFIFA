@@ -12,7 +12,7 @@ namespace MySoccer.Pruebas
     {
         static void Main(string[] args)
         {
-            Narrador mNarrador = new Narrador();
+            Narrador mNarrador = new Narrador(0,"rrere",12,"sdsfdas");
             mNarrador.cIdentificador = 2014;
 
             ResultadoPartido mResultadoPartido = new ResultadoPartido();

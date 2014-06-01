@@ -13,5 +13,12 @@ namespace MySoccer.Dominio
         public String cContrasena { get; set; }
         public String cFechaInscripcion { get; set; }
 
+        public Cuenta(String pNombreUsuario, String pContrasena)
+        {
+            this.cEstado = false;
+            this.cFechaInscripcion = DateTime.Now.Date.ToString();
+            this.cNombreUsuario = pNombreUsuario;
+            this.cContrasena = pContrasena;
+        }
     }
 }

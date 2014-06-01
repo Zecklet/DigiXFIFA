@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace MySoccer.Dominio
 {
-    class Administrador : Usuario
+    public class Administrador : Usuario
     {
+        public Administrador(String pCorreoElectronico)
+        {
+            this.cCorreoElectronico = pCorreoElectronico;
+        }
         public String cCorreoElectronico { get; set; }
     }
 }

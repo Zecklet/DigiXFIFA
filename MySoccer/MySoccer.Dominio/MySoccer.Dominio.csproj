@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultadoPartido.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="UsuariosFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MySoccer.Datos\MySoccer.Datos.csproj">
