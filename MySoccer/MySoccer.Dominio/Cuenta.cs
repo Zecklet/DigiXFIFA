@@ -20,5 +20,10 @@ namespace MySoccer.Dominio
             this.cNombreUsuario = pNombreUsuario;
             this.cContrasena = pContrasena;
         }
+
+        public Boolean CompararContrasena(String pContrasena)
+        {
+            return (this.cContrasena == pContrasena);
+        }
     }
 }

@@ -32,14 +32,22 @@ namespace MySoccer.Dominio
             }
         }
 
-        public Usuario ObtenerUsuario(String pNombreUsuario, String pContrasena)
+        public int ObtenerUsuario(String pNombreUsuario, String pContrasena)
         {
+            int mResultadoBusqueda = 0;
             Usuario mUsuario = UsuariosFactory.RecuperarUsuario(pNombreUsuario);
             //Falta la comprobación de la contrasena
             this.cUsuarioActual = mUsuario;
-            return mUsuario;
+
+            if (mUsuario == null)
+            {
+                mResultadoBusqueda = datConstantes.kCodigoNombreUsuarioExiste;
+            }
+            else if (!mUsuario.CompararContrasena(pContrasena))
+            {
+                mResultadoBusqueda = datConstantes.kCodigoContrasenaIncorrecta;
+            }
+            return mResultadoBusqueda;
         }
     }
-
-    
 }

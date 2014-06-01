@@ -24,6 +24,10 @@ namespace MySoccer.Dominio
             this.cCuenta = new Cuenta(pNombreUsuario, pContrasena);
         }
 
+        public Boolean CompararContrasena(String pContrasena)
+        {
+            return this.cCuenta.CompararContrasena(pContrasena);
+        }
         public Boolean ExisteNombreUsuario(String pNombreUsuario)
         {
             datUsuariosBaseDatos mConexionBaseDatos = new datAdministradorBaseDatos();

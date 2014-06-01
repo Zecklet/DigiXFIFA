@@ -120,6 +120,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\guiModelInicioSesion.cs" />
     <Compile Include="Models\guiModeloAdministrador.cs" />
     <Compile Include="Models\guiModeloFanatico.cs" />
     <Compile Include="Models\guiModeloNarrador.cs" />
@@ -131,6 +132,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
+    <Content Include="JavaScript\calendario.js" />
+    <Content Include="JavaScript\jquery.datetimepicker.css" />
+    <Content Include="JavaScript\jquery.datetimepicker.js" />
+    <Content Include="JavaScript\jquery.js" />
     <Content Include="Styles\Images\logo.png" />
     <Content Include="Styles\JS\jquery.js" />
     <Content Include="Styles\JS\uikit.js" />

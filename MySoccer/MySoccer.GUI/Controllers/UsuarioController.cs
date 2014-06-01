@@ -11,8 +11,21 @@ namespace MySoccer.GUI.Controllers
 {
     public class UsuarioController : Controller
     {
-        //
-        // GET: /Usuario
+
+        //Funciones de propocito general
+
+        public ActionResult VolverInicio()
+        {
+            return View("Index", new guiModelInicioSesion());
+        }
+
+        public ParametrosUsuario CrearParametrosDatos(guiModeloUsuario pModel)
+        {
+            ParametrosUsuario mParametro = new ParametrosUsuario(pModel.cNombre,
+    pModel.cApellido, pModel.cNombreUsuario,
+    pModel.cContrasena, pModel.cFechaNacimiento);
+            return mParametro;
+        }
 
         //-----------------------------------------------------------------\\
         //Seccion del Administrador
@@ -26,31 +39,26 @@ namespace MySoccer.GUI.Controllers
         {
             guiModeloAdministrador mContenedorUsuario = new guiModeloAdministrador();
             mContenedorUsuario.cNombreSeccion = "Registrar administrador";
-            mContenedorUsuario.cAccion = "RegistrarAdministrador";
+            mContenedorUsuario.cAccion = "Administrador_Registro";
             return View(mContenedorUsuario);
         }
 
         // POST: que se encarga de crear un usuario de tipo narrador
         [HttpPost]
-        public ActionResult RegistrarAdministrador(guiModeloAdministrador pModel)
+        public ActionResult Administrador_Registro(guiModeloAdministrador pModel)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    //regresa a la pantalla de login
-                    String mNombre = pModel.cNombre;
-                    String mApellio = pModel.cApellido;
                     AdministrarUsuario mUsuarios = new AdministrarUsuario();
-                    ParametrosUsuario mParametro = new ParametrosUsuario(mNombre,
-                        mApellio, pModel.cNombreUsuario,
-                        pModel.cContrasena,pModel.cFechaNacimiento);
+                    ParametrosUsuario mParametro = CrearParametrosDatos(pModel);
                     mParametro.DatosAdministrador(pModel.cCorreoElectronico);
-                    mUsuarios.AgregarNuevoUsuario(mParametro,datConstantes.kUsuarioAdministrador);
-                    return View("Index");
+                    mUsuarios.AgregarNuevoUsuario(mParametro, datConstantes.kUsuarioAdministrador);
+                    return VolverInicio();
                 }
                 System.Console.WriteLine(pModel.cNombre);
-                return View("Administrador_Registro",pModel);
+                return View("Administrador_Registro", pModel);
 
             }
             catch
@@ -71,29 +79,34 @@ namespace MySoccer.GUI.Controllers
         {
             guiModeloFanatico mContenedorUsuario = new guiModeloFanatico();
             mContenedorUsuario.cNombreSeccion = "Registrar fanático";
-            mContenedorUsuario.cAccion = "RegistrarFanatico";
+            mContenedorUsuario.cAccion = "Fanatico_Registro";
             return View(mContenedorUsuario);
         }
 
         // POST: que se encarga de crear un usuario de tipo narrador
         [HttpPost]
-        public ActionResult RegistrarFanatico(guiModeloFanatico pModel)
+        public ActionResult Fanatico_Registro(guiModeloFanatico pModel)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    //regresa a la pantalla de login
-                    return View("Index");
+                    AdministrarUsuario mUsuarios = new AdministrarUsuario();
+                    ParametrosUsuario mParametro = CrearParametrosDatos(pModel);
+                    mParametro.DatosFanatico(pModel.cGenero, pModel.cDescripcion, pModel.cCorreoElectronico,
+                        pModel.cPais, pModel.cEquipo, pModel.cRutaImagen);
+                    mUsuarios.AgregarNuevoUsuario(mParametro, datConstantes.kUsuarioFantatico);
+                    return VolverInicio();
                 }
-                return View("Administrador_Fanatico", pModel);
+                return View(pModel);
 
             }
             catch
             {
-                return View("Administrador_Fanatico", pModel);
+                return View(pModel);
             }
         }
+
         //-----------------------------------------------------------------\\
         //Seccion del narrador
 
@@ -107,25 +120,32 @@ namespace MySoccer.GUI.Controllers
         {
             guiModeloNarrador mContenedorUsuario = new guiModeloNarrador();
             mContenedorUsuario.cNombreSeccion = "Registrar narrador";
-            mContenedorUsuario.cAccion = "RegistrarNarrador";
+            mContenedorUsuario.cAccion = "Narrador_Registro";
             return View(mContenedorUsuario);
         }
+
+        // POST: que se encarga de crear un usuario de tipo narrador
         [HttpPost]
-        public ActionResult RegistrarNarrador(guiModeloNarrador pModel)
+        public ActionResult Narrador_Registro(guiModeloNarrador pModel)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     //regresa a la pantalla de login
-                    return View("Index");
+                    AdministrarUsuario mUsuarios = new AdministrarUsuario();
+                    ParametrosUsuario mParametro = CrearParametrosDatos(pModel);
+                    mParametro.DatosNarrador(Convert.ToInt32(pModel.cGenero), pModel.cDescripcion,
+                       Convert.ToInt32(pModel.cAnosExperiencia), pModel.cRutaImagen);
+                    mUsuarios.AgregarNuevoUsuario(mParametro, datConstantes.kUsuarioNarrador);
+                    return VolverInicio();
                 }
-                return View("Administrador_Fanatico", pModel);
+                return View(pModel);
 
             }
             catch
             {
-                return View("Administrador_Fanatico", pModel);
+                return View(pModel);
             }
         }
     }

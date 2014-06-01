@@ -12,8 +12,8 @@ namespace MySoccer.GUI.Models
         [Required(ErrorMessage = " El correo electronico no puede estar vacío.")]
         public String cCorreoElectronico { get; set; }
 
-        public String cGenero { get; set; }
-        public String cEquipo { get; set; }
+        public int cGenero { get; set; }
+        public int cEquipo { get; set; }
 
         [Required(ErrorMessage = " La descripción personal no puede estar vacía.")]
         public String cDescripcion { get; set; }
