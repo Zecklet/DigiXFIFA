@@ -10,24 +10,34 @@ namespace MySoccer.Dominio
 {
     public class AdministrarUsuario
     {
-        private Administrador cAdministradorTemporal;
+        private Usuario cUsuarioActual;
         public AdministrarUsuario() {
-        
+            
         }
 
         //Este metodo crea un administrador 
-        public void AgregarAdministrador(ParametrosUsuario pDatosUsuario)
+        public int AgregarNuevoUsuario(ParametrosUsuario pDatosUsuario, int pTipoUsuario)
         {
-            datControlBaseDatos x = new datControlBaseDatos();
-            x.AgregarUsuario();
+            Usuario mNuevoUsuario = UsuariosFactory.CrearUsuario(pDatosUsuario, pTipoUsuario);
+            if (mNuevoUsuario.ExisteNombreUsuario(pDatosUsuario.cNombreUsuario))
+            {
+                return datConstantes.kCodigoNombreUsuarioExiste; //existe el usuario y no se debe de crear, falta mandar un mensaje de error
+            }
+            else
+            {
+                mNuevoUsuario.CrearUsuarioBaseDatos();
+                mNuevoUsuario.CrearCuentaBaseDatos();
+                mNuevoUsuario.CrearTipoUsuarioBaseDatos();
+                return 0;
+            }
         }
-        //Este metodo crea un fanatico 
-        public void AgregarFanatico(ParametrosUsuario pDatosUsuario)
+
+        public Usuario ObtenerUsuario(String pNombreUsuario, String pContrasena)
         {
-        }
-        //Este metodo crea un narrador
-        public void AgregarNarrador(ParametrosUsuario pDatosUsuario)
-        {
+            Usuario mUsuario = UsuariosFactory.RecuperarUsuario(pNombreUsuario);
+            //Falta la comprobación de la contrasena
+            this.cUsuarioActual = mUsuario;
+            return mUsuario;
         }
     }
 

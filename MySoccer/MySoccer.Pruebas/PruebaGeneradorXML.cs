@@ -10,7 +10,7 @@ namespace MySoccer.Pruebas
 {
     class PruebaGeneradorXML
     {
-        static void Main(string[] args)
+        static void Main2(string[] args)
         {
             Narrador mNarrador = new Narrador(0,"rrere",12,"sdsfdas");
             mNarrador.cIdentificador = 2014;

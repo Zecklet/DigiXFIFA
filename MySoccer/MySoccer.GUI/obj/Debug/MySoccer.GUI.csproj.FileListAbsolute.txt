@@ -41,3 +41,5 @@ C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\es\Syste
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\obj\Debug\MySoccer.GUI.csprojResolveAssemblyReference.cache
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\obj\Debug\MySoccer.GUI.dll
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\obj\Debug\MySoccer.GUI.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\EntityFramework.SqlServer.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\EntityFramework.SqlServer.xml

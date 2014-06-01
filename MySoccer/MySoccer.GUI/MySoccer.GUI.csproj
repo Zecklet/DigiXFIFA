@@ -39,6 +39,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -220,6 +227,10 @@
     <None Include="Properties\PublishProfiles\Kenneth.pubxml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MySoccer.Datos\MySoccer.Datos.csproj">
+      <Project>{008dc06f-a56f-4184-80a8-5de6ac397872}</Project>
+      <Name>MySoccer.Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MySoccer.Dominio\MySoccer.Dominio.csproj">
       <Project>{3d9b6808-f34e-4c65-bc08-83366960aff8}</Project>
       <Name>MySoccer.Dominio</Name>

@@ -54,6 +54,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -102,7 +103,10 @@
     <Compile Include="CUENTA.cs">
       <DependentUpon>datMySoccerModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="datControlBaseDatos.cs" />
+    <Compile Include="datAdministradorBaseDatos.cs" />
+    <Compile Include="datConstantes.cs" />
+    <Compile Include="datUsuariosBaseDatos.cs" />
+    <Compile Include="datFanaticoBaseDatos.cs" />
     <Compile Include="datMySoccerModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -118,6 +122,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>datMySoccerModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="datNarradorBaseDatos.cs" />
     <Compile Include="EQUIPO.cs">
       <DependentUpon>datMySoccerModel.tt</DependentUpon>
     </Compile>

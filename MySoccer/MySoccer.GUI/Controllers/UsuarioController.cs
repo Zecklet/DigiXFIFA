@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MySoccer.GUI.Models;
 using MySoccer.Dominio;
+using MySoccer.Datos;
 
 namespace MySoccer.GUI.Controllers
 {
@@ -45,7 +46,7 @@ namespace MySoccer.GUI.Controllers
                         mApellio, pModel.cNombreUsuario,
                         pModel.cContrasena,pModel.cFechaNacimiento);
                     mParametro.DatosAdministrador(pModel.cCorreoElectronico);
-                    mUsuarios.AgregarAdministrador(mParametro);
+                    mUsuarios.AgregarNuevoUsuario(mParametro,datConstantes.kUsuarioAdministrador);
                     return View("Index");
                 }
                 System.Console.WriteLine(pModel.cNombre);
