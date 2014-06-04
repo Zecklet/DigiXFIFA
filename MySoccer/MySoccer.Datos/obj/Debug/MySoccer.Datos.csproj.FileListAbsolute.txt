@@ -1,22 +1,3 @@
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\MySoccer.Datos.dll
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\MySoccer.Datos.pdb
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.dll
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.pdb
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\MySoccer.Datos.dll.config
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.dll
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.SqlServerCompact.dll
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\Iesi.Collections.dll
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\NHibernate.dll
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\System.Data.SqlServerCe.dll
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.xml
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.SqlServerCompact.xml
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\Iesi.Collections.xml
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\bin\Debug\NHibernate.xml
-C:\Users\Ney Rojas\Desktop\Hola\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.csprojResolveAssemblyReference.cache
-C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.csprojResolveAssemblyReference.cache
-C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.dll
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\MySoccer.Datos.dll.config
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\MySoccer.Datos.dll
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\MySoccer.Datos.pdb
@@ -28,43 +9,19 @@ C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\NHibernate.dll
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Owin.dll
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\TINA-ORM.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Tina.MsSql.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Xpand.ExpressApp.NH.Core.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Xpand.ExpressApp.NH.DataLayer.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Xpand.ExpressApp.NH.dll
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.xml
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.SqlServerCompact.xml
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Iesi.Collections.xml
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Microsoft.Owin.xml
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\NHibernate.xml
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.dll
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.pdb
-<<<<<<< HEAD
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.csprojResolveAssemblyReference.cache
-=======
-C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\TINA-ORM.dll
-C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Tina.MsSql.dll
-C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Xpand.ExpressApp.NH.Core.dll
-C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Xpand.ExpressApp.NH.DataLayer.dll
-C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Xpand.ExpressApp.NH.dll
->>>>>>> 7a50e5602253c560bf6a48a46b17f5e1796b3172
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\MySoccer.Datos.dll.config
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\MySoccer.Datos.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\MySoccer.Datos.pdb
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.SqlServerCompact.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Iesi.Collections.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Microsoft.Owin.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\NHibernate.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Owin.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\System.Data.SqlServerCe.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\TINA-ORM.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Tina.MsSql.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Xpand.ExpressApp.NH.Core.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Xpand.ExpressApp.NH.DataLayer.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Xpand.ExpressApp.NH.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.xml
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\EntityFramework.SqlServerCompact.xml
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Iesi.Collections.xml
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\Microsoft.Owin.xml
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\NHibernate.xml
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.dll
-C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\obj\Debug\MySoccer.Datos.csprojResolveAssemblyReference.cache
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\MySoccer.EjeTransversal.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Datos\bin\Debug\MySoccer.EjeTransversal.pdb

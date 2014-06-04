@@ -32,7 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,16 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PruebaAgregarUsuarioBase.cs" />
     <Compile Include="PruebaGeneradorXML.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PruebaUsuarioFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MySoccer.Datos\MySoccer.Datos.csproj">
+      <Project>{008dc06f-a56f-4184-80a8-5de6ac397872}</Project>
+      <Name>MySoccer.Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MySoccer.Dominio\MySoccer.Dominio.csproj">
       <Project>{3d9b6808-f34e-4c65-bc08-83366960aff8}</Project>
       <Name>MySoccer.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MySoccer.EjeTransversal\MySoccer.EjeTransversal.csproj">
+      <Project>{95dba2d3-78c3-4fe9-8f1f-f95618883f74}</Project>
+      <Name>MySoccer.EjeTransversal</Name>
     </ProjectReference>
     <ProjectReference Include="..\MySoccer.Servicio\MySoccer.Servicio.csproj">
       <Project>{8bb4ecbc-0ff1-4738-acf7-e958141521b8}</Project>

@@ -39,25 +39,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrador.cs" />
-    <Compile Include="AdministrarUsuario.cs" />
+    <Compile Include="GestionarUsuarios\Administrador.cs" />
+    <Compile Include="GestionarUsuarios\AdministrarUsuario.cs" />
     <Compile Include="ComentarioEstadistico.cs" />
     <Compile Include="ComentarioTexto.cs" />
-    <Compile Include="Cuenta.cs" />
+    <Compile Include="GestionarUsuarios\Cuenta.cs" />
     <Compile Include="Equipo.cs" />
-    <Compile Include="Fanatico.cs" />
+    <Compile Include="GestionarUsuarios\Fanatico.cs" />
     <Compile Include="Jugador.cs" />
-    <Compile Include="Narrador.cs" />
-    <Compile Include="ParametrosUsuario.cs" />
+    <Compile Include="GestionarUsuarios\Narrador.cs" />
+    <Compile Include="GestionarUsuarios\ParametrosUsuario.cs" />
     <Compile Include="Partido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultadoPartido.cs" />
-    <Compile Include="Usuario.cs" />
+    <Compile Include="UI_OpcionDropdown.cs" />
+    <Compile Include="GestionarUsuarios\Usuario.cs" />
+    <Compile Include="GestionarUsuarios\UsuariosFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MySoccer.Datos\MySoccer.Datos.csproj">
       <Project>{008dc06f-a56f-4184-80a8-5de6ac397872}</Project>
       <Name>MySoccer.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MySoccer.EjeTransversal\MySoccer.EjeTransversal.csproj">
+      <Project>{95dba2d3-78c3-4fe9-8f1f-f95618883f74}</Project>
+      <Name>MySoccer.EjeTransversal</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

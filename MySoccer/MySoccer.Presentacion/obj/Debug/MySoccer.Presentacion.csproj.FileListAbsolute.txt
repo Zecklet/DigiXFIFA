@@ -1,0 +1,15 @@
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\bin\Debug\MySoccer.Presentacion.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\bin\Debug\MySoccer.Presentacion.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\obj\Debug\MySoccer.Presentacion.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\obj\Debug\MySoccer.Presentacion.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\obj\Debug\MySoccer.Presentacion.csprojResolveAssemblyReference.cache
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\bin\Debug\MySoccer.Datos.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\bin\Debug\MySoccer.Dominio.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\bin\Debug\MySoccer.EjeTransversal.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\bin\Debug\MySoccer.Servicio.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\bin\Debug\EntityFramework.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\bin\Debug\MySoccer.Datos.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\bin\Debug\MySoccer.Dominio.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\bin\Debug\MySoccer.EjeTransversal.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\bin\Debug\MySoccer.Servicio.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Presentacion\bin\Debug\EntityFramework.xml

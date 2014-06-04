@@ -54,6 +54,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -102,7 +103,11 @@
     <Compile Include="CUENTA.cs">
       <DependentUpon>datMySoccerModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="datControlBaseDatos.cs" />
+    <Compile Include="GestionarUsuarios\datAdministradorBaseDatos.cs" />
+    <Compile Include="GestionarUsuarios\datEquipoBaseDatos.cs" />
+    <Compile Include="GestionarUsuarios\datPaisBaseDatos.cs" />
+    <Compile Include="GestionarUsuarios\datUsuariosBaseDatos.cs" />
+    <Compile Include="GestionarUsuarios\datFanaticoBaseDatos.cs" />
     <Compile Include="datMySoccerModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -118,6 +123,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>datMySoccerModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="GestionarUsuarios\datNarradorBaseDatos.cs" />
     <Compile Include="EQUIPO.cs">
       <DependentUpon>datMySoccerModel.tt</DependentUpon>
     </Compile>
@@ -137,7 +143,6 @@
       <DependentUpon>datMySoccerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Prueba.cs" />
     <Compile Include="RECHAZADO.cs">
       <DependentUpon>datMySoccerModel.tt</DependentUpon>
     </Compile>
@@ -184,6 +189,12 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MySoccer.EjeTransversal\MySoccer.EjeTransversal.csproj">
+      <Project>{95dba2d3-78c3-4fe9-8f1f-f95618883f74}</Project>
+      <Name>MySoccer.EjeTransversal</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

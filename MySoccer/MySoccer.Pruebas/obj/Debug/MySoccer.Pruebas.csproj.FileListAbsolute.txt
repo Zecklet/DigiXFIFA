@@ -13,3 +13,21 @@ C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\En
 C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\obj\Debug\MySoccer.Pruebas.csprojResolveAssemblyReference.cache
 C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\obj\Debug\MySoccer.Pruebas.exe
 C:\Users\Jorge\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\obj\Debug\MySoccer.Pruebas.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\obj\Debug\MySoccer.Pruebas.csprojResolveAssemblyReference.cache
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\obj\Debug\MySoccer.Pruebas.exe
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\MySoccer.Pruebas.exe.config
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\MySoccer.Pruebas.exe
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\MySoccer.Pruebas.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\MySoccer.Dominio.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\MySoccer.Servicio.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\MySoccer.Dominio.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\MySoccer.Servicio.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\obj\Debug\MySoccer.Pruebas.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\MySoccer.Datos.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\EntityFramework.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\MySoccer.Datos.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\EntityFramework.xml
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\MySoccer.EjeTransversal.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Pruebas\bin\Debug\MySoccer.EjeTransversal.pdb
