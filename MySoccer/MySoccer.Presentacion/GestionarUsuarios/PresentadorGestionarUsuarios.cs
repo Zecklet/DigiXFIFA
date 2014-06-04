@@ -54,6 +54,13 @@ namespace MySoccer.Presentacion.GestionarUsuarios
         {
             return this.cAdmiUsuarios.GetUsuarioActual().cIDTipo;
         }
+
+        public Dictionary<int, String> GetPaises()
+        {
+            
+        }
+
+
         //-----------------------------------------------------------------\\
         //-------------------Seccion del Administrador---------------------\\
         //-----------------------------------------------------------------\\

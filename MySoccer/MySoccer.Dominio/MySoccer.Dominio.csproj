@@ -43,6 +43,7 @@
     <Compile Include="GestionarUsuarios\AdministrarUsuario.cs" />
     <Compile Include="ComentarioEstadistico.cs" />
     <Compile Include="ComentarioTexto.cs" />
+    <Compile Include="GestionarUsuarios\ConsultorPaisBase.cs" />
     <Compile Include="GestionarUsuarios\Cuenta.cs" />
     <Compile Include="Equipo.cs" />
     <Compile Include="GestionarUsuarios\Fanatico.cs" />
