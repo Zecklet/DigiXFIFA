@@ -120,17 +120,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\guiModelInicioSesion.cs" />
-    <Compile Include="Models\guiModeloAdministrador.cs" />
-    <Compile Include="Models\guiModeloFanatico.cs" />
-    <Compile Include="Models\guiModeloNarrador.cs" />
-    <Compile Include="Models\guiModeloUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="ImagenesUsuarios\xxx.jpg" />
     <Content Include="Global.asax" />
     <Content Include="JavaScript\calendario.js" />
     <Content Include="JavaScript\jquery.datetimepicker.css" />
@@ -151,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -230,6 +227,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\Kenneth.pubxml" />
+    <Content Include="Views\Layouts\_Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MySoccer.Datos\MySoccer.Datos.csproj">
@@ -239,6 +237,14 @@
     <ProjectReference Include="..\MySoccer.Dominio\MySoccer.Dominio.csproj">
       <Project>{3d9b6808-f34e-4c65-bc08-83366960aff8}</Project>
       <Name>MySoccer.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MySoccer.EjeTransversal\MySoccer.EjeTransversal.csproj">
+      <Project>{95dba2d3-78c3-4fe9-8f1f-f95618883f74}</Project>
+      <Name>MySoccer.EjeTransversal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MySoccer.Presentacion\MySoccer.Presentacion.csproj">
+      <Project>{3663317b-e775-4a7b-8422-559165df067b}</Project>
+      <Name>MySoccer.Presentacion</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

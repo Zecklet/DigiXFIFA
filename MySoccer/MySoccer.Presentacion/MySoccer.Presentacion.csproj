@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3663317B-E775-4A7B-8422-559165DF067B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MySoccer.Presentacion</RootNamespace>
+    <AssemblyName>MySoccer.Presentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GestionarUsuarios\guiModeloAccionesPagina.cs" />
+    <Compile Include="GestionarUsuarios\guiModeloAdministrador.cs" />
+    <Compile Include="GestionarUsuarios\guiModeloFanatico.cs" />
+    <Compile Include="GestionarUsuarios\guiModeloNarrador.cs" />
+    <Compile Include="GestionarUsuarios\guiModeloUsuario.cs" />
+    <Compile Include="GestionarUsuarios\guiModeloUsuarioFactory.cs" />
+    <Compile Include="GestionarUsuarios\guiModeloUsuarioNull.cs" />
+    <Compile Include="GestionarUsuarios\PresentadorGestionarUsuarios.cs" />
+    <Compile Include="IniciarSesion\guiModelInicioSesion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MySoccer.Datos\MySoccer.Datos.csproj">
+      <Project>{008dc06f-a56f-4184-80a8-5de6ac397872}</Project>
+      <Name>MySoccer.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MySoccer.Dominio\MySoccer.Dominio.csproj">
+      <Project>{3d9b6808-f34e-4c65-bc08-83366960aff8}</Project>
+      <Name>MySoccer.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MySoccer.EjeTransversal\MySoccer.EjeTransversal.csproj">
+      <Project>{95dba2d3-78c3-4fe9-8f1f-f95618883f74}</Project>
+      <Name>MySoccer.EjeTransversal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MySoccer.Servicio\MySoccer.Servicio.csproj">
+      <Project>{8bb4ecbc-0ff1-4738-acf7-e958141521b8}</Project>
+      <Name>MySoccer.Servicio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

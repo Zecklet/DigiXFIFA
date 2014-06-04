@@ -1,14 +1,16 @@
-﻿@{
+﻿@model MySoccer.Presentacion.GestionarUsuarios.guiModeloNarrador
+
+@{
     ViewBag.Title = "Narrador_Perfil";
     Layout = "~/Views/Layouts/_Narrador.cshtml";
 }
 
 <div class="uk-grid">
-    <div class="uk-width-1-3 uk-push-1-6">
-        <img src="#" alt="Alternate Text" />
+    <div class="uk-width-1-3 uk-push-1-10">
+        <img src="@Url.Content(Model.cRutaImagen)" alt="Image" width="200" />
     </div>
     <div class="uk-width-2-3 uk-vertical-align-middle">
-        <h1>#nombre de usuario</h1>
+        <h1>@Html.LabelFor(model => model.cNombre, Model.cNombre + " " + Model.cApellido)</h1>
     </div>
 </div>
 <br />
@@ -23,21 +25,22 @@
         <label class="uk-form-label">Fecha de inscripción</label>
     </div>
     <div class="uk-width-3-10 uk-push-1-10">
-        <label class="uk-form-label">#genero</label>
+        <label>@Html.LabelFor(model => model.cGenero, Model.cGenero)</label>
         <br />
-        <label class="uk-form-label">#fechadenacimiento</label>
+        <label>@Html.LabelFor(model => model.cFechaNacimiento, Model.cFechaNacimiento)</label>
         <br />
-        <label class="uk-form-label">#añosdeexperiencia</label>
+        <label>@Html.LabelFor(model => model.cAnosExperiencia, Model.cAnosExperiencia)</label>
         <br />
-        <label class="uk-form-label">#fechadeinscripcion</label>
+        <label>@Html.LabelFor(model => model.cFechaInscripcion, Model.cFechaInscripcion)</label>
     </div>
     <div class="uk-width-3-10 uk-push-1-10">
         <label class="uk-form-label">Descripción personal</label>
         <br />
-        <label class="uk-form-label">#descripcionpersonal</label>
+        <label>@Html.LabelFor(model => model.cDescripcion, Model.cDescripcion)</label>
+        <br />
     </div>
 </div>
 <div class="uk-width-1-3 uk-push-2-4 ">
     <br />
-    <a class="uk-button uk-button-primary uk-text-break uk-align-right" href="@Url.Action("Narrador_Registro")"><i class="uk-icon-magic">&nbsp</i>Editar</a>
+    <a class="uk-button uk-button-primary uk-text-break uk-align-right" href="@Url.Action("Narrador_Editar_Perfil")"><i class="uk-icon-magic">&nbsp</i>Editar</a>
 </div>

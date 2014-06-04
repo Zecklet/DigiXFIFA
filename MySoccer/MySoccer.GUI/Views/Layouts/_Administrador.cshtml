@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model MySoccer.Presentacion.GestionarUsuarios.guiModeloAdministrador
+<!DOCTYPE html>
 
 <html class="uk-height-1-1">
 <head>
@@ -13,10 +14,11 @@
         <div class="uk-grid">
             <br />
             <div class="uk-width-3-6">
-                <i class="uk-icon-user uk-icon-large">&nbsp</i><a href="@Url.Action("Administrador_Perfil")" class="uk-link"> #nombredeusuario </a>
+                <i class="uk-icon-user uk-icon-large">&nbsp</i>
+                <a href="@Url.Action("Administrador_Perfil")" class="uk-link"> @Model.cNombre </a>
             </div>
             <div class="uk-width-1-6 uk-push-2-6">
-                <a href="@Url.Action("Index")" class="uk-link"> Cerrar sesión </a>
+                <a href="@Url.Action("Index","Home")" class="uk-link"> Cerrar sesión </a>
             </div>
         </div>
         <hr class="uk-grid-divider" />

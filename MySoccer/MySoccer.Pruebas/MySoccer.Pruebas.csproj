@@ -69,6 +69,10 @@
       <Project>{3d9b6808-f34e-4c65-bc08-83366960aff8}</Project>
       <Name>MySoccer.Dominio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MySoccer.EjeTransversal\MySoccer.EjeTransversal.csproj">
+      <Project>{95dba2d3-78c3-4fe9-8f1f-f95618883f74}</Project>
+      <Name>MySoccer.EjeTransversal</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MySoccer.Servicio\MySoccer.Servicio.csproj">
       <Project>{8bb4ecbc-0ff1-4738-acf7-e958141521b8}</Project>
       <Name>MySoccer.Servicio</Name>

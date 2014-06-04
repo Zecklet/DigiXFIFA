@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MySoccer.GUI.Models;
+using MySoccer.Dominio;
+using MySoccer.Datos;
+using System.IO;
+using MySoccer.Presentacion.GestionarUsuarios;
+using MySoccer.Presentacion.IniciarSesion;
 
 namespace MySoccer.GUI.Controllers
 {
@@ -12,10 +16,54 @@ namespace MySoccer.GUI.Controllers
         //
         // GET: /Home/
 
+        [HttpPost]
+        public ActionResult Index(guiModelInicioSesion pModel)
+        {
+
+            HttpPostedFileBase file = pModel.cImagen;
+            if (file.ContentLength > 0)
+            {
+                var fileName = Path.GetFileName(file.FileName);
+                var path = Path.Combine(Server.MapPath("~/App_Data/ImagenesUsuarios"), fileName);
+                file.SaveAs(path);
+            }
+
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Index()
         {
+            Session["Usuario"] = null;
+            Session["Modelo"] = null;
+
             return View(new guiModelInicioSesion());
         }
+
+        [HttpGet]
+        public ActionResult IniciarSesion(guiModelInicioSesion pModel)
+        {
+            if (ModelState.IsValid)
+            {
+                PresentadorGestionarUsuarios mPresentador = new PresentadorGestionarUsuarios();
+                
+                //Si se retorna verdadero es por que el usuario existe y la contrasena es la correcta 
+                if (mPresentador.UsuarioCorrecto(pModel.cNombreUsuario, pModel.cConstrasena))
+                {
+                    //Que tan mal es almacenar toda la informacion del usuario
+
+                    Dictionary<String, String> mDatos = mPresentador.GetDatos();
+
+                    guiModeloUsuario mModeloUsuario = guiModeloUsuarioFactory.RecuperarModelo(mDatos, mPresentador.GetTipoUsuario());
+                    mModeloUsuario.cNombreUsuario = mPresentador.GetNombreUsuario();
+                    Session["Modelo"] = mModeloUsuario;
+                    Session["Usuario"] = mPresentador;
+
+                    return RedirectToAction(mModeloUsuario.cTipoUsuario + "_Perfil", "Usuario");
+                }
+            }
+            return View("Index",pModel);
+        }
+
 
         public ActionResult Administrador_Calendario()
         {

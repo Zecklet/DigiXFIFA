@@ -43,3 +43,7 @@ C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\obj\Debug\My
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\obj\Debug\MySoccer.GUI.pdb
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\EntityFramework.SqlServer.dll
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\EntityFramework.SqlServer.xml
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\MySoccer.EjeTransversal.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\MySoccer.EjeTransversal.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\MySoccer.Presentacion.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\MySoccer.Presentacion.pdb

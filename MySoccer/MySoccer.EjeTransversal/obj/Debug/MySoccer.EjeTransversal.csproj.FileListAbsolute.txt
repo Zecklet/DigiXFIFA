@@ -1,0 +1,5 @@
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.EjeTransversal\bin\Debug\MySoccer.EjeTransversal.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.EjeTransversal\bin\Debug\MySoccer.EjeTransversal.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.EjeTransversal\obj\Debug\MySoccer.EjeTransversal.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.EjeTransversal\obj\Debug\MySoccer.EjeTransversal.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.EjeTransversal\obj\Debug\MySoccer.EjeTransversal.csprojResolveAssemblyReference.cache

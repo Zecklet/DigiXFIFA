@@ -21,3 +21,5 @@ C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Servicio\bin\Deb
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Servicio\bin\Debug\EntityFramework.dll
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Servicio\bin\Debug\MySoccer.Datos.pdb
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Servicio\bin\Debug\EntityFramework.xml
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Servicio\bin\Debug\MySoccer.EjeTransversal.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.Servicio\bin\Debug\MySoccer.EjeTransversal.pdb

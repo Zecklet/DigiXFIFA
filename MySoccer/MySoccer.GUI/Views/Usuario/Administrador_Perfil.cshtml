@@ -1,10 +1,12 @@
-﻿@{
+﻿@model MySoccer.Presentacion.GestionarUsuarios.guiModeloAdministrador
+
+@{
     ViewBag.Title = "Administrador_Perfil";
     Layout = "~/Views/Layouts/_Administrador.cshtml";
 }
 
 <div class="uk-width-8-10 uk-push-2-10">
-    <h1>#nombre de usuario</h1>
+    <h1>@Html.LabelFor(model => model.cNombre, Model.cNombre + " " + Model.cApellido)</h1>
     <br />
 </div>
 <div class="uk-grid">
@@ -16,15 +18,15 @@
         <label>Fecha de inscripción</label>
     </div>
     <div class="uk-width-5-10 uk-push-1-10">
-        <label>#correoelectronico</label>
+        <label>@Html.LabelFor(model => model.cCorreoElectronico, Model.cCorreoElectronico)</label>
         <br />
-        <label>#fechadenacimiento</label>
+        <label>@Html.LabelFor(model => model.cFechaNacimiento, Model.cFechaNacimiento)</label>
         <br />
-        <label>#nombredeusuario</label>
+        <label>@Html.LabelFor(model => model.cFechaInscripcion, Model.cFechaInscripcion)</label>
         <br />
         <br />
         <div class="uk-width-1-3 uk-push-1-3">
-            <a class="uk-button uk-button-primary uk-text-break" href="@Url.Action("Administrador_Registro")"><i class="uk-icon-magic">&nbsp</i>Editar perfil</a>
+            <a class="uk-button uk-button-primary uk-text-break" href="@Url.Action("Administrador_Editar_Perfil")"><i class="uk-icon-magic">&nbsp</i>Editar perfil</a>
         </div>
     </div>
 </div>
