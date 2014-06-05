@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySoccer.Dominio.GestionarUsuarios;
+using MySoccer.EjeTransversal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,17 +14,20 @@ namespace MySoccer.Dominio
         public String cNombreUsuario { get; set; }
         public String cContrasena { get; set; }
         public DateTime cFechaInscripcion { get; set; }
+        private Encriptacion cEncriptador { get; set; }
 
         public Cuenta(String pNombreUsuario, String pContrasena)
         {
+            this.cEncriptador = new Encriptacion();
             this.cEstado = false;
             this.cFechaInscripcion = DateTime.Now;
             this.cNombreUsuario = pNombreUsuario;
-            this.cContrasena = pContrasena;
+            this.cContrasena = this.cEncriptador.Encriptar(ConstantesGestionarUsuarios.kUbicacionLLavePrivada, pContrasena);
         }
 
         public Cuenta(String pNombreUsuario, String pContrasena, Boolean pEstado, DateTime pFechaInscripcion)
         {
+            this.cEncriptador = new Encriptacion();
             this.cEstado = pEstado;
             this.cFechaInscripcion = pFechaInscripcion;
             this.cNombreUsuario = pNombreUsuario.ToLower();
@@ -41,7 +46,7 @@ namespace MySoccer.Dominio
 
         public Boolean CompararContrasena(String pContrasena)
         {
-            return (this.cContrasena == pContrasena);
+            return (pContrasena == this.cEncriptador.Desencriptar(ConstantesGestionarUsuarios.kUbicacionLLavePrivada, this.cContrasena));
         }
 
         public void CambiarUsuario(String pNuevoNombreUsuario)
@@ -51,7 +56,7 @@ namespace MySoccer.Dominio
 
         public void CambiarContrasena(String pNuevaContrasena)
         {
-            this.cContrasena = pNuevaContrasena; //Se le tiene que aplicar el algoritmo de encriptacion
+            this.cContrasena = this.cEncriptador.Encriptar(ConstantesGestionarUsuarios.kUbicacionLLavePrivada, pNuevaContrasena);
         }
     }
 }

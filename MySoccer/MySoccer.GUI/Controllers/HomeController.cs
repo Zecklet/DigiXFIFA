@@ -8,6 +8,7 @@ using MySoccer.Datos;
 using System.IO;
 using MySoccer.Presentacion.GestionarUsuarios;
 using MySoccer.Presentacion.IniciarSesion;
+using MySoccer.EjeTransversal;
 
 namespace MySoccer.GUI.Controllers
 {
@@ -47,7 +48,8 @@ namespace MySoccer.GUI.Controllers
                 PresentadorGestionarUsuarios mPresentador = new PresentadorGestionarUsuarios();
                 
                 //Si se retorna verdadero es por que el usuario existe y la contrasena es la correcta 
-                if (mPresentador.UsuarioCorrecto(pModel.cNombreUsuario, pModel.cConstrasena))
+                ContenedorError mResultado = mPresentador.UsuarioCorrecto(pModel.cNombreUsuario, pModel.cConstrasena);
+                if (!mResultado.HayError())
                 {
                     //Que tan mal es almacenar toda la informacion del usuario
 
@@ -57,8 +59,13 @@ namespace MySoccer.GUI.Controllers
                     mModeloUsuario.cNombreUsuario = mPresentador.GetNombreUsuario();
                     Session["Modelo"] = mModeloUsuario;
                     Session["Usuario"] = mPresentador;
+                    Session["Nombre"] = mPresentador.GetNombre();
 
                     return RedirectToAction(mModeloUsuario.cTipoUsuario + "_Perfil", "Usuario");
+                }
+                else
+                {
+                    ModelState.AddModelError(ConstantesGestionarUsuarios.kStringCodigoError, mResultado.GetMensajeError());
                 }
             }
             return View("Index",pModel);

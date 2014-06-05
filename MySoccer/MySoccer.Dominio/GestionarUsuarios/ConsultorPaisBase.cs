@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySoccer.Datos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,17 @@ namespace MySoccer.Dominio.GestionarUsuarios
                 }
                 return cFabricaUsuario;
             }
+        }
+
+        public static Dictionary<int,String> GetPaises()
+        {
+            datPaisBaseDatos mConexionBasePaises = new datPaisBaseDatos();
+            return mConexionBasePaises.GetPaises();
+        }
+        public static String GetNombrePais(int pIdPais)
+        {
+            datPaisBaseDatos mConexionBasePaises = new datPaisBaseDatos();
+            return mConexionBasePaises.GetNombrePais(pIdPais);
         }
     }
 }

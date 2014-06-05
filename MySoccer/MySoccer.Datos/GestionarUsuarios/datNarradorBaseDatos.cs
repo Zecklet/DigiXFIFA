@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySoccer.Datos.Entity;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace MySoccer.Datos
                 Foto = pRutaFoto
             };
 
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion(); //crea una nueva conexion con sql server
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion(); //crea una nueva conexion con sql server
             mConexionMySoccer.Database.Connection.Open(); //Abre la conexion con sqlserver 
 
             mConexionMySoccer.NARRADOR.Add(mNuevoUsuario); //Agrega el usuario de tipo narrador
@@ -32,7 +33,7 @@ namespace MySoccer.Datos
         }
         public NARRADOR ObtenerNarrador(int pPKUsuario)
         {
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
             mConexionMySoccer.Database.Connection.Open();
 
             NARRADOR mResultado = mConexionMySoccer.NARRADOR.Where(s => s.PK_FK_Narrador == pPKUsuario).First();
@@ -44,7 +45,7 @@ namespace MySoccer.Datos
         public void ActualizarDatosNarrador(int pIdentificadorUsuario, String pDescripcion,
             String pRutaFoto, int pGenero, int pAnosExperiencia)
         {
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
             mConexionMySoccer.Database.Connection.Open();
 
             NARRADOR mNarradorViejo = mConexionMySoccer.NARRADOR.Where(s => s.PK_FK_Narrador == pIdentificadorUsuario).First();

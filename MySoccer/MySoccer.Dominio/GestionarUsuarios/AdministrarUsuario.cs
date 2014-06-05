@@ -58,7 +58,7 @@ namespace MySoccer.Dominio
 
 
         //Funcion que devuel true si el nombre de usuario y la contrasenas son correctas
-        public Boolean UsuarioCorrecto(String pNombreUsuario, String pContrasena)
+        public ContenedorError UsuarioCorrecto(String pNombreUsuario, String pContrasena)
         {
             cContenedorError = new ContenedorError(0); //inicializa un contenedor de error, sin error alguno
             Usuario mUsuario = UsuariosFactory.RecuperarUsuario(pNombreUsuario); //usando el factory de usuarios, se  recontruye el usuario completo de la base de datos
@@ -66,13 +66,13 @@ namespace MySoccer.Dominio
             this.cUsuarioActual = mUsuario;
             if (mUsuario == null) //Se comprueba que el usuario exista 
             {
-                cContenedorError = new ContenedorError(ConstantesGestionarUsuarios.kCodigoNombreUsuarioExiste);
+                cContenedorError = new ContenedorError(ConstantesGestionarUsuarios.kCodigoNombreUsuarioNoExiste);
             }
             else if (!mUsuario.CompararContrasena(pContrasena)) //Se comprueba la contrase del usuario
             {
                 cContenedorError = new ContenedorError(ConstantesGestionarUsuarios.kCodigoContrasenaIncorrecta);
             }
-            return !cContenedorError.HayError(); //devuelve el valor de la consulta 
+            return cContenedorError; //devuelve el valor de la consulta 
         }
 
         //Funcion que retorna el mensaje de error dependiendo del tipo de error
@@ -95,6 +95,11 @@ namespace MySoccer.Dominio
         public Dictionary<String, String> GetDatos()
         {
             return this.cUsuarioActual.GetDatos();
+        }
+
+        public String GetNombre()
+        {
+            return this.cUsuarioActual.cNombre;
         }
     }
 }

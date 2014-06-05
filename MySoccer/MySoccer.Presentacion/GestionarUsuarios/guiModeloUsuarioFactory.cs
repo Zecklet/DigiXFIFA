@@ -1,4 +1,5 @@
 ﻿using MySoccer.Datos;
+using MySoccer.Dominio.GestionarUsuarios;
 using MySoccer.EjeTransversal;
 using System;
 using System.Collections.Generic;
@@ -36,10 +37,8 @@ namespace MySoccer.Presentacion.GestionarUsuarios
                     break;
                 case ConstantesGestionarUsuarios.kUsuarioFantatico:
                     mNuevoUsuario = new guiModeloFanatico();
-                    datPaisBaseDatos mConexionBasePaises = new datPaisBaseDatos();
-                    ((guiModeloFanatico)mNuevoUsuario).cPaises = mConexionBasePaises.GetPaises();
-                    datEquipoBaseDatos mConexionBaseEquipos = new datEquipoBaseDatos();
-                    ((guiModeloFanatico)mNuevoUsuario).cEquipos = mConexionBaseEquipos.GetEquipos();
+                    ((guiModeloFanatico)mNuevoUsuario).cPaises = ConsultorPaisBase.GetPaises();
+                    ((guiModeloFanatico)mNuevoUsuario).cEquipos = ConsultorEquipoBase.GetEquipos();
                     break;
             }
             return mNuevoUsuario;
@@ -75,11 +74,8 @@ namespace MySoccer.Presentacion.GestionarUsuarios
                         cEquipo = mDatosModelo[ConstantesGestionarUsuarios.kStringEquipoFavorito],
                         cPais = mDatosModelo[ConstantesGestionarUsuarios.kStringPais]
                     };
-                    datEquipoBaseDatos mConexionEquipos = new datEquipoBaseDatos();
-                    datPaisBaseDatos mConexionPais = new datPaisBaseDatos();
-                    ((guiModeloFanatico)mNuevoUsuario).cEquipos = mConexionEquipos.GetEquipos();
-                    ((guiModeloFanatico)mNuevoUsuario).cPaises = mConexionPais.GetPaises();
-                    break;
+                    ((guiModeloFanatico)mNuevoUsuario).cPaises = ConsultorPaisBase.GetPaises();
+                    ((guiModeloFanatico)mNuevoUsuario).cEquipos = ConsultorEquipoBase.GetEquipos();                    break;
                 default:
                     mNuevoUsuario = new guiModeloUsuarioNull();
                     break;

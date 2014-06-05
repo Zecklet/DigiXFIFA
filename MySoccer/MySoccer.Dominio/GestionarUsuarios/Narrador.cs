@@ -1,4 +1,5 @@
 ﻿using MySoccer.Datos;
+using MySoccer.Datos.Entity;
 using MySoccer.EjeTransversal;
 using System;
 using System.Collections.Generic;

@@ -115,6 +115,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\GestionarCalendarioController.cs" />
+    <Compile Include="Controllers\GestionarTorneoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -132,6 +134,8 @@
     <Content Include="JavaScript\jquery.datetimepicker.css" />
     <Content Include="JavaScript\jquery.datetimepicker.js" />
     <Content Include="JavaScript\jquery.js" />
+    <Content Include="Llaves\privateKeyMS.xml" />
+    <Content Include="Llaves\publicKeyMS.xml" />
     <Content Include="Styles\Images\logo.png" />
     <Content Include="Styles\JS\jquery.js" />
     <Content Include="Styles\JS\uikit.js" />
@@ -178,16 +182,16 @@
     <Content Include="Views\Usuario\Administrador_Perfil.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Administrador_Calendario.cshtml" />
+    <Content Include="Views\GestionarCalendario\Administrador_Calendario.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Administrador_Partido.cshtml" />
+    <Content Include="Views\GestionarCalendario\Administrador_Partido.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Administrador_Torneo.cshtml" />
+    <Content Include="Views\GestionarTorneo\Administrador_Torneo.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Administrador_Equipo.cshtml" />
+    <Content Include="Views\GestionarTorneo\Administrador_Equipo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Administrador_ListaRechazados.cshtml" />

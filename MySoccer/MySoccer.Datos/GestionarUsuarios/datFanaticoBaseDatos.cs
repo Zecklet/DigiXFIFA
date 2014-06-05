@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySoccer.Datos.Entity;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace MySoccer.Datos
              FK_Pais = pPais 
          };
 
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion(); //crea una nueva conexion con sql server
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion(); //crea una nueva conexion con sql server
             mConexionMySoccer.Database.Connection.Open(); //Abre la conexion con sqlserver 
 
             mConexionMySoccer.FANATICO.Add(mNuevoUsuario); //Agrega el usuario de tipo Fanatico
@@ -33,7 +34,7 @@ namespace MySoccer.Datos
         }
         public FANATICO ObtenerFanatico(int pPKUsuario)
         {
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
             mConexionMySoccer.Database.Connection.Open();
 
             FANATICO mResultado = mConexionMySoccer.FANATICO.Where(s => s.PK_FK_Fanatico == pPKUsuario).First();
@@ -45,7 +46,7 @@ namespace MySoccer.Datos
         public void ActualizarDatosFanatico(int pIdentificadorUsuario, String pDescripcion, String pCorreoElectronico,
             String pRutaFoto, int pGenero, int pEquipoFavorito, int pPais)
         {
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
             mConexionMySoccer.Database.Connection.Open();
 
             FANATICO mFanaticoViejo = mConexionMySoccer.FANATICO.Where(s => s.PK_FK_Fanatico == pIdentificadorUsuario).First();

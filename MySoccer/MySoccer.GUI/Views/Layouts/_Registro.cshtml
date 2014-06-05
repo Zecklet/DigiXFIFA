@@ -37,8 +37,11 @@
                 </div>
             </div>
         </form>
-        <br /> <br />
-        @using (Html.BeginForm(@Model.cAccion, "Usuario", FormMethod.Post, new { enctype="multipart/form-data"}))
+        <br />
+        <font class="uk-form uk-form-horizontal" color=" red">@Html.ValidationMessage("error") </font>
+
+        <br />
+        @using (Html.BeginForm(@Model.cAccion, "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.HiddenFor(model => Model.cNombreSeccion, Model.cNombreSeccion)
             @Html.HiddenFor(model => Model.cNombreLayout, Model.cNombreLayout)
@@ -46,14 +49,14 @@
             <div class="uk-form-row">
                 <label class="uk-form-label">Nombre de usuario</label>
                 <div class="uk-form-controls">
-                    @Html.TextBoxFor(model => model.cNombreUsuario, Model.cNombreUsuario, new { @class = "uk-form-width-medium" })
+                    @Html.TextBoxFor(model => model.cNombreUsuario, Model.cNombreUsuario, new {@maxlength = "30", @class = "uk-form-width-medium" })
                     @Html.ValidationMessageFor(model => Model.cNombreUsuario)
                 </div>
             </div>
             <div class="uk-form-row">
                 <label class="uk-form-label">Contraseña</label>
                 <div class="uk-form-controls">
-                    @Html.PasswordFor(model => model.cContrasena, new { @class = "uk-form-width-medium" })
+                    @Html.PasswordFor(model => model.cContrasena, new { @maxlength = "8", @class = "uk-form-width-medium" })
                     @Html.ValidationMessageFor(model => Model.cContrasena)
                 </div>
             </div>

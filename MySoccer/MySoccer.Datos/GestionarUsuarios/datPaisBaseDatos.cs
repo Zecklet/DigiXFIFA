@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySoccer.Datos.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace MySoccer.Datos
         {
             PAIS mNuevoPais = new PAIS() { Nombre = pNuevoPais }; //Se crea el nuevo pais con todos sus atributos
 
-            MY_SOCCER_CON mConexionMySoccer = new MY_SOCCER_CON(); //crea una nueva conexion con sql server
+            MY_SOCCER_CONEXION mConexionMySoccer = new MY_SOCCER_CONEXION(); //crea una nueva conexion con sql server
             mConexionMySoccer.Database.Connection.Open(); //Abre la conexion con sqlserver 
 
             mConexionMySoccer.PAIS.Add(mNuevoPais); //Agrega un nuevo pais
@@ -32,7 +33,7 @@ namespace MySoccer.Datos
         {
             Dictionary<int, String> mResultado = new Dictionary<int, String>(); //Se crea el objecto que sera devuel
 
-            MY_SOCCER_CON mConexionMySoccer = new MY_SOCCER_CON(); //crea una nueva conexion con sql server
+            MY_SOCCER_CONEXION mConexionMySoccer = new MY_SOCCER_CONEXION(); //crea una nueva conexion con sql server
             mConexionMySoccer.Database.Connection.Open(); //abre una conexion
             foreach (PAIS mPais in mConexionMySoccer.PAIS) //Recorre la lista de paises existentes
             {
@@ -42,9 +43,23 @@ namespace MySoccer.Datos
 
             mConexionMySoccer.SaveChanges();
             mConexionMySoccer.Database.Connection.Close();//Cierra la conexion con los paises 
-            return mResultado; //devuelve el resultado 
-            
+            return mResultado; //devuelve el 
+        }
 
+        public String GetNombrePais(int pIdPais)
+        {
+            String mResultado = "";
+            MY_SOCCER_CONEXION mConexionMySoccer = new MY_SOCCER_CONEXION(); //crea una nueva conexion con sql server
+            mConexionMySoccer.Database.Connection.Open(); //Abre la conexion con sqlserver 
+
+            var Equipos = from Pais in mConexionMySoccer.PAIS
+                          where Pais.PK_Pais == pIdPais
+                          select Pais.Nombre;
+            mResultado = Equipos.First();
+
+            mConexionMySoccer.Database.Connection.Close(); //Cierra la conexion 
+
+            return mResultado;
         }
     }
 }

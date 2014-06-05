@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySoccer.Datos;
 using MySoccer.EjeTransversal;
+using MySoccer.Datos.Entity;
 
 namespace MySoccer.Dominio
 {

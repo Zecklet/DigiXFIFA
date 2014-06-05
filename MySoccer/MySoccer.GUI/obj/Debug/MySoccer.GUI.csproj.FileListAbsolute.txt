@@ -47,3 +47,5 @@ C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\MySoccer
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\MySoccer.EjeTransversal.pdb
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\MySoccer.Presentacion.dll
 C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\MySoccer.Presentacion.pdb
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\MySoccer.Servicio.dll
+C:\Users\Ney Rojas\Documents\GitHub\DigiXFIFA\MySoccer\MySoccer.GUI\bin\MySoccer.Servicio.pdb

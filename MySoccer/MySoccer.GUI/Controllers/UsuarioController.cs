@@ -17,6 +17,11 @@ namespace MySoccer.GUI.Controllers
 
         PresentadorGestionarUsuarios cPresentadorUsuarios;
 
+        public UsuarioController()
+        {
+            this.cPresentadorUsuarios = new PresentadorGestionarUsuarios();
+        }
+
         //-----------------------------------------------------------------\\
         //----------------------Funciones generales------------------------\\
         //-----------------------------------------------------------------\\
@@ -41,20 +46,10 @@ namespace MySoccer.GUI.Controllers
         }
 
 
-        //Entrada: El nombre de usuario es utilizado para guardar la imagen del usuario
-        //Descripcion: Funcion que sube un archivo enviado por el usuario
-        public String GuardarArchivo(String pNombreUsuario, HttpPostedFileBase pImagen)
+        //esta funcion guarda el mensaje de error en el estado del modelo para que sea leido en la interfaz
+        public void SetError(ContenedorError pError)
         {
-            var mPath = "";
-            String mRutaImagenes = "~/ImagenesUsuarios/";
-            if (pImagen!= null && pImagen.ContentLength > 0)
-            {
-                var mExtension = ".jpg";
-                mPath = Path.Combine(Server.MapPath(mRutaImagenes), pNombreUsuario + mExtension);
-                pImagen.SaveAs(mPath);
-                mPath = mRutaImagenes + pNombreUsuario + mExtension;
-            }
-            return mPath;
+            ModelState.AddModelError(ConstantesGestionarUsuarios.kStringCodigoError, pError.GetMensajeError());
         }
 
         //-----------------------------------------------------------------\\
@@ -69,7 +64,6 @@ namespace MySoccer.GUI.Controllers
 
         public ActionResult Administrador_Registro()
         {
-            cPresentadorUsuarios = new PresentadorGestionarUsuarios();
             guiModeloUsuario mNuevoModelo = cPresentadorUsuarios.GetModeloUsuario(ConstantesGestionarUsuarios.kUsuarioAdministrador);
             mNuevoModelo.cNombreSeccion = "Registrar administrador";
             mNuevoModelo.cAccion = "Administrador_Nuevo_Registro";
@@ -84,9 +78,15 @@ namespace MySoccer.GUI.Controllers
 
             if (ModelState.IsValid)
             {
-                cPresentadorUsuarios = new PresentadorGestionarUsuarios();
-                cPresentadorUsuarios.AgregarAdministrador(pModel);
-                return VolverInicio();
+                ContenedorError mResultado = cPresentadorUsuarios.AgregarAdministrador(pModel);
+                if (!mResultado.HayError())
+                {
+                    return VolverInicio();
+                }
+                else
+                {
+                    SetError(mResultado);
+                }
             }
 
             return View("Administrador_Registro", pModel);
@@ -103,14 +103,21 @@ namespace MySoccer.GUI.Controllers
         public ActionResult Administrador_Guardar_Cambios(guiModeloAdministrador pModel)
         {
             PresentadorGestionarUsuarios mPresentador = (PresentadorGestionarUsuarios)Session["Usuario"];
-            if (ModelState.IsValid){            
-                mPresentador.ActualizarAdministrador(pModel);
-                pModel.cContrasena = "";
-                pModel.cFechaInscripcion = ((guiModeloUsuario)Session["Modelo"]).cFechaInscripcion;
-                Session["Modelo"] = pModel;
+            if (ModelState.IsValid)
+            {
+                ContenedorError mResultado = mPresentador.ActualizarAdministrador(pModel);
+                if (!mResultado.HayError())
+                {
+                    pModel.cContrasena = "";
+                    pModel.cFechaInscripcion = ((guiModeloUsuario)Session["Modelo"]).cFechaInscripcion;
+                    Session["Modelo"] = pModel;
 
-                return RedirectToAction("Administrador_Perfil", "Usuario");
-
+                    return RedirectToAction("Administrador_Perfil", "Usuario");
+                }
+                else
+                {
+                    SetError(mResultado);
+                }
             }
             return View("Administrador_Registro", pModel);
         }
@@ -121,12 +128,13 @@ namespace MySoccer.GUI.Controllers
 
         public ActionResult Fanatico_Perfil()
         {
-            return View((guiModeloFanatico)Session["Modelo"]);
+            guiModeloFanatico mModelo = (guiModeloFanatico)Session["Modelo"]; //se saca la informacion del modelo para no modificar el original
+            this.cPresentadorUsuarios.ColocarPaisEquipo(ref mModelo);  //se le coloca el nombre del pais y el equipo favorito
+            return View(mModelo); //Se le agrega el modelo a la vista del perfil del fanatico
         }
 
         public ActionResult Fanatico_Registro()
         {
-            cPresentadorUsuarios = new PresentadorGestionarUsuarios();
             guiModeloUsuario mContenedorUsuario = cPresentadorUsuarios.GetModeloUsuario(ConstantesGestionarUsuarios.kUsuarioFantatico);
             mContenedorUsuario.cNombreSeccion = "Registrar fanático";
             mContenedorUsuario.cAccion = "Fanatico_Nuevo_Registro";
@@ -140,16 +148,21 @@ namespace MySoccer.GUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                pModel.cRutaImagen = GuardarArchivo(pModel.cNombreUsuario, pModel.cImagen);
-                cPresentadorUsuarios = new PresentadorGestionarUsuarios();
-                cPresentadorUsuarios.AgregarFanatico(pModel);
-
-                return VolverInicio();
+                pModel.cRutaImagen = this.cPresentadorUsuarios.GuardarImagen(pModel.cNombreUsuario, pModel.cImagen);
+                ContenedorError mResultado = cPresentadorUsuarios.AgregarFanatico(pModel);
+                if (!mResultado.HayError())
+                {
+                    return VolverInicio();
+                }
+                else
+                {
+                    SetError(mResultado);
+                }
             }
-            guiModeloFanatico mModelo = (guiModeloFanatico)Session["Modelo"];
+            this.cPresentadorUsuarios.SetPaisesEquios(ref pModel);
             return View("Fanatico_Registro", pModel);
         }
-           
+
         public ActionResult Fanatico_Editar_Perfil()
         {
             guiModeloUsuario mModelo = (guiModeloUsuario)Session["Modelo"];
@@ -164,22 +177,26 @@ namespace MySoccer.GUI.Controllers
             PresentadorGestionarUsuarios mPresentador = (PresentadorGestionarUsuarios)Session["Usuario"];
             if (ModelState.IsValid)
             {
-                mNuevaFoto = GuardarArchivo(pModel.cNombreUsuario,pModel.cImagen);
+                mNuevaFoto = this.cPresentadorUsuarios.GuardarImagen(pModel.cNombreUsuario, pModel.cImagen);
                 if (mNuevaFoto == "")
                 {
                     mNuevaFoto = mPresentador.GetRutaFotoFanatico();
                 }
 
                 pModel.cRutaImagen = mNuevaFoto;
-                mPresentador.ActualizarFanatico(pModel);
+                ContenedorError mResultado = mPresentador.ActualizarFanatico(pModel);
+                if (mResultado.HayError())
+                {
+                    pModel.cContrasena = ""; //Para que la contrasena no se guarde en el modelo que almaceno en la sesion
+                    pModel.cFechaInscripcion = ((guiModeloUsuario)Session["Modelo"]).cFechaInscripcion;
 
-                pModel.cContrasena = ""; //Para que la contrasena no se guarde en el modelo que almaceno en la sesion
-                pModel.cFechaInscripcion = ((guiModeloUsuario)Session["Modelo"]).cFechaInscripcion;
-                
-                Session["Modelo"] = pModel;
-                
-                return RedirectToAction("Fanatico_Perfil", "Usuario");
-
+                    Session["Modelo"] = pModel;
+                    return RedirectToAction("Fanatico_Perfil", "Usuario");
+                }
+                else
+                {
+                    SetError(mResultado);
+                }
             }
             guiModeloFanatico mModelo = (guiModeloFanatico)Session["Modelo"];
             pModel.cPaises = mModelo.cPaises;
@@ -199,7 +216,6 @@ namespace MySoccer.GUI.Controllers
         //GET /Usuario/Narrador_Registro
         public ActionResult Narrador_Registro()
         {
-            cPresentadorUsuarios = new PresentadorGestionarUsuarios();
             guiModeloUsuario mContenedorUsuario = cPresentadorUsuarios.GetModeloUsuario(ConstantesGestionarUsuarios.kUsuarioNarrador);
             mContenedorUsuario.cNombreSeccion = "Registrar narrador";
             mContenedorUsuario.cAccion = "Narrador_Nuevo_Registro";
@@ -214,11 +230,16 @@ namespace MySoccer.GUI.Controllers
 
             if (ModelState.IsValid)
             {
-                pModel.cRutaImagen = GuardarArchivo(pModel.cNombreUsuario,pModel.cImagen);
-                cPresentadorUsuarios = new PresentadorGestionarUsuarios();
-                cPresentadorUsuarios.AgregarNarrador(pModel);
-
-                return VolverInicio();//regresa a la pantalla de login
+                pModel.cRutaImagen = this.cPresentadorUsuarios.GuardarImagen(pModel.cNombreUsuario, pModel.cImagen);
+                ContenedorError mResultado = cPresentadorUsuarios.AgregarNarrador(pModel);
+                if (!mResultado.HayError())
+                {
+                    return VolverInicio();//regresa a la pantalla de login
+                }
+                else
+                {
+                    SetError(mResultado);
+                }
             }
             return View("Narrador_Registro", pModel);
         }
@@ -236,23 +257,29 @@ namespace MySoccer.GUI.Controllers
             String mNuevaFoto = ""; //donde se almacena la nueva ruta de la imagen
             PresentadorGestionarUsuarios mPresentador = (PresentadorGestionarUsuarios)Session["Usuario"];
 
-            if (ModelState.IsValid){
-                mNuevaFoto = GuardarArchivo(pModel.cNombreUsuario, pModel.cImagen);
+            if (ModelState.IsValid)
+            {
+                mNuevaFoto = this.cPresentadorUsuarios.GuardarImagen(pModel.cNombreUsuario, pModel.cImagen);
                 if (mNuevaFoto == "")
                 {
                     mNuevaFoto = mPresentador.GetRutaFotoNarrador();
                 }
 
                 pModel.cRutaImagen = mNuevaFoto;
-                mPresentador.ActualizarNarrador(pModel);
 
-                pModel.cContrasena = ""; //Para que la contrasena no se guarde en el modelo que almaceno en la sesion
-                pModel.cFechaInscripcion = ((guiModeloUsuario)Session["Modelo"]).cFechaInscripcion;
+                ContenedorError mResultado = mPresentador.ActualizarNarrador(pModel);
+                if (!mResultado.HayError())
+                {
+                    pModel.cContrasena = ""; //Para que la contrasena no se guarde en el modelo que almaceno en la sesion
+                    pModel.cFechaInscripcion = ((guiModeloUsuario)Session["Modelo"]).cFechaInscripcion;
 
-                Session["Modelo"] = pModel;
-                
-                return RedirectToAction("Narrador_Perfil", "Usuario");
-
+                    Session["Modelo"] = pModel;
+                    return RedirectToAction("Narrador_Perfil", "Usuario");
+                }
+                else
+                {
+                    SetError(mResultado);
+                }
             }
             return View("Narrador_Registro", pModel);
         }

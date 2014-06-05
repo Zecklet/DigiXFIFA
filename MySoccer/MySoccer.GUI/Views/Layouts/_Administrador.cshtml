@@ -1,5 +1,4 @@
-﻿@model MySoccer.Presentacion.GestionarUsuarios.guiModeloAdministrador
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="uk-height-1-1">
 <head>
@@ -10,12 +9,14 @@
     <title>MySoccer</title>
 </head>
 <body class="uk-height-1-1">
+
+
     <div class="uk-width-9-10 uk-height-1-1 uk-container-center">
         <div class="uk-grid">
             <br />
             <div class="uk-width-3-6">
                 <i class="uk-icon-user uk-icon-large">&nbsp</i>
-                <a href="@Url.Action("Administrador_Perfil")" class="uk-link"> @Model.cNombre </a>
+                <a href="@Url.Action("Administrador_Perfil","Usuario")" class="uk-link"> @Session["Nombre"] </a>
             </div>
             <div class="uk-width-1-6 uk-push-2-6">
                 <a href="@Url.Action("Index","Home")" class="uk-link"> Cerrar sesión </a>
@@ -26,9 +27,9 @@
             <div class="uk-width-2-10 uk-grid-divider">
                 <a class="uk-button uk-button-primary uk-width-1-1 uk-button-large uk-text-break" href="@Url.Action("Administrador_ListaRechazados")">Administrar lista de rechazados</a>
                 <br /> <br />
-                <a class="uk-button uk-button-primary uk-width-1-1 uk-button-large uk-text-break" href="@Url.Action("Administrador_Calendario")">Gestionar calendario</a>
+                <a class="uk-button uk-button-primary uk-width-1-1 uk-button-large uk-text-break" href="@Url.Action("Administrador_Calendario","GestionarCalendario")">Gestionar calendario</a>
                 <br /> <br />
-                <a class="uk-button uk-button-primary uk-width-1-1 uk-button-large uk-text-break" href="@Url.Action("Administrador_Torneo")">Gestionar torneo</a>
+                <a class="uk-button uk-button-primary uk-width-1-1 uk-button-large uk-text-break" href="@Url.Action("Administrador_Torneo","GestionarTorneo")">Gestionar torneo</a>
                 <br /> <br />
             </div>
             <div class="uk-width-8-10">

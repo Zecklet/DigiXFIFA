@@ -17,20 +17,6 @@ namespace MySoccer.Presentacion.GestionarUsuarios
             this.cEquipo = "0";
         }
 
-        public SelectList GetEquipos()
-        {
-            
-            SelectList mResultado = new SelectList(cEquipos, "Key", "Value",
-                (Object) cEquipos.ElementAt(Convert.ToInt32(cEquipo)).Key);
-            return mResultado;
-        }
-
-        public SelectList GetPaises()
-        {
-            SelectList mResultado = new SelectList(cPais, "Key", "Value", 
-                (Object) cPaises.ElementAt(Convert.ToInt32(cPais)).Key);
-            return mResultado;
-        }
         [Required(ErrorMessage = " El correo electronico no puede estar vacío.")]
         public String cCorreoElectronico { get; set; }
 

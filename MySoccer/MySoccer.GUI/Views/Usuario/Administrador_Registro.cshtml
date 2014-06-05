@@ -8,21 +8,21 @@
 <div class="uk-form-row">
     <label class="uk-form-label">Nombre</label>
     <div class="uk-form-controls">
-        @Html.TextBoxFor(model => model.cNombre, Model.cNombre, new { @class = "uk-form-width-medium" })
+        @Html.TextBoxFor(model => model.cNombre, Model.cNombre, new {@maxlength = "30", @class = "uk-form-width-medium" })
         @Html.ValidationMessageFor(model => Model.cNombre)
     </div>
 </div>
 <div class="uk-form-row">
     <label class="uk-form-label">Apellido</label>
     <div class="uk-form-controls">
-        @Html.TextBoxFor(model => model.cApellido, Model.cApellido, new { @class = "uk-form-width-medium" })
+        @Html.TextBoxFor(model => model.cApellido, Model.cApellido, new {@maxlength = "30", @class = "uk-form-width-medium" })
         @Html.ValidationMessageFor(model => Model.cApellido)
     </div>
 </div>
 <div class="uk-form-row">
     <label class="uk-form-label">Correo electrónico</label>
     <div class="uk-form-controls">
-        @Html.TextBoxFor(model => model.cCorreoElectronico, Model.cCorreoElectronico, new { @class = "uk-form-width-medium" })
+        @Html.TextBoxFor(model => model.cCorreoElectronico, Model.cCorreoElectronico, new {@maxlength = "30", @class = "uk-form-width-medium" })
         @Html.ValidationMessageFor(model => Model.cCorreoElectronico)
     </div>
 </div>

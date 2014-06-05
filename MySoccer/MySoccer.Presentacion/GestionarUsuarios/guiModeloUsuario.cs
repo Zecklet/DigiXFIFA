@@ -33,8 +33,9 @@ namespace MySoccer.Presentacion.GestionarUsuarios
         [Required(ErrorMessage = " El apellido no puede estar vacío.")]
         public String cApellido { get; set; }
 
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        [Required(ErrorMessage = " La fecha de nacimiento no puede estar vacío.")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{dd/MM/yyyy}")]
+        [DataType(DataType.Date, ErrorMessage = " La fecha de nacimiento debe seguir el formtato dd/mm/yyyy, y no puede quedar vacía.")]
+        [Required]
         public String cFechaNacimiento { get; set; }
         public String cFechaInscripcion { get; set; }
         //Codigo utilizado para la seccion de acciones de la pagina 
@@ -42,6 +43,7 @@ namespace MySoccer.Presentacion.GestionarUsuarios
         public String cAccion { get; set; }
         public String cNombrePagina { get; set; }
         public String cNombreLayout { get; set; }
-    }
 
+        public String cMensajeError { get; set; } //aqui se almacena el error en caso de que algo ocurra
+    }
 }

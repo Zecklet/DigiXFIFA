@@ -43,9 +43,11 @@
     <Compile Include="GestionarUsuarios\AdministrarUsuario.cs" />
     <Compile Include="ComentarioEstadistico.cs" />
     <Compile Include="ComentarioTexto.cs" />
+    <Compile Include="GestionarUsuarios\ConsultorEquipoBase.cs" />
     <Compile Include="GestionarUsuarios\ConsultorPaisBase.cs" />
     <Compile Include="GestionarUsuarios\Cuenta.cs" />
     <Compile Include="Equipo.cs" />
+    <Compile Include="GestionarUsuarios\Encriptacion.cs" />
     <Compile Include="GestionarUsuarios\Fanatico.cs" />
     <Compile Include="Jugador.cs" />
     <Compile Include="GestionarUsuarios\Narrador.cs" />
@@ -66,6 +68,10 @@
       <Project>{95dba2d3-78c3-4fe9-8f1f-f95618883f74}</Project>
       <Name>MySoccer.EjeTransversal</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Llaves\privateKeyMS.xml" />
+    <Content Include="Llaves\publicKeyMS.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

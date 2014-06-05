@@ -23,14 +23,16 @@ namespace MySoccer.Pruebas
             //mPruebaPais.AgregarPais("Japón");
             //mPruebaPais.AgregarPais("Brasil");
             //mPruebaPais.AgregarPais("Uruguay");
+            //mPruebaPais.AgregarPais("Panamá");
+            //mPruebaPais.AgregarPais("China");
             mPruebaPais.GetPaises();
 
             //Pruebas para agregar equipos 
             datEquipoBaseDatos mPruebaEquipo = new datEquipoBaseDatos();
-            //mPruebaEquipo.AgregarEquipo(19, "", DateTime.Now, "COSTARRICENSE");
-            //mPruebaEquipo.AgregarEquipo(20, "", DateTime.Now, "NIPPON");
-            //mPruebaEquipo.AgregarEquipo(21, "", DateTime.Now, "BRAILEÑO");
-            //mPruebaEquipo.AgregarEquipo(22, "", DateTime.Now, "URUGUAYO");
+            mPruebaEquipo.AgregarEquipo(1, "", DateTime.Now, "COSTARRICENSE");
+            mPruebaEquipo.AgregarEquipo(2, "", DateTime.Now, "NIPPON");
+            mPruebaEquipo.AgregarEquipo(3, "", DateTime.Now, "BRAILEÑO");
+            mPruebaEquipo.AgregarEquipo(4, "", DateTime.Now, "URUGUAYO");
             mPruebaEquipo.GetEquipos();
 
             System.Console.WriteLine("EL ID DEL NUEVO USUARIO ES EL SIGUIENTE ");

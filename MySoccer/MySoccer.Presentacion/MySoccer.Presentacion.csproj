@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestionarCalendario\ModeloGestionarCalendario.cs" />
+    <Compile Include="GestionarCalendario\ModeloDatosPartido.cs" />
+    <Compile Include="GestionarCalendario\PresentadorGestionarCalendario.cs" />
+    <Compile Include="GestionarTorneo\ModeloGestionarTorneo.cs" />
+    <Compile Include="GestionarTorneo\PresentadorGestionarTorneo.cs" />
     <Compile Include="GestionarUsuarios\guiModeloAccionesPagina.cs" />
     <Compile Include="GestionarUsuarios\guiModeloAdministrador.cs" />
     <Compile Include="GestionarUsuarios\guiModeloFanatico.cs" />
@@ -72,6 +77,7 @@
       <Name>MySoccer.Servicio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

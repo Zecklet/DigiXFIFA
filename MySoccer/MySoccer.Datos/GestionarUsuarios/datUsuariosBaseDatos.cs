@@ -1,4 +1,5 @@
-﻿using MySoccer.EjeTransversal;
+﻿using MySoccer.Datos.Entity;
+using MySoccer.EjeTransversal;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -13,9 +14,9 @@ namespace MySoccer.Datos
     public abstract class datUsuariosBaseDatos
     {
 
-        public MY_SOCCER_CON CrearConexion()
+        public MY_SOCCER_CONEXION CrearConexion()
         {
-            MY_SOCCER_CON mNuevaConexion = new MY_SOCCER_CON();
+            MY_SOCCER_CONEXION mNuevaConexion = new MY_SOCCER_CONEXION();
             return mNuevaConexion;
         }
 
@@ -30,7 +31,7 @@ namespace MySoccer.Datos
                 //Fecha_Nacimiento = Convert.ToDateTime(pFechaNacmiento)
             };
 
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
 
             mConexionMySoccer.Database.Connection.Open();
 
@@ -54,7 +55,7 @@ namespace MySoccer.Datos
                 Estado = pEstado
             };
             // Fecha_Nacimiento = DateTime.Now.Date };
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
 
             mConexionMySoccer.Database.Connection.Open();
 
@@ -71,7 +72,7 @@ namespace MySoccer.Datos
 
         public void VerBaseDatos()
         {
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
 
             mConexionMySoccer.Database.Connection.Open();
 
@@ -87,7 +88,7 @@ namespace MySoccer.Datos
         public CUENTA ObtenerCuenta(String pNombreUsuario)
         {
             CUENTA mSalida = null;
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
 
             mConexionMySoccer.Database.Connection.Open();
             IQueryable<CUENTA> mResultado = mConexionMySoccer.CUENTA.Where(s => s.Nombre_Usuario == pNombreUsuario);
@@ -103,7 +104,7 @@ namespace MySoccer.Datos
 
         public USUARIO ObtenerUsuario(int pPKUsuario)
         {
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
 
             mConexionMySoccer.Database.Connection.Open();
 
@@ -120,7 +121,7 @@ namespace MySoccer.Datos
         {
             int mResultado = 0;
 
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
             mConexionMySoccer.Database.Connection.Open();
 
             CUENTA mCuentaUsuario = ObtenerCuenta(pNombreUsuario) ;
@@ -149,7 +150,7 @@ namespace MySoccer.Datos
 
         public void ActualizarCuenta(int pIdentificadorCuenta, String pNombreUsuario, String pContrasena)
         {
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
             mConexionMySoccer.Database.Connection.Open();
 
             CUENTA mCuentaVieja = mConexionMySoccer.CUENTA.Where(s => s.PK_FK_Cuenta == pIdentificadorCuenta).First();
@@ -170,7 +171,7 @@ namespace MySoccer.Datos
         public void ActualizarUsuario(int pIdentificadorUsuario, String pNombre, String pApellido,
             DateTime pFechaNacimiento)
         {
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
             mConexionMySoccer.Database.Connection.Open();
 
             USUARIO mUsuarioViejo = mConexionMySoccer.USUARIO.Where(s => s.PK_Usuario == pIdentificadorUsuario).First();

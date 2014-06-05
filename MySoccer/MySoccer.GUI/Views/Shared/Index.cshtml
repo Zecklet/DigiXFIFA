@@ -31,6 +31,7 @@
                         <label class="uk-form-label">Nombre de usuario</label>
                         <div class="uk-form-controls">
                             @Html.TextBoxFor(model => model.cNombreUsuario, Model.cNombreUsuario, new { @class = "uk-form-width-medium" })
+                            <br/>
                             @Html.ValidationMessageFor(model => Model.cNombreUsuario)
                         </div>
                     </div>
@@ -38,9 +39,13 @@
                         <label class="uk-form-label">Contraseña</label>
                         <div class="uk-form-controls">
                             @Html.PasswordFor(model => model.cConstrasena, new { @class = "uk-form-width-medium" })
+                            <br />
                             @Html.ValidationMessageFor(model => Model.cConstrasena)
                         </div>
                     </div>
+                    <br>
+                    <font class="uk-form uk-form-horizontal" color=" red">@Html.ValidationMessage("error") </font>
+                    <br>
                     <div class="uk-form-row">
                         <br />
                         <div class="uk-grid">
@@ -55,11 +60,8 @@
                     </div>
                 </div>
             }
-            <form action="" method="post" enctype="multipart/form-data">
-                <label for="file">Filename:</label>
-                @Html.TextBoxFor(model => model.cImagen, new { type = "file", accept = "image/*" })
-                <input type="submit" />
-            </form>
+                
+
         </div>
     </div>
 </body>

@@ -28,24 +28,18 @@
     <EntitySetMapping Name="COMENTARIO">
       <EntityTypeMapping TypeName="MY_SOCCER_MODEL.COMENTARIO">
         <MappingFragment StoreEntitySet="COMENTARIO">
+          <ScalarProperty Name="FK_Partido" ColumnName="FK_Partido" />
+          <ScalarProperty Name="FK_Usuario" ColumnName="FK_Usuario" />
           <ScalarProperty Name="PK_Comentario" ColumnName="PK_Comentario" />
-          <ScalarProperty Name="Comentario1" ColumnName="Comentario" />
           <ScalarProperty Name="Tiempo" ColumnName="Tiempo" />
-          <ScalarProperty Name="FK_Partido_Registrado" ColumnName="FK_Partido_Registrado" />
-          <ScalarProperty Name="FK_Narrador" ColumnName="FK_Narrador" />
-          <ScalarProperty Name="FK_Fanatico" ColumnName="FK_Fanatico" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="COMENTARIO_ESTADISTICO">
       <EntityTypeMapping TypeName="MY_SOCCER_MODEL.COMENTARIO_ESTADISTICO">
         <MappingFragment StoreEntitySet="COMENTARIO_ESTADISTICO">
-          <ScalarProperty Name="PK_Comentario_Estadistico" ColumnName="PK_Comentario_Estadistico" />
-          <ScalarProperty Name="Tiempo" ColumnName="Tiempo" />
-          <ScalarProperty Name="FK_Jugador_1" ColumnName="FK_Jugador_1" />
-          <ScalarProperty Name="FK_Jugador_2" ColumnName="FK_Jugador_2" />
+          <ScalarProperty Name="PK_FK_Comentario_Estadistico" ColumnName="PK_FK_Comentario_Estadistico" />
           <ScalarProperty Name="FK_Equipo" ColumnName="FK_Equipo" />
-          <ScalarProperty Name="FK_Partido" ColumnName="FK_Partido" />
           <ScalarProperty Name="FK_Accion" ColumnName="FK_Accion" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -66,7 +60,6 @@
         <MappingFragment StoreEntitySet="EQUIPO">
           <ScalarProperty Name="PK_Equipo" ColumnName="PK_Equipo" />
           <ScalarProperty Name="Nombre_Federacion" ColumnName="Nombre_Federacion" />
-          <ScalarProperty Name="Foto" ColumnName="Foto" />
           <ScalarProperty Name="Fecha_Asociacion_XFIFA" ColumnName="Fecha_Asociacion_XFIFA" />
           <ScalarProperty Name="FK_Pais" ColumnName="FK_Pais" />
         </MappingFragment>
@@ -113,20 +106,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PARTIDO_REGISTRADO">
-      <EntityTypeMapping TypeName="MY_SOCCER_MODEL.PARTIDO_REGISTRADO">
-        <MappingFragment StoreEntitySet="PARTIDO_REGISTRADO">
-          <ScalarProperty Name="PK_Partido_Registrado" ColumnName="PK_Partido_Registrado" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="Hora" ColumnName="Hora" />
-          <ScalarProperty Name="id_Torneo_MyHistory" ColumnName="id_Torneo_MyHistory" />
-          <ScalarProperty Name="FK_Equipo_1" ColumnName="FK_Equipo_1" />
-          <ScalarProperty Name="FK_Equipo_2" ColumnName="FK_Equipo_2" />
-          <ScalarProperty Name="FK_Sede" ColumnName="FK_Sede" />
-          <ScalarProperty Name="FK_Narrador" ColumnName="FK_Narrador" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="RECHAZADO">
       <EntityTypeMapping TypeName="MY_SOCCER_MODEL.RECHAZADO">
         <MappingFragment StoreEntitySet="RECHAZADO">
@@ -134,14 +113,6 @@
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Apellido" ColumnName="Apellido" />
           <ScalarProperty Name="Intentos_Ingreso" ColumnName="Intentos_Ingreso" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="RESERVA">
-      <EntityTypeMapping TypeName="MY_SOCCER_MODEL.RESERVA">
-        <MappingFragment StoreEntitySet="RESERVA">
-          <ScalarProperty Name="PK_FK_Partido_Registrado" ColumnName="PK_FK_Partido_Registrado" />
-          <ScalarProperty Name="PK_FK_Jugador" ColumnName="PK_FK_Jugador" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -164,21 +135,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="MY_SOCCER_MODEL.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TITULAR">
       <EntityTypeMapping TypeName="MY_SOCCER_MODEL.TITULAR">
         <MappingFragment StoreEntitySet="TITULAR">
-          <ScalarProperty Name="PK_FK_Partido_Registrado" ColumnName="PK_FK_Partido_Registrado" />
+          <ScalarProperty Name="PK_FK_Partido" ColumnName="PK_FK_Partido" />
           <ScalarProperty Name="PK_FK_Jugador" ColumnName="PK_FK_Jugador" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -190,6 +150,47 @@
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Apellido" ColumnName="Apellido" />
           <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMENTARIO_ESTADISTICO_X_JUGADOR">
+      <EntityTypeMapping TypeName="MY_SOCCER_MODEL.COMENTARIO_ESTADISTICO_X_JUGADOR">
+        <MappingFragment StoreEntitySet="COMENTARIO_ESTADISTICO_X_JUGADOR">
+          <ScalarProperty Name="TipoJugador" ColumnName="TipoJugador" />
+          <ScalarProperty Name="PK_FK_Jugador" ColumnName="PK_FK_Jugador" />
+          <ScalarProperty Name="PK_FK_Comentario_Estadistico_X_Jugador" ColumnName="PK_FK_Comentario_Estadistico_X_Jugador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMENTARIO_LIBRE">
+      <EntityTypeMapping TypeName="MY_SOCCER_MODEL.COMENTARIO_LIBRE">
+        <MappingFragment StoreEntitySet="COMENTARIO_LIBRE">
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="PK_FK_Comentario_Libre" ColumnName="PK_FK_Comentario_Libre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FOTO_EQUIPO">
+      <EntityTypeMapping TypeName="MY_SOCCER_MODEL.FOTO_EQUIPO">
+        <MappingFragment StoreEntitySet="FOTO_EQUIPO">
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="PK_FK_Equipo" ColumnName="PK_FK_Equipo" />
+          <ScalarProperty Name="PK_Torneo" ColumnName="PK_Torneo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PARTIDO">
+      <EntityTypeMapping TypeName="MY_SOCCER_MODEL.PARTIDO">
+        <MappingFragment StoreEntitySet="PARTIDO">
+          <ScalarProperty Name="FK_Narrador" ColumnName="FK_Narrador" />
+          <ScalarProperty Name="FK_Sede" ColumnName="FK_Sede" />
+          <ScalarProperty Name="FK_Equipo_2" ColumnName="FK_Equipo_2" />
+          <ScalarProperty Name="FK_Equipo_1" ColumnName="FK_Equipo_1" />
+          <ScalarProperty Name="Torneo" ColumnName="Torneo" />
+          <ScalarProperty Name="Fase" ColumnName="Fase" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="PK_Partido" ColumnName="PK_Partido" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

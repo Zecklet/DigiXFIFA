@@ -85,104 +85,107 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ACCION.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
+    <Compile Include="Entity\ACCION.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="ADMINISTRADOR.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
+    <Compile Include="Entity\ADMINISTRADOR.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="ARDUINO.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
+    <Compile Include="Entity\ARDUINO.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="COMENTARIO.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
+    <Compile Include="Entity\COMENTARIO.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="COMENTARIO_ESTADISTICO.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
+    <Compile Include="Entity\COMENTARIO_ESTADISTICO.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="CUENTA.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
+    <Compile Include="Entity\COMENTARIO_ESTADISTICO_X_JUGADOR.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\COMENTARIO_LIBRE.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CUENTA.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\datMySoccerEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datMySoccerEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\datMySoccerEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\datMySoccerEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datMySoccerEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\EQUIPO.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FANATICO.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FOTO_EQUIPO.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\JUGADOR.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\NARRADOR.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PAIS.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PARTIDO.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\RECHAZADO.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\RESULTADO_PARTIDO.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SEDE.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TITULAR.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\USUARIO.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="GestionarUsuarios\datAdministradorBaseDatos.cs" />
     <Compile Include="GestionarUsuarios\datEquipoBaseDatos.cs" />
     <Compile Include="GestionarUsuarios\datPaisBaseDatos.cs" />
     <Compile Include="GestionarUsuarios\datUsuariosBaseDatos.cs" />
     <Compile Include="GestionarUsuarios\datFanaticoBaseDatos.cs" />
-    <Compile Include="datMySoccerModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>datMySoccerModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="datMySoccerModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="datMySoccerModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>datMySoccerModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="GestionarUsuarios\datNarradorBaseDatos.cs" />
-    <Compile Include="EQUIPO.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FANATICO.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="JUGADOR.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NARRADOR.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PAIS.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PARTIDO_REGISTRADO.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RECHAZADO.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RESERVA.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RESULTADO_PARTIDO.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SEDE.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TITULAR.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="USUARIO.cs">
-      <DependentUpon>datMySoccerModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="datMySoccerModel.edmx">
+    <EntityDeploy Include="Entity\datMySoccerEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>datMySoccerModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>datMySoccerEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="datMySoccerModel.Context.tt">
+    <None Include="Entity\datMySoccerEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>datMySoccerModel.edmx</DependentUpon>
-      <LastGenOutput>datMySoccerModel.Context.cs</LastGenOutput>
+      <DependentUpon>datMySoccerEntity.edmx</DependentUpon>
+      <LastGenOutput>datMySoccerEntity.Context.cs</LastGenOutput>
     </None>
-    <None Include="datMySoccerModel.edmx.diagram">
-      <DependentUpon>datMySoccerModel.edmx</DependentUpon>
+    <None Include="Entity\datMySoccerEntity.edmx.diagram">
+      <DependentUpon>datMySoccerEntity.edmx</DependentUpon>
     </None>
-    <None Include="datMySoccerModel.tt">
+    <None Include="Entity\datMySoccerEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>datMySoccerModel.edmx</DependentUpon>
-      <LastGenOutput>datMySoccerModel.cs</LastGenOutput>
+      <DependentUpon>datMySoccerEntity.edmx</DependentUpon>
+      <LastGenOutput>datMySoccerEntity.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -196,6 +199,7 @@
       <Name>MySoccer.EjeTransversal</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

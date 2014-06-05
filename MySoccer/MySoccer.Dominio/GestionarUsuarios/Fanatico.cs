@@ -1,4 +1,5 @@
 ﻿using MySoccer.Datos;
+using MySoccer.Datos.Entity;
 using MySoccer.EjeTransversal;
 using System;
 using System.Collections.Generic;
@@ -60,7 +61,7 @@ namespace MySoccer.Dominio
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringDescripcion, this.cDescripcion);
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringGenero, ConstantesGestionarUsuarios.kSexos[this.cGenero]);
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringRutaFoto, this.cRutaFoto);
-            mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringEquipoFavorito, this.cIDEquipoFavorito + "");
+            mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringEquipoFavorito,  this.cIDEquipoFavorito + "");
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringPais, this.cIDPais + "");
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringCorreoElectronico, this.cCorreoElectronico);
 

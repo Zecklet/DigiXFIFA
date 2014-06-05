@@ -1,5 +1,4 @@
-﻿@model MySoccer.Presentacion.GestionarUsuarios.guiModeloNarrador
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
@@ -14,7 +13,7 @@
         <div class="uk-grid">
             <br />
             <div class="uk-width-3-6">
-                <i class="uk-icon-user uk-icon-large">&nbsp</i><a href="@Url.Action("Narrador_Perfil")" class="uk-link"> @Model.cNombre </a>
+                <i class="uk-icon-user uk-icon-large">&nbsp</i><a href="@Url.Action("Narrador_Perfil")" class="uk-link"> @Session["Nombre"] </a>
             </div>
             <div class="uk-width-1-6 uk-push-2-6">
                 <a class="uk-link" href="@Url.Action("Index","Home")"> Cerrar sesión </a>

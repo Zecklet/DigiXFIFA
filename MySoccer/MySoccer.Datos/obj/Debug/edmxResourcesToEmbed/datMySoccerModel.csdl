@@ -34,10 +34,13 @@
     <Property Name="FK_Fanatico" Type="Int32" Nullable="false" />
     <NavigationProperty Name="NARRADOR" Relationship="Self.FK_COMENTARIO_NARRADOR" FromRole="COMENTARIO" ToRole="NARRADOR" />
     <NavigationProperty Name="FANATICO" Relationship="Self.PFK_COMENTARIO_FANATICO" FromRole="COMENTARIO" ToRole="FANATICO" />
+    <Property Name="FK_Usuario" Type="Int32" Nullable="false" />
+    <Property Name="FK_Partido" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="COMENTARIO_ESTADISTICO">
     <Key>
       <PropertyRef Name="PK_Comentario_Estadistico" />
+      <PropertyRef Name="PK_FK_Comentario_Estadistico" />
     </Key>
     <Property Name="PK_Comentario_Estadistico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Tiempo" Type="Int32" Nullable="false" />
@@ -48,6 +51,7 @@
     <Property Name="FK_Accion" Type="Int32" Nullable="false" />
     <NavigationProperty Name="ACCION" Relationship="Self.FK_COMENTARIO_ESTADISTICO_ACCION" FromRole="COMENTARIO_ESTADISTICO" ToRole="ACCION" />
     <NavigationProperty Name="EQUIPO" Relationship="Self.FK_COMENTARIO_ESTADISTICO_EQUIPO" FromRole="COMENTARIO_ESTADISTICO" ToRole="EQUIPO" />
+    <Property Name="PK_FK_Comentario_Estadistico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="CUENTA">
     <Key>
@@ -56,7 +60,7 @@
     <Property Name="PK_FK_Cuenta" Type="Int32" Nullable="false" />
     <Property Name="Estado" Type="Boolean" Nullable="false" />
     <Property Name="Nombre_Usuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Contraseña" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contraseña" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Fecha_Inscripcion" Type="DateTime" Nullable="false" Precision="0" />
   </EntityType>
   <EntityType Name="EQUIPO">
@@ -180,9 +184,11 @@
     <Key>
       <PropertyRef Name="PK_FK_Partido_Registrado" />
       <PropertyRef Name="PK_FK_Jugador" />
+      <PropertyRef Name="PK_FK_Partido" />
     </Key>
     <Property Name="PK_FK_Partido_Registrado" Type="Int32" Nullable="false" />
     <Property Name="PK_FK_Jugador" Type="Int32" Nullable="false" />
+    <Property Name="PK_FK_Partido" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="USUARIO">
     <Key>
@@ -357,5 +363,48 @@
       <End Role="NARRADOR" EntitySet="NARRADOR" />
       <End Role="PARTIDO_REGISTRADO" EntitySet="PARTIDO_REGISTRADO" />
     </AssociationSet>
+    <EntitySet Name="COMENTARIO_ESTADISTICO_X_JUGADOR" EntityType="MY_SOCCER_MODEL.COMENTARIO_ESTADISTICO_X_JUGADOR" />
+    <EntitySet Name="COMENTARIO_LIBRE" EntityType="MY_SOCCER_MODEL.COMENTARIO_LIBRE" />
+    <EntitySet Name="FOTO_EQUIPO" EntityType="MY_SOCCER_MODEL.FOTO_EQUIPO" />
+    <EntitySet Name="PARTIDO" EntityType="MY_SOCCER_MODEL.PARTIDO" />
   </EntityContainer>
+  <EntityType Name="COMENTARIO_ESTADISTICO_X_JUGADOR">
+    <Key>
+      <PropertyRef Name="PK_FK_Comentario_Estadistico_X_Jugador" />
+      <PropertyRef Name="PK_FK_Jugador" />
+    </Key>
+    <Property Name="PK_FK_Comentario_Estadistico_X_Jugador" Type="Int32" Nullable="false" />
+    <Property Name="PK_FK_Jugador" Type="Int32" Nullable="false" />
+    <Property Name="TipoJugador" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COMENTARIO_LIBRE">
+    <Key>
+      <PropertyRef Name="PK_FK_Comentario_Libre" />
+    </Key>
+    <Property Name="PK_FK_Comentario_Libre" Type="Int32" Nullable="false" />
+    <Property Name="Comentario" Type="String" Nullable="false" MaxLength="140" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FOTO_EQUIPO">
+    <Key>
+      <PropertyRef Name="PK_Torneo" />
+      <PropertyRef Name="PK_FK_Equipo" />
+    </Key>
+    <Property Name="PK_Torneo" Type="Int32" Nullable="false" />
+    <Property Name="PK_FK_Equipo" Type="Int32" Nullable="false" />
+    <Property Name="Foto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PARTIDO">
+    <Key>
+      <PropertyRef Name="PK_Partido" />
+    </Key>
+    <Property Name="PK_Partido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Hora" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Fase" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Torneo" Type="Int32" Nullable="false" />
+    <Property Name="FK_Equipo_1" Type="Int32" Nullable="false" />
+    <Property Name="FK_Equipo_2" Type="Int32" Nullable="false" />
+    <Property Name="FK_Sede" Type="Int32" Nullable="false" />
+    <Property Name="FK_Narrador" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

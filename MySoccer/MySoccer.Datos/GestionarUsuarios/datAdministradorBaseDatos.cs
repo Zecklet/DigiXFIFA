@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySoccer.Datos.Entity;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace MySoccer.Datos
                 Correo_Electronico = pCorreoElectronico
             };
 
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion(); //Crea un nueva conexion con la base de  datos 
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion(); //Crea un nueva conexion con la base de  datos 
             mConexionMySoccer.Database.Connection.Open(); //abre la conexion a la base de datos 
 
             mConexionMySoccer.ADMINISTRADOR.Add(mNuevoUsuario); //Agrega el usuario a la base de datos 
@@ -28,7 +29,7 @@ namespace MySoccer.Datos
         }
         public ADMINISTRADOR ObtenerAdministrador(int pPKUsuario)
         {
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
             mConexionMySoccer.Database.Connection.Open();
 
             ADMINISTRADOR mResultado = mConexionMySoccer.ADMINISTRADOR.Where(s => s.PK_FK_Administrador == pPKUsuario).First(); ;
@@ -41,7 +42,7 @@ namespace MySoccer.Datos
 
         public void ActualizarDatosAdministrador(int pIdentificadorUsuario, String pCorreoElectronico)
         {
-            MY_SOCCER_CON mConexionMySoccer = CrearConexion();
+            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
             mConexionMySoccer.Database.Connection.Open();
 
             ADMINISTRADOR mAdministradorViejo = mConexionMySoccer.ADMINISTRADOR.Where(s => s.PK_FK_Administrador == pIdentificadorUsuario).First();
