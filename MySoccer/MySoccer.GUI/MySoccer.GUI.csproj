@@ -130,6 +130,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="ImagenesUsuarios\xxx.jpg" />
     <Content Include="Global.asax" />
+    <Content Include="JavaScript\jsGestionarCalendario.js" />
     <Content Include="JavaScript\calendario.js" />
     <Content Include="JavaScript\jquery.datetimepicker.css" />
     <Content Include="JavaScript\jquery.datetimepicker.js" />

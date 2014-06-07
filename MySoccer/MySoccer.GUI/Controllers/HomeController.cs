@@ -46,7 +46,7 @@ namespace MySoccer.GUI.Controllers
             if (ModelState.IsValid)
             {
                 PresentadorGestionarUsuarios mPresentador = new PresentadorGestionarUsuarios();
-                
+
                 //Si se retorna verdadero es por que el usuario existe y la contrasena es la correcta 
                 ContenedorError mResultado = mPresentador.UsuarioCorrecto(pModel.cNombreUsuario, pModel.cConstrasena);
                 if (!mResultado.HayError())
@@ -60,15 +60,16 @@ namespace MySoccer.GUI.Controllers
                     Session["Modelo"] = mModeloUsuario;
                     Session["Usuario"] = mPresentador;
                     Session["Nombre"] = mPresentador.GetNombre();
-
+                    Session["EstadoUsuario"] = mModeloUsuario.cEstado;
                     return RedirectToAction(mModeloUsuario.cTipoUsuario + "_Perfil", "Usuario");
+
                 }
                 else
                 {
                     ModelState.AddModelError(ConstantesGestionarUsuarios.kStringCodigoError, mResultado.GetMensajeError());
                 }
             }
-            return View("Index",pModel);
+            return View("Index", pModel);
         }
 
 

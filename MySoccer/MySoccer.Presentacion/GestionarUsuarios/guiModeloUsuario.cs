@@ -43,7 +43,7 @@ namespace MySoccer.Presentacion.GestionarUsuarios
         public String cAccion { get; set; }
         public String cNombrePagina { get; set; }
         public String cNombreLayout { get; set; }
-
+        public Boolean cEstado { get; set; }
         public String cMensajeError { get; set; } //aqui se almacena el error en caso de que algo ocurra
     }
 }

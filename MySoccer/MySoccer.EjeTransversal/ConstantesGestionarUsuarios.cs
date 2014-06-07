@@ -23,12 +23,14 @@ namespace MySoccer.EjeTransversal
         public const int kCodigoNombreUsuarioExiste = 1;
         public const int kCodigoNombreUsuarioNoExiste = 2;
         public const int kCodigoContrasenaIncorrecta = 3;
+        public const int kCodigoEquiposIguales = 4;
 
         //Mesajes de errores
 
         public const String kMensajeNombreUsuarioExiste = "El nombre de usuario ingresado ya existe en el sistema.";
         public const String kMensajeNombreUsuarioNoExiste = "El nombre de usuario ingresado es incorrecto. \n Por favor intentelo de nuevo.";
         public const String kMensajeContrasenaIncorrecta = "La contraseña ingresado es incorrecto. \n Por favor intentelo de nuevo.";
+        public const String kMensajeEquiposIguales = "Los equipos seleccionados para el partido, NO pueden ser los mismos.";
 
         //Constantes utilizadas en la parte de cuenta 
 
@@ -48,6 +50,7 @@ namespace MySoccer.EjeTransversal
         public const String kStringApellido = "Apellido";
         public const String kStringFechaNacimiento = "FechaNacimiento";
         public const String kStringFechaInscripcion = "FechaInscripcion";
+        public const String kStringEstado = "Estado";
 
         //------------------ Admnistrador y Fanatico ------------------------
 
@@ -69,5 +72,6 @@ namespace MySoccer.EjeTransversal
         public const String kStringRutaFoto = "RutaFoto";
 
         //------------------------------------------------------------------\\
+
     }
 }

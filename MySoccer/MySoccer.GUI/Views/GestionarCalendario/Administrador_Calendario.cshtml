@@ -1,22 +1,31 @@
-﻿@{
+﻿@model MySoccer.Presentacion.GestionarCalendario.ModeloGestionarCalendario
+@{
     ViewBag.Title = "Administrador_Calendario";
     Layout = "~/Views/Layouts/_Administrador.cshtml";
 }
 
 <div class="uk-width-9-10 uk-push-1-10">
+    <script type="text/javascript" src="~/JavaScript/jsGestionarCalendario.js"></script>
     <div class="uk-grid">
         <div class="uk-width-1-4">
             <div class="uk-button-dropdown" data-uk-dropdown="">
-                <button class="uk-button uk-button-large uk-button-primary">#torneo&nbsp<i class="uk-icon-caret-down"></i></button>
-                <div class="uk-dropdown">
-                    <ul class="uk-nav uk-nav-dropdown"></ul>
-                </div>
+                @using (Html.BeginForm("Administrador_Cambiar_Calendario", "GestionarCalendario", FormMethod.Get, new { id = "frCambiarTorneo", name = "frCambiarTorneo" }))
+                {
+                    <label class="uk-text-bold">Torneo:</label>
+                    @Html.DropDownListFor(model => Model.cTorneoSeleccionado, new SelectList(Model.cTorneos, "key", "value"), new { @class = "uk-button uk-button-large uk-button-primary", @onchange = "CambiarToreno()" })
+                }
             </div>
         </div>
-        <div class="uk-width-1-4 uk-push-2-4 uk-text-right">
-            <a class="uk-button uk-button-primary uk-text-break" href="@Url.Action("Administrador_Partido")"><i class="uk-icon-plus">&nbsp</i>Agregar partido</a>
-        </div>
+        @using (Html.BeginForm("Administrador_Partido", "GestionarCalendario", FormMethod.Get, new { @class = "uk-width-1-4 uk-push-2-4 uk-text-right" }))
+        {
+            @Html.HiddenFor(model => Model.cTorneoSeleccionado, Model.cTorneoSeleccionado)
+            <button class="uk-button uk-button-primary uk-text-break" type="submit">
+                <i class="uk-icon-plus">&nbsp</i>Agregar partido
+            </button>
+
+        }
     </div>
+
     <table class="uk-table">
         <tr>
             <th>Equipo 1</th>
@@ -27,15 +36,52 @@
             <th>Fase</th>
             <th>Sede</th>
             <th>Asistencia</th>
+            <th>Estado</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
         </tr>
+        @foreach (var mPartido in @Model.cListaPartidos)
+        {
+            <tr>
+                <th>@mPartido.cNombreEquipo1</th>
+                <th>@mPartido.cNombreEquipo2</th>
+                <th>@mPartido.cMarcador</th>
+                <th>@mPartido.cFecha</th>
+                <th>@mPartido.cHora</th>
+                <th>@mPartido.cFase</th>
+                <th>@mPartido.cNombreSede</th>
+                <th>@mPartido.cAsistencia</th>
+                <th>@mPartido.cEstado</th>
+
+                @if (mPartido.cPartidoJugado == 0)
+                {
+                    <th>
+                        <button id=@mPartido.cIdPartido onclick="ActualizarPartido(@mPartido.cIdPartido)" class="uk-button uk-button-primary uk-text-break"><i class="uk-icon-magic">&nbsp</i></button>
+                    </th>
+                    <th>
+                        <button id=@mPartido.cIdPartido onclick="EliminarPartido(@mPartido.cIdPartido)" class="uk-button uk-button-primary uk-text-break"><i class="uk-icon-times">&nbsp</i></button>
+                    </th>
+                }
+                else
+                {
+                    <th>
+
+                        <button class="uk-button uk-button-primary uk-text-break" disabled><i class="uk-icon-magic">&nbsp</i></button>
+                    </th>
+                    <th>
+                        <button class="uk-button uk-button-primary uk-text-break" disabled><i class="uk-icon-minus">&nbsp</i></button>
+                    </th>
+                }
+            </tr>
+        }
     </table>
-    <hr class="uk-grid-divider" />
-    <div class="uk-grid">
-        <div class="uk-width-1-5 uk-push-3-5 uk-text-right">
-            <a class="uk-button uk-button-primary uk-text-break" href="#"><i class="uk-icon-magic">&nbsp</i>Editar</a>
-        </div>
-        <div class="uk-width-1-5 uk-push-3-5">
-            <a class="uk-button uk-button-primary uk-text-break" href="#"><i class="uk-icon-minus">&nbsp</i>Eliminar</a>
-        </div>
-    </div>
+
+    @using (Html.BeginForm("Administrador_Partido_Editar", "GestionarCalendario", FormMethod.Get, new { id = "frEditarPartido", name = "frEditarPartido" }))
+    {
+        @Html.HiddenFor(model => model.cIdPartidoSeleccionado, new { id = "hdPartidoSelecionado" })
+    }
+    @using (Html.BeginForm("Administrador_Eliminar_Partido", "GestionarCalendario", FormMethod.Post, new { id = "frEliminarPartido", name = "frEliminarrPartido" }))
+    {
+        @Html.HiddenFor(model => model.cIdPartidoSeleccionado, new { id = "hdPartidoAEliminar" })
+    }
 </div>

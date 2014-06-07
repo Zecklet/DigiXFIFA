@@ -11,6 +11,11 @@ namespace MySoccer.EjeTransversal
         private String cMensajeError;
         private Boolean cHayError = true;
 
+        public ContenedorError()
+        {
+            cHayError = false;
+        }
+
         public ContenedorError(int pTipoError)
         {
             switch (pTipoError)
@@ -23,6 +28,9 @@ namespace MySoccer.EjeTransversal
                     break;
                 case ConstantesGestionarUsuarios.kCodigoContrasenaIncorrecta:
                     cMensajeError = ConstantesGestionarUsuarios.kMensajeContrasenaIncorrecta;
+                    break;
+                case ConstantesGestionarUsuarios.kCodigoEquiposIguales:
+                    cMensajeError = ConstantesGestionarUsuarios.kMensajeEquiposIguales;
                     break;
                 default:
                     cHayError = false;

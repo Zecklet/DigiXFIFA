@@ -13,7 +13,15 @@
         <div class="uk-grid">
             <br />
             <div class="uk-width-3-6">
-                <i class="uk-icon-user uk-icon-large">&nbsp</i><a href="@Url.Action("Narrador_Perfil")" class="uk-link"> @Session["Nombre"] </a>
+                @if ((Boolean)Session["EstadoUsuario"])
+                {
+                    <i class="uk-icon-user uk-icon-large">&nbsp</i><a href="@Url.Action("Narrador_Perfil")" class="uk-link"> @Session["Nombre"] </a>
+                }
+                else
+                {
+                    <i class="uk-icon-user uk-icon-large">&nbsp</i><a class="uk-link"> @Session["Nombre"] </a>
+
+                }
             </div>
             <div class="uk-width-1-6 uk-push-2-6">
                 <a class="uk-link" href="@Url.Action("Index","Home")"> Cerrar sesión </a>
@@ -22,7 +30,15 @@
         <hr class="uk-grid-divider" />
         <div class="uk-grid uk-container-center">
             <div class="uk-width-2-10 uk-grid-divider">
-                <a href="@Url.Action("Narrador_Calendario")" class="uk-button uk-button-primary uk-width-1-1 uk-button-large uk-text-break">Ver calendario de juegos</a>
+                @if ((Boolean)Session["EstadoUsuario"])
+                {
+                    <a href="@Url.Action("Narrador_Calendario")" class="uk-button uk-button-primary uk-width-1-1 uk-button-large uk-text-break">Ver calendario de juegos</a>
+                }
+                else
+                {
+                    <a class="uk-button uk-button-primary uk-width-1-1 uk-button-large uk-text-break" href="@Url.Action("Activar_Usuario", "Usuario")">Activar Cuenta</a>
+                    <br /> <br />
+                }
             </div>
             <div class="uk-width-8-10">
                 @RenderBody()

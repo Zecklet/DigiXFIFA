@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestionarCalendario\ConsultorSedeBase.cs" />
     <Compile Include="GestionarUsuarios\Administrador.cs" />
     <Compile Include="GestionarUsuarios\AdministrarUsuario.cs" />
     <Compile Include="ComentarioEstadistico.cs" />

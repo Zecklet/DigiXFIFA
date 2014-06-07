@@ -22,6 +22,7 @@ namespace MySoccer.Datos.Entity
         public int FK_Equipo_1 { get; set; }
         public int FK_Equipo_2 { get; set; }
         public int FK_Sede { get; set; }
-        public int FK_Narrador { get; set; }
+        public Nullable<int> FK_Narrador { get; set; }
+        public Nullable<int> Estado { get; set; }
     }
 }

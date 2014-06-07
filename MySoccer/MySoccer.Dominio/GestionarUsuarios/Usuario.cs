@@ -48,7 +48,7 @@ namespace MySoccer.Dominio
         {
             datUsuariosBaseDatos mConexionBaseDatos = new datAdministradorBaseDatos();
             mConexionBaseDatos.AgregarCuenta(this.cIdentificador, this.cCuenta.cNombreUsuario, this.cCuenta.cContrasena,
-                this.cCuenta.cFechaInscripcion, this.cCuenta.cEstado);
+                this.cCuenta.cFechaInscripcion, true);
         }
 
         public int RecuperarTipoUsuario(String pNombreUsuario)
@@ -83,11 +83,15 @@ namespace MySoccer.Dominio
         public void DesactivarCuenta()
         {
             this.cCuenta.cEstado = false;
+            datUsuariosBaseDatos mConexionUsuarios = new datAdministradorBaseDatos();
+            mConexionUsuarios.CambiarEstadoCuenta(this.cCuenta.GetNombreUsuario(),false);
         }
 
         public void ActivarCuenta()
         {
             cCuenta.cEstado = true;
+            datUsuariosBaseDatos mConexionUsuarios = new datAdministradorBaseDatos();
+            mConexionUsuarios.CambiarEstadoCuenta(this.cCuenta.GetNombreUsuario(), true);
         }
 
         public String GetNombreUsuario()
@@ -107,6 +111,7 @@ namespace MySoccer.Dominio
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringApellido, this.cApellido);
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringFechaNacimiento, this.cFechaNacimiento.Date.ToShortDateString());
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringFechaInscripcion, this.cCuenta.cFechaInscripcion.Date.ToShortDateString());
+            mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringEstado, this.cCuenta.cEstado.ToString());
             return mDatosRetorno;
         }
 

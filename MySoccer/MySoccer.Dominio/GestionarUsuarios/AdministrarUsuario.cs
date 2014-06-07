@@ -101,5 +101,15 @@ namespace MySoccer.Dominio
         {
             return this.cUsuarioActual.cNombre;
         }
+
+        public void DesactivarUsuario()
+        {
+            this.cUsuarioActual.DesactivarCuenta();
+        }
+
+        public void ActivarUsuario()
+        {
+            this.cUsuarioActual.ActivarCuenta();
+        }
     }
 }

@@ -45,7 +45,19 @@ namespace MySoccer.GUI.Controllers
             return View("Index", new guiModelInicioSesion());
         }
 
-
+        public ActionResult Desactivar_Usuario()
+        {
+            this.cPresentadorUsuarios = (PresentadorGestionarUsuarios)Session["Usuario"];
+            this.cPresentadorUsuarios.DesactivarUsuario();
+            return RedirectToAction("Index", "Home");
+        }
+        public ActionResult Activar_Usuario()
+        {
+            this.cPresentadorUsuarios = (PresentadorGestionarUsuarios)Session["Usuario"];
+            this.cPresentadorUsuarios.ActivarUsuario();
+            Session["EstadoUsuario"] = true;
+            return RedirectToAction(((guiModeloUsuario) Session["Modelo"]).cTipoUsuario + "_Perfil", "Usuario");
+        }
         //esta funcion guarda el mensaje de error en el estado del modelo para que sea leido en la interfaz
         public void SetError(ContenedorError pError)
         {
@@ -88,7 +100,6 @@ namespace MySoccer.GUI.Controllers
                     SetError(mResultado);
                 }
             }
-
             return View("Administrador_Registro", pModel);
         }
 

@@ -1,46 +1,67 @@
-﻿@model MySoccer.Presentacion.GestionarCalendario.ModeloDatosPartido;
+﻿@model MySoccer.Presentacion.GestionarCalendario.ModeloDatosPartido
 @{
     ViewBag.Title = "Administrador_Partido";
     Layout = "~/Views/Layouts/_Administrador.cshtml";
 }
 
+<link rel="stylesheet" type="text/css" href="~/JavaScript/jquery.datetimepicker.css" />
+<script type="text/javascript" src="~/JavaScript/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="~/JavaScript/calendario.js"></script>
+
+
 <div class="uk-width-8-10 uk-push-2-10">
     <h1>Crear partido</h1>
-    <form class="uk-form uk-form-horizontal" action="#" method="post">
+    <font class="uk-form uk-form-horizontal" color=" red">@Html.ValidationMessage("Error") </font>
+    <br /><br />
+    @using (Html.BeginForm("Administrador_Gestionar_Partido", "GestionarCalendario", FormMethod.Post, new { @class = "uk-form uk-form-horizontal" }))
+    {
+        @Html.HiddenFor(model => Model.cIdPartido, Model.cIdPartido)
+        @Html.HiddenFor(model => Model.cTorneoSeleccionado,Model.cTorneoSeleccionado)
         <div class="uk-form-row">
             <label class="uk-form-label">Fecha</label>
             <div class="uk-form-controls">
-                @Html.TextAreaFor(model => Model.cFecha,Model.cFecha)
+                @Html.TextBoxFor(model => Model.cFecha, Model.cFecha, new { id = "datetimepicker_mask", @class = "uk-form-width-medium" })
+                @Html.ValidationMessageFor(model => Model.cFecha)
             </div>
         </div>
         <div class="uk-form-row">
             <label class="uk-form-label">Hora</label>
             <div class="uk-form-controls">
-                @Html.TextAreaFor(model => Model.cHora,Model.cHora)
+                @Html.TextBoxFor(model => Model.cHora, Model.cHora, new { id = "datetimepicker_time", @class = "uk-form-width-medium" })
+                @Html.ValidationMessageFor(model => Model.cHora)
             </div>
         </div>
         <div class="uk-form-row">
             <label class="uk-form-label">Equipos</label>
             <div class="uk-form-controls">
-                @Html.DropDownListFor(model => model.cEquipo1, new SelectList(Model.cEquipos, "Key", "Value"), new { @class = "uk-form-width-medium"}) 
+                @Html.DropDownListFor(model => Model.cIdEquipo1, new SelectList(Model.cEquipos, "Key", "Value"), new { @class = "uk-form-width-medium" })
                 &nbsp
-                @Html.DropDownListFor(model => model.cEquipo2, new SelectList(Model.cEquipos, "Key", "Value"), new { @class = "uk-form-width-medium" })
+                @Html.DropDownListFor(model => Model.cIdEquipo2, new SelectList(Model.cEquipos, "Key", "Value"), new { @class = "uk-form-width-medium" })
             </div>
         </div>
         <div class="uk-form-row">
             <label class="uk-form-label">Fase</label>
             <div class="uk-form-controls">
-                @Html.TextAreaFor(model => Model.cFase,Model.cFase)
+                @Html.TextBoxFor(model => Model.cFase, Model.cFase, new { @class = "uk-form-width-medium" })
+                @Html.ValidationMessageFor(model => Model.cFase)
             </div>
         </div>
         <div class="uk-form-row">
             <label class="uk-form-label">Sede</label>
             <div class="uk-form-controls">
-                @Html.DropDownListFor(model => model.cSede, new SelectList(Model.cSedes, "Key", "Value"), new { @class = "uk-form-width-medium" })
+                @Html.DropDownListFor(model => Model.cIdSede, new SelectList(Model.cSedes, "Key", "Value"), new { @class = "uk-form-width-medium" })
             </div>
         </div>
         <br />
         <a class="uk-button uk-button-primary uk-text-break uk-align-medium-right" href="@Url.Action("Administrador_Calendario")"><i class="uk-icon-times">&nbsp</i>Cancelar</a>
-        <a class="uk-button uk-button-primary uk-text-break uk-align-medium-right" href="#"><i class="uk-icon-check">&nbsp</i>Crear partido</a>
-    </form>
+
+        if(Model.cIdPartido.IsEmpty())
+        {
+            <input class="uk-button uk-button-primary uk-text-break uk-align-medium-right" value="Crear partido" type="submit" />
+        }
+        else
+        {
+            <input class="uk-button uk-button-primary uk-text-break uk-align-medium-right" value="Actualizar partido" type="submit" />
+        }
+    }
 </div>

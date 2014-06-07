@@ -25,6 +25,15 @@ namespace MySoccer.Presentacion.GestionarUsuarios
         //-----------------------------------------------------------------\\
 
 
+        public void DesactivarUsuario()
+        {
+            this.cAdmiUsuarios.DesactivarUsuario();
+        }
+
+        public void ActivarUsuario()
+        {
+            this.cAdmiUsuarios.ActivarUsuario();
+        }
         public guiModeloUsuario GetModeloUsuario(int pTipoUsuario)
         {
             return guiModeloUsuarioFactory.GetModeloVacio(pTipoUsuario);

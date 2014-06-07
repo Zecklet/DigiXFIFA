@@ -160,6 +160,9 @@
     <Compile Include="Entity\USUARIO.cs">
       <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="GestionarCalendario\ContenedorPartido.cs" />
+    <Compile Include="GestionarCalendario\datSedeBaseDatos.cs" />
+    <Compile Include="GestionarCalendario\PartidoBaseDatos.cs" />
     <Compile Include="GestionarUsuarios\datAdministradorBaseDatos.cs" />
     <Compile Include="GestionarUsuarios\datEquipoBaseDatos.cs" />
     <Compile Include="GestionarUsuarios\datPaisBaseDatos.cs" />

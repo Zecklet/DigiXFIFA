@@ -15,7 +15,6 @@ namespace MySoccer.Datos.Entity
     public partial class RESULTADO_PARTIDO
     {
         public int PK_FK_Resultado_Partido { get; set; }
-        public Nullable<int> Estado { get; set; }
         public Nullable<int> Asistencia { get; set; }
         public Nullable<int> Marcador_Equipo_1 { get; set; }
         public Nullable<int> Marcador_Equipo_2 { get; set; }

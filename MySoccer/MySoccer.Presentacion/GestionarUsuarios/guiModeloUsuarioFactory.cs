@@ -85,7 +85,7 @@ namespace MySoccer.Presentacion.GestionarUsuarios
             mNuevoUsuario.cFechaInscripcion = mDatosModelo[ConstantesGestionarUsuarios.kStringFechaInscripcion];
             mNuevoUsuario.cNombre = mDatosModelo[ConstantesGestionarUsuarios.kStringNombre];
             mNuevoUsuario.cApellido = mDatosModelo[ConstantesGestionarUsuarios.kStringApellido];
-
+            mNuevoUsuario.cEstado = Convert.ToBoolean(mDatosModelo[ConstantesGestionarUsuarios.kStringEstado]);
             return mNuevoUsuario;
         }
     }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MY_SOCCER_CON.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MY_SOCCER_CON.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ACCION">
           <Key>
             <PropertyRef Name="PK_Accion" />
@@ -133,10 +133,11 @@
           <Property Name="Hora" Type="time" Precision="7" Nullable="false" />
           <Property Name="Fase" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Torneo" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="int" />
           <Property Name="FK_Equipo_1" Type="int" Nullable="false" />
           <Property Name="FK_Equipo_2" Type="int" Nullable="false" />
           <Property Name="FK_Sede" Type="int" Nullable="false" />
-          <Property Name="FK_Narrador" Type="int" Nullable="false" />
+          <Property Name="FK_Narrador" Type="int" />
         </EntityType>
         <EntityType Name="RECHAZADO">
           <Key>
@@ -152,7 +153,6 @@
             <PropertyRef Name="PK_FK_Resultado_Partido" />
           </Key>
           <Property Name="PK_FK_Resultado_Partido" Type="int" Nullable="false" />
-          <Property Name="Estado" Type="int" />
           <Property Name="Asistencia" Type="int" />
           <Property Name="Marcador_Equipo_1" Type="int" />
           <Property Name="Marcador_Equipo_2" Type="int" />
@@ -203,8 +203,7 @@
           <EntitySet Name="TITULAR" EntityType="Self.TITULAR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MY_SOCCER_CON" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -339,7 +338,8 @@
           <Property Name="FK_Equipo_1" Type="Int32" Nullable="false" />
           <Property Name="FK_Equipo_2" Type="Int32" Nullable="false" />
           <Property Name="FK_Sede" Type="Int32" Nullable="false" />
-          <Property Name="FK_Narrador" Type="Int32" Nullable="false" />
+          <Property Name="FK_Narrador" Type="Int32" />
+          <Property Name="Estado" Type="Int32" />
         </EntityType>
         <EntityType Name="RECHAZADO">
           <Key>
@@ -355,7 +355,6 @@
             <PropertyRef Name="PK_FK_Resultado_Partido" />
           </Key>
           <Property Name="PK_FK_Resultado_Partido" Type="Int32" Nullable="false" />
-          <Property Name="Estado" Type="Int32" />
           <Property Name="Asistencia" Type="Int32" />
           <Property Name="Marcador_Equipo_1" Type="Int32" />
           <Property Name="Marcador_Equipo_2" Type="Int32" />
@@ -546,6 +545,7 @@
           <EntitySetMapping Name="PARTIDO">
             <EntityTypeMapping TypeName="MY_SOCCER_CON.PARTIDO">
               <MappingFragment StoreEntitySet="PARTIDO">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="PK_Partido" ColumnName="PK_Partido" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Hora" ColumnName="Hora" />
@@ -572,7 +572,6 @@
             <EntityTypeMapping TypeName="MY_SOCCER_CON.RESULTADO_PARTIDO">
               <MappingFragment StoreEntitySet="RESULTADO_PARTIDO">
                 <ScalarProperty Name="PK_FK_Resultado_Partido" ColumnName="PK_FK_Resultado_Partido" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="Asistencia" ColumnName="Asistencia" />
                 <ScalarProperty Name="Marcador_Equipo_1" ColumnName="Marcador_Equipo_1" />
                 <ScalarProperty Name="Marcador_Equipo_2" ColumnName="Marcador_Equipo_2" />

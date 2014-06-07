@@ -188,5 +188,24 @@ namespace MySoccer.Datos
             mConexionMySoccer.SaveChanges();
             mConexionMySoccer.Database.Connection.Close();
         }
+
+        public void CambiarEstadoCuenta(String pNombreUsuario, Boolean pEstadoNuevo)
+        {
+            using (var mConexion = CrearConexion())
+            {
+                CUENTA mCuentaVieja = mConexion.CUENTA.Where(s => s.Nombre_Usuario == pNombreUsuario).First();
+                mCuentaVieja.Estado = pEstadoNuevo;
+
+                mConexion.CUENTA.Attach(mCuentaVieja);
+
+                //Variable que me ayuda con las actulizaciones de la cuenta
+                var mActulizador = mConexion.Entry(mCuentaVieja);
+                mActulizador.State = EntityState.Modified;
+                mActulizador.Property(s => s.Contraseña).IsModified = false;
+                mActulizador.Property(s => s.Fecha_Inscripcion).IsModified = false;
+                mActulizador.Property(s => s.Nombre_Usuario).IsModified = false;
+                mConexion.SaveChanges();
+            }
+        }
     }
 }
