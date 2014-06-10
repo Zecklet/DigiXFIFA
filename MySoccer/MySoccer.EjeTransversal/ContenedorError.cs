@@ -18,23 +18,10 @@ namespace MySoccer.EjeTransversal
 
         public ContenedorError(int pTipoError)
         {
-            switch (pTipoError)
+            cMensajeError = ConstantesGestionarUsuarios.kContenedorMensajes[pTipoError];
+            if (pTipoError == 0)
             {
-                case ConstantesGestionarUsuarios.kCodigoNombreUsuarioExiste:
-                    cMensajeError = ConstantesGestionarUsuarios.kMensajeNombreUsuarioExiste;
-                    break;
-                case ConstantesGestionarUsuarios.kCodigoNombreUsuarioNoExiste:
-                    cMensajeError = ConstantesGestionarUsuarios.kMensajeNombreUsuarioNoExiste;
-                    break;
-                case ConstantesGestionarUsuarios.kCodigoContrasenaIncorrecta:
-                    cMensajeError = ConstantesGestionarUsuarios.kMensajeContrasenaIncorrecta;
-                    break;
-                case ConstantesGestionarUsuarios.kCodigoEquiposIguales:
-                    cMensajeError = ConstantesGestionarUsuarios.kMensajeEquiposIguales;
-                    break;
-                default:
-                    cHayError = false;
-                    break;
+                this.cHayError = false;
             }
         }
 

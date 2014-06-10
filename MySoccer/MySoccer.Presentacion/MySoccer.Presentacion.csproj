@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministrarListaRechazados\ModeloListaRechazados.cs" />
+    <Compile Include="AdministrarListaRechazados\PresentadorListaRechazados.cs" />
     <Compile Include="GestionarCalendario\ModeloGestionarCalendario.cs" />
     <Compile Include="GestionarCalendario\ModeloDatosPartido.cs" />
     <Compile Include="GestionarCalendario\PresentadorGestionarCalendario.cs" />

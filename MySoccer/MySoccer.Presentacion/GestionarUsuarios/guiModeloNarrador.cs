@@ -19,7 +19,7 @@ namespace MySoccer.Presentacion.GestionarUsuarios
 
         public String cGenero { get; set; }
 
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{#0}")]
+        [Range(0, 99, ErrorMessage = " Los años de experiencia tienen que ser un numero entero, mayor a cero y menor a 99.")]
         [Required(ErrorMessage = " La cantidad de años de experiencia no puede estar vacía.")]
         public String cAnosExperiencia { get; set; }
 

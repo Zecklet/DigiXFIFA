@@ -85,6 +85,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministrarListaRechazados\ContenedorRechazado.cs" />
+    <Compile Include="AdministrarListaRechazados\ListaRechazadosBaseDatos.cs" />
     <Compile Include="Entity\ACCION.cs">
       <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>

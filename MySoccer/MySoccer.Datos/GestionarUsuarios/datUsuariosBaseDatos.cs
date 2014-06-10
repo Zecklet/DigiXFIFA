@@ -91,7 +91,7 @@ namespace MySoccer.Datos
             MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
 
             mConexionMySoccer.Database.Connection.Open();
-            IQueryable<CUENTA> mResultado = mConexionMySoccer.CUENTA.Where(s => s.Nombre_Usuario == pNombreUsuario);
+            IQueryable<CUENTA> mResultado = mConexionMySoccer.CUENTA.Where(cuenta => cuenta.Nombre_Usuario == pNombreUsuario);
             
             if (mResultado.Count()!=0){
                 mSalida = mResultado.First();

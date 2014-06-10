@@ -31,7 +31,7 @@ namespace MySoccer.Dominio
                 mNuevoUsuario.CrearUsuarioBaseDatos();
                 mNuevoUsuario.CrearCuentaBaseDatos();
                 mNuevoUsuario.CrearTipoUsuarioBaseDatos();
-                return 0;
+                return 0; 
             }
         }
 

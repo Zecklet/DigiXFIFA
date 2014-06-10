@@ -115,6 +115,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdministrarListaRechazadosController.cs" />
     <Compile Include="Controllers\GestionarCalendarioController.cs" />
     <Compile Include="Controllers\GestionarTorneoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="ImagenesUsuarios\xxx.jpg" />
     <Content Include="Global.asax" />
+    <Content Include="JavaScript\jsAdministrarListaRechazados.js" />
     <Content Include="JavaScript\jsGestionarCalendario.js" />
     <Content Include="JavaScript\calendario.js" />
     <Content Include="JavaScript\jquery.datetimepicker.css" />
@@ -195,7 +197,7 @@
     <Content Include="Views\GestionarTorneo\Administrador_Equipo.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Administrador_ListaRechazados.cshtml" />
+    <Content Include="Views\AdministrarListaRechazados\Administrador_ListaRechazados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Narrador_Calendario.cshtml" />

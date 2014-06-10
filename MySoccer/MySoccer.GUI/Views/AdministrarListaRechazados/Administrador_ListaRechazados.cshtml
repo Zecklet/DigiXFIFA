@@ -1,0 +1,75 @@
+﻿@model MySoccer.Presentacion.AdministrarListaRechazados.ModeloListaRechazados
+@{
+    ViewBag.Title = "Administrador_ListaRechazados";
+    Layout = "~/Views/Layouts/_Administrador.cshtml";
+}
+
+<script type="text/javascript" src="~/JavaScript/jsAdministrarListaRechazados.js"></script>
+
+<div class="uk-width-8-10 uk-push-2-10">
+    <h1>Administrar lista de rechazados</h1>
+    <h3>Ingresar rechazado</h3>
+    
+    <font class="uk-form uk-form-horizontal" color=" red">@Html.ValidationMessage("Error") </font>
+    <br /><br />
+    @using (Html.BeginForm("Administrador_Rechazado_Agregar", "AdministrarListaRechazados", FormMethod.Post, new { @class = "uk-form uk-form-horizontal" }))
+    {
+        <div class="uk-form-row">
+            <label class="uk-form-label">Nombre</label>
+            <div class="uk-form-controls">
+                @Html.TextBoxFor(model => Model.cNombre, Model.cNombre, new { @class = "uk-form-width-medium" })
+                @Html.ValidationMessageFor(model => Model.cNombre)
+            </div>
+        </div>
+        <div class="uk-form-row">
+            <label class="uk-form-label">Nombre</label>
+            <div class="uk-form-controls">
+                @Html.TextBoxFor(model => Model.cApellido, Model.cApellido, new { @class = "uk-form-width-medium" })
+                @Html.ValidationMessageFor(model => Model.cApellido)
+            </div>
+        </div>
+        <div class="uk-form-row">
+            <label class="uk-form-label">Pasaporte</label>
+            <div class="uk-form-controls">
+                @Html.TextBoxFor(model => Model.cPasaporte, Model.cPasaporte + "", new { @class = "uk-form-width-medium" })
+                @Html.ValidationMessageFor(model => Model.cPasaporte)
+            </div>
+        </div>
+        <div class="uk-form-row uk-width-1-5 uk-push-3-5">
+            <button class="uk-button uk-button-primary" type="submit">
+                <i class="uk-icon-plus">&nbsp</i>Agregar
+            </button>
+        </div>
+    }
+
+    <h3>Lista de rechazados</h3>
+    <table class="uk-table">
+        <tr>
+            <th>Nombre del fanático</th>
+            <th>Pasaporte</th>
+            <th>Intentos de ingreso</th>
+            <th>Eliminar</th>
+        </tr>
+
+        @foreach (var mRechazado in @Model.cListaRechazados)
+        {
+            <tr>
+                <th>@mRechazado.cNombre @mRechazado.cApellido</th>
+                <th>@mRechazado.cPasaporte</th>
+                <th>@mRechazado.cIntentosIngreso</th>
+                <th>
+                    <button id=@mRechazado.cPasaporte onclick="EliminarRechazado(@mRechazado.cPasaporte,document.getElementById('hdRechazadoEliminar'),document.frEliminarRechazado)" class="uk-button uk-button-primary uk-text-break"><i class="uk-icon-times">&nbsp</i></button>
+                </th>
+            </tr>
+        }
+    </table>
+    <br />
+
+    @using (Html.BeginForm("Administrador_Rechazado_Eliminar", "AdministrarListaRechazados", FormMethod.Post, new { name = "frEliminarRechazado", @class = "uk-form uk-form-horizontal" }))
+    {
+        <div class="uk-form-row uk-width-1-5 uk-push-3-5">
+            @Html.HiddenFor(model => model.cRechzadoSeleccionado, new {id ="hdRechazadoEliminar" })
+            @*<button class="uk-button uk-button-primary" type="submit"><i class="uk-icon-minus">&nbsp</i>Eliminar</button>*@
+        </div>
+    }
+</div>
