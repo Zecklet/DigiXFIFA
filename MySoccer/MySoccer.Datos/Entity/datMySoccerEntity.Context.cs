@@ -45,5 +45,6 @@ namespace MySoccer.Datos.Entity
         public virtual DbSet<SEDE> SEDE { get; set; }
         public virtual DbSet<TITULAR> TITULAR { get; set; }
         public virtual DbSet<USUARIO> USUARIO { get; set; }
+        public virtual DbSet<TORNEO> TORNEO { get; set; }
     }
 }

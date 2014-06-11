@@ -18,5 +18,6 @@ namespace MySoccer.Datos.Entity
         public string Nombre_Federacion { get; set; }
         public System.DateTime Fecha_Asociacion_XFIFA { get; set; }
         public int FK_Pais { get; set; }
+        public string Nombre_Equipo { get; set; }
     }
 }

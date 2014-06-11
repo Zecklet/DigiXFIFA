@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySoccer.Datos;
 using MySoccer.EjeTransversal;
+using MySoccer.EjeTransversal.GestionarUsuarios;
 
 namespace MySoccer.Dominio
 {
@@ -25,21 +26,24 @@ namespace MySoccer.Dominio
             }
         }
 
-        public static Usuario CrearUsuario(ParametrosUsuario pDatosUsuario, int pTipoUsuario)
+        public static Usuario CrearUsuario(guiModeloUsuario pDatosUsuario, int pTipoUsuario)
         {
             Usuario mNuevoUsuario = null;
             switch (pTipoUsuario)
             {
                 case ConstantesGestionarUsuarios.kUsuarioAdministrador:
-                    mNuevoUsuario = new Administrador(pDatosUsuario.cCorreoElectronico);
+                    mNuevoUsuario = new Administrador(((guiModeloAdministrador)pDatosUsuario).cCorreoElectronico);
                     break;
                 case ConstantesGestionarUsuarios.kUsuarioNarrador:
-                    mNuevoUsuario = new Narrador(pDatosUsuario.cGenero, pDatosUsuario.cRutaFoto,
-                        pDatosUsuario.cAnosExperiencia, pDatosUsuario.cDescripcion);
+                    guiModeloNarrador mModeloNarrador = (guiModeloNarrador)pDatosUsuario;
+                    mNuevoUsuario = new Narrador(Convert.ToInt32(mModeloNarrador.cGenero), mModeloNarrador.cRutaImagen,
+                        Convert.ToInt32(mModeloNarrador.cAnosExperiencia), mModeloNarrador.cDescripcion);
                     break;
                 case ConstantesGestionarUsuarios.kUsuarioFantatico:
-                    mNuevoUsuario = new Fanatico(pDatosUsuario.cCorreoElectronico,pDatosUsuario.cGenero,
-                        pDatosUsuario.cDescripcion,pDatosUsuario.cRutaFoto,pDatosUsuario.cPais,pDatosUsuario.cEquipoFavorito);
+                    guiModeloFanatico mModeloFanatico = (guiModeloFanatico)pDatosUsuario;
+                    mNuevoUsuario = new Fanatico(mModeloFanatico.cCorreoElectronico, Convert.ToInt32(mModeloFanatico.cGenero),
+                        mModeloFanatico.cDescripcion, mModeloFanatico.cRutaImagen, Convert.ToInt32(mModeloFanatico.cPais),
+                        Convert.ToInt32(mModeloFanatico.cEquipo));
                     break;
                 default:
                     break;
@@ -51,7 +55,7 @@ namespace MySoccer.Dominio
 
 
         //PREGUNTAR: si una fabrica puede crear un segundo metodo de factory
-        public static Usuario RecuperarUsuario(String pNombreUsuario)
+        public static Usuario CrearUsuario(String pNombreUsuario)
         {
             Usuario mNuevoUsuario = new Administrador();
             int mTipoUsuario = mNuevoUsuario.RecuperarTipoUsuario(pNombreUsuario);
@@ -67,10 +71,10 @@ namespace MySoccer.Dominio
                     mNuevoUsuario = new Administrador();
                     break;
                 case ConstantesGestionarUsuarios.kUsuarioNarrador:
-                    mNuevoUsuario = new Narrador();                    
+                    mNuevoUsuario = new Narrador();
                     break;
                 case ConstantesGestionarUsuarios.kUsuarioFantatico:
-                    mNuevoUsuario = new Fanatico();  
+                    mNuevoUsuario = new Fanatico();
                     break;
                 default:
                     break;
@@ -80,20 +84,25 @@ namespace MySoccer.Dominio
             mNuevoUsuario.RecuperarDatosBaseDatos();
             return mNuevoUsuario;
         }
-        public static Usuario ActualizarUsuarios(ParametrosUsuario pDatosUsuario, Usuario pUsuario)
+        public static Usuario ActualizarUsuarios(guiModeloUsuario pDatosUsuario, Usuario pUsuario)
         {
             switch (pUsuario.cIDTipo)
             {
                 case ConstantesGestionarUsuarios.kUsuarioAdministrador:
-                    ((Administrador)pUsuario).CambiarDatosAdministrador(pDatosUsuario.cCorreoElectronico);
+                    ((Administrador)pUsuario).CambiarDatosAdministrador(((guiModeloAdministrador) pDatosUsuario).cCorreoElectronico);
                     break;
                 case ConstantesGestionarUsuarios.kUsuarioNarrador:
-                    ((Narrador)pUsuario).CambiarDatosNarrador(pDatosUsuario.cRutaFoto, pDatosUsuario.cDescripcion,
-                        pDatosUsuario.cAnosExperiencia, pDatosUsuario.cGenero);
+                    guiModeloNarrador mModeloNarrador = (guiModeloNarrador)pDatosUsuario;
+                    ((Narrador)pUsuario).CambiarDatosNarrador(mModeloNarrador.cRutaImagen,
+                        mModeloNarrador.cDescripcion, Convert.ToInt32(mModeloNarrador.cAnosExperiencia),
+                        Convert.ToInt32(mModeloNarrador.cGenero));
                     break;
                 case ConstantesGestionarUsuarios.kUsuarioFantatico:
-                    ((Fanatico)pUsuario).CambiarDatosFanatico(pDatosUsuario.cCorreoElectronico,pDatosUsuario.cRutaFoto,
-                        pDatosUsuario.cEquipoFavorito, pDatosUsuario.cPais, pDatosUsuario.cGenero, pDatosUsuario.cDescripcion);
+                    guiModeloFanatico mModeloFanatico = (guiModeloFanatico)pDatosUsuario;
+
+                    ((Fanatico)pUsuario).CambiarDatosFanatico(mModeloFanatico.cCorreoElectronico, mModeloFanatico.cRutaImagen,
+                        Convert.ToInt32(mModeloFanatico.cEquipo), Convert.ToInt32(mModeloFanatico.cPais),
+                        Convert.ToInt32(mModeloFanatico.cGenero), mModeloFanatico.cDescripcion);
                     break;
                 default:
                     break;

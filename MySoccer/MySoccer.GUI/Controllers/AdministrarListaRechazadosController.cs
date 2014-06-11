@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MySoccer.Presentacion.AdministrarListaRechazados;
 using MySoccer.EjeTransversal;
+using MySoccer.EjeTransversal.AdministrarListaRechazados;
 
 namespace MySoccer.GUI.Controllers
 {

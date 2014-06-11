@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySoccer.Datos;
 using MySoccer.EjeTransversal;
+using MySoccer.EjeTransversal.GestionarUsuarios;
 
 
 namespace MySoccer.Dominio
@@ -19,7 +20,7 @@ namespace MySoccer.Dominio
         }
 
         //Este metodo crea un administrador 
-        public int AgregarNuevoUsuario(ParametrosUsuario pDatosUsuario, int pTipoUsuario)
+        public int AgregarNuevoUsuario(guiModeloUsuario pDatosUsuario, int pTipoUsuario)
         {
             Usuario mNuevoUsuario = UsuariosFactory.CrearUsuario(pDatosUsuario, pTipoUsuario);
             if (mNuevoUsuario.ExisteNombreUsuario(pDatosUsuario.cNombreUsuario))
@@ -36,7 +37,7 @@ namespace MySoccer.Dominio
         }
 
         //Este se usa para actualizar los datos 
-        public int ActualizarUsuario(ParametrosUsuario pDatosUsuario)
+        public int ActualizarUsuario(guiModeloUsuario pDatosUsuario)
         {
             if (this.cUsuarioActual == null)
             {
@@ -61,7 +62,7 @@ namespace MySoccer.Dominio
         public ContenedorError UsuarioCorrecto(String pNombreUsuario, String pContrasena)
         {
             cContenedorError = new ContenedorError(0); //inicializa un contenedor de error, sin error alguno
-            Usuario mUsuario = UsuariosFactory.RecuperarUsuario(pNombreUsuario); //usando el factory de usuarios, se  recontruye el usuario completo de la base de datos
+            Usuario mUsuario = UsuariosFactory.CrearUsuario(pNombreUsuario); //usando el factory de usuarios, se  recontruye el usuario completo de la base de datos
 
             this.cUsuarioActual = mUsuario;
             if (mUsuario == null) //Se comprueba que el usuario exista 

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace MySoccer.Presentacion.IniciarSesion
+namespace MySoccer.EjeTransversal.IniciarSesion
 {
     public class guiModelInicioSesion
     {

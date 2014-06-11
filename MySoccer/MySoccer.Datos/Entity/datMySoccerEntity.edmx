@@ -32,6 +32,7 @@
           </Key>
           <Property Name="PK_Comentario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Tiempo" Type="int" Nullable="false" />
+          <Property Name="TipoComentario" Type="bit" Nullable="false" />
           <Property Name="FK_Usuario" Type="int" Nullable="false" />
           <Property Name="FK_Partido" Type="int" Nullable="false" />
         </EntityType>
@@ -39,7 +40,7 @@
           <Key>
             <PropertyRef Name="PK_FK_Comentario_Estadistico" />
           </Key>
-          <Property Name="PK_FK_Comentario_Estadistico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PK_FK_Comentario_Estadistico" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="FK_Equipo" Type="int" Nullable="false" />
           <Property Name="FK_Accion" Type="int" Nullable="false" />
         </EntityType>
@@ -74,6 +75,7 @@
             <PropertyRef Name="PK_Equipo" />
           </Key>
           <Property Name="PK_Equipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_Equipo" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Nombre_Federacion" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Fecha_Asociacion_XFIFA" Type="date" Nullable="false" />
           <Property Name="FK_Pais" Type="int" Nullable="false" />
@@ -92,10 +94,10 @@
         </EntityType>
         <EntityType Name="FOTO_EQUIPO">
           <Key>
-            <PropertyRef Name="PK_Torneo" />
+            <PropertyRef Name="PK_FK_Torneo" />
             <PropertyRef Name="PK_FK_Equipo" />
           </Key>
-          <Property Name="PK_Torneo" Type="int" Nullable="false" />
+          <Property Name="PK_FK_Torneo" Type="int" Nullable="false" />
           <Property Name="PK_FK_Equipo" Type="int" Nullable="false" />
           <Property Name="Foto" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -104,6 +106,8 @@
             <PropertyRef Name="PK_Jugador" />
           </Key>
           <Property Name="PK_Jugador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Pasaporte" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="Jugador_MyHistory" Type="int" Nullable="false" />
           <Property Name="FK_Equipo" Type="int" Nullable="false" />
         </EntityType>
@@ -132,18 +136,18 @@
           <Property Name="Fecha" Type="date" Nullable="false" />
           <Property Name="Hora" Type="time" Precision="7" Nullable="false" />
           <Property Name="Fase" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Torneo" Type="int" Nullable="false" />
           <Property Name="Estado" Type="int" />
           <Property Name="FK_Equipo_1" Type="int" Nullable="false" />
           <Property Name="FK_Equipo_2" Type="int" Nullable="false" />
           <Property Name="FK_Sede" Type="int" Nullable="false" />
           <Property Name="FK_Narrador" Type="int" />
+          <Property Name="FK_Torneo" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="RECHAZADO">
           <Key>
             <PropertyRef Name="Pasaporte_XFIFA" />
           </Key>
-          <Property Name="Pasaporte_XFIFA" Type="int" Nullable="false" />
+          <Property Name="Pasaporte_XFIFA" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Intentos_Ingreso" Type="int" />
@@ -171,6 +175,13 @@
           </Key>
           <Property Name="PK_FK_Partido" Type="int" Nullable="false" />
           <Property Name="PK_FK_Jugador" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TORNEO">
+          <Key>
+            <PropertyRef Name="PK_Torneo" />
+          </Key>
+          <Property Name="PK_Torneo" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="USUARIO">
           <Key>
@@ -201,6 +212,7 @@
           <EntitySet Name="RESULTADO_PARTIDO" EntityType="Self.RESULTADO_PARTIDO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SEDE" EntityType="Self.SEDE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TITULAR" EntityType="Self.TITULAR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TORNEO" EntityType="Self.TORNEO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -236,6 +248,7 @@
           <Property Name="Tiempo" Type="Int32" Nullable="false" />
           <Property Name="FK_Usuario" Type="Int32" Nullable="false" />
           <Property Name="FK_Partido" Type="Int32" Nullable="false" />
+          <Property Name="TipoComentario" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="COMENTARIO_ESTADISTICO">
           <Key>
@@ -279,6 +292,7 @@
           <Property Name="Nombre_Federacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Fecha_Asociacion_XFIFA" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="FK_Pais" Type="Int32" Nullable="false" />
+          <Property Name="Nombre_Equipo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="FANATICO">
           <Key>
@@ -294,12 +308,12 @@
         </EntityType>
         <EntityType Name="FOTO_EQUIPO">
           <Key>
-            <PropertyRef Name="PK_Torneo" />
             <PropertyRef Name="PK_FK_Equipo" />
+            <PropertyRef Name="PK_FK_Torneo" />
           </Key>
-          <Property Name="PK_Torneo" Type="Int32" Nullable="false" />
           <Property Name="PK_FK_Equipo" Type="Int32" Nullable="false" />
           <Property Name="Foto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PK_FK_Torneo" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="JUGADOR">
           <Key>
@@ -308,6 +322,8 @@
           <Property Name="PK_Jugador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Jugador_MyHistory" Type="Int32" Nullable="false" />
           <Property Name="FK_Equipo" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Pasaporte" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="NARRADOR">
           <Key>
@@ -334,18 +350,18 @@
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Hora" Type="Time" Nullable="false" Precision="7" />
           <Property Name="Fase" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Torneo" Type="Int32" Nullable="false" />
           <Property Name="FK_Equipo_1" Type="Int32" Nullable="false" />
           <Property Name="FK_Equipo_2" Type="Int32" Nullable="false" />
           <Property Name="FK_Sede" Type="Int32" Nullable="false" />
           <Property Name="FK_Narrador" Type="Int32" />
           <Property Name="Estado" Type="Int32" />
+          <Property Name="FK_Torneo" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="RECHAZADO">
           <Key>
             <PropertyRef Name="Pasaporte_XFIFA" />
           </Key>
-          <Property Name="Pasaporte_XFIFA" Type="Int32" Nullable="false" />
+          <Property Name="Pasaporte_XFIFA" Type="String" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Intentos_Ingreso" Type="Int32" />
@@ -404,7 +420,15 @@
           <EntitySet Name="SEDE" EntityType="Self.SEDE" />
           <EntitySet Name="TITULAR" EntityType="Self.TITULAR" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
+          <EntitySet Name="TORNEO" EntityType="MY_SOCCER_CON.TORNEO" />
         </EntityContainer>
+        <EntityType Name="TORNEO">
+          <Key>
+            <PropertyRef Name="PK_Torneo" />
+          </Key>
+          <Property Name="PK_Torneo" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -438,6 +462,7 @@
           <EntitySetMapping Name="COMENTARIO">
             <EntityTypeMapping TypeName="MY_SOCCER_CON.COMENTARIO">
               <MappingFragment StoreEntitySet="COMENTARIO">
+                <ScalarProperty Name="TipoComentario" ColumnName="TipoComentario" />
                 <ScalarProperty Name="PK_Comentario" ColumnName="PK_Comentario" />
                 <ScalarProperty Name="Tiempo" ColumnName="Tiempo" />
                 <ScalarProperty Name="FK_Usuario" ColumnName="FK_Usuario" />
@@ -485,6 +510,7 @@
           <EntitySetMapping Name="EQUIPO">
             <EntityTypeMapping TypeName="MY_SOCCER_CON.EQUIPO">
               <MappingFragment StoreEntitySet="EQUIPO">
+                <ScalarProperty Name="Nombre_Equipo" ColumnName="Nombre_Equipo" />
                 <ScalarProperty Name="PK_Equipo" ColumnName="PK_Equipo" />
                 <ScalarProperty Name="Nombre_Federacion" ColumnName="Nombre_Federacion" />
                 <ScalarProperty Name="Fecha_Asociacion_XFIFA" ColumnName="Fecha_Asociacion_XFIFA" />
@@ -508,7 +534,7 @@
           <EntitySetMapping Name="FOTO_EQUIPO">
             <EntityTypeMapping TypeName="MY_SOCCER_CON.FOTO_EQUIPO">
               <MappingFragment StoreEntitySet="FOTO_EQUIPO">
-                <ScalarProperty Name="PK_Torneo" ColumnName="PK_Torneo" />
+                <ScalarProperty Name="PK_FK_Torneo" ColumnName="PK_FK_Torneo" />
                 <ScalarProperty Name="PK_FK_Equipo" ColumnName="PK_FK_Equipo" />
                 <ScalarProperty Name="Foto" ColumnName="Foto" />
               </MappingFragment>
@@ -517,6 +543,8 @@
           <EntitySetMapping Name="JUGADOR">
             <EntityTypeMapping TypeName="MY_SOCCER_CON.JUGADOR">
               <MappingFragment StoreEntitySet="JUGADOR">
+                <ScalarProperty Name="Pasaporte" ColumnName="Pasaporte" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="PK_Jugador" ColumnName="PK_Jugador" />
                 <ScalarProperty Name="Jugador_MyHistory" ColumnName="Jugador_MyHistory" />
                 <ScalarProperty Name="FK_Equipo" ColumnName="FK_Equipo" />
@@ -545,12 +573,12 @@
           <EntitySetMapping Name="PARTIDO">
             <EntityTypeMapping TypeName="MY_SOCCER_CON.PARTIDO">
               <MappingFragment StoreEntitySet="PARTIDO">
+                <ScalarProperty Name="FK_Torneo" ColumnName="FK_Torneo" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="PK_Partido" ColumnName="PK_Partido" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Hora" ColumnName="Hora" />
                 <ScalarProperty Name="Fase" ColumnName="Fase" />
-                <ScalarProperty Name="Torneo" ColumnName="Torneo" />
                 <ScalarProperty Name="FK_Equipo_1" ColumnName="FK_Equipo_1" />
                 <ScalarProperty Name="FK_Equipo_2" ColumnName="FK_Equipo_2" />
                 <ScalarProperty Name="FK_Sede" ColumnName="FK_Sede" />
@@ -601,6 +629,14 @@
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Apellido" ColumnName="Apellido" />
                 <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TORNEO">
+            <EntityTypeMapping TypeName="MY_SOCCER_CON.TORNEO">
+              <MappingFragment StoreEntitySet="TORNEO">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PK_Torneo" ColumnName="PK_Torneo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

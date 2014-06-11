@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySoccer.Datos.GestionarCalendario
+namespace MySoccer.EjeTransversal.GestionarCalendario
 {
     public class ContenedorPartido
     {

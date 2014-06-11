@@ -85,7 +85,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdministrarListaRechazados\ContenedorRechazado.cs" />
     <Compile Include="AdministrarListaRechazados\ListaRechazadosBaseDatos.cs" />
     <Compile Include="Entity\ACCION.cs">
       <DependentUpon>datMySoccerEntity.tt</DependentUpon>
@@ -159,10 +158,12 @@
     <Compile Include="Entity\TITULAR.cs">
       <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\TORNEO.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\USUARIO.cs">
       <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="GestionarCalendario\ContenedorPartido.cs" />
     <Compile Include="GestionarCalendario\datSedeBaseDatos.cs" />
     <Compile Include="GestionarCalendario\PartidoBaseDatos.cs" />
     <Compile Include="GestionarUsuarios\datAdministradorBaseDatos.cs" />

@@ -43,22 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdministrarListaRechazados\ModeloListaRechazados.cs" />
     <Compile Include="AdministrarListaRechazados\PresentadorListaRechazados.cs" />
-    <Compile Include="GestionarCalendario\ModeloGestionarCalendario.cs" />
-    <Compile Include="GestionarCalendario\ModeloDatosPartido.cs" />
     <Compile Include="GestionarCalendario\PresentadorGestionarCalendario.cs" />
-    <Compile Include="GestionarTorneo\ModeloGestionarTorneo.cs" />
     <Compile Include="GestionarTorneo\PresentadorGestionarTorneo.cs" />
-    <Compile Include="GestionarUsuarios\guiModeloAccionesPagina.cs" />
-    <Compile Include="GestionarUsuarios\guiModeloAdministrador.cs" />
-    <Compile Include="GestionarUsuarios\guiModeloFanatico.cs" />
-    <Compile Include="GestionarUsuarios\guiModeloNarrador.cs" />
-    <Compile Include="GestionarUsuarios\guiModeloUsuario.cs" />
-    <Compile Include="GestionarUsuarios\guiModeloUsuarioFactory.cs" />
-    <Compile Include="GestionarUsuarios\guiModeloUsuarioNull.cs" />
     <Compile Include="GestionarUsuarios\PresentadorGestionarUsuarios.cs" />
-    <Compile Include="IniciarSesion\guiModelInicioSesion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

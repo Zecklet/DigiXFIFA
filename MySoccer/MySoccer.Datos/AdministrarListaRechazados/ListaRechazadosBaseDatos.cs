@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySoccer.Datos.Entity;
+using MySoccer.EjeTransversal.AdministrarListaRechazados;
 
 namespace MySoccer.Datos.AdministrarListaRechazados
 {
     public class ListaRechazadosBaseDatos
     {
-        public void AgregarRechazado(int pPasaporte, String pNombre, String pApellido)
+        public void AgregarRechazado(String pPasaporte, String pNombre, String pApellido)
         {
             using (var mConexion = new MY_SOCCER_CONEXION())
             {
@@ -45,7 +46,7 @@ namespace MySoccer.Datos.AdministrarListaRechazados
             return mResultado;
         }
 
-        public void EliminarRechazado(int pPasaporte)
+        public void EliminarRechazado(String pPasaporte)
         {
             using (var mConexionMySoccer = new MY_SOCCER_CONEXION())
             {
@@ -56,7 +57,7 @@ namespace MySoccer.Datos.AdministrarListaRechazados
                 mConexionMySoccer.SaveChanges();
             }
         }
-        public Boolean ExisteRechazado(int pPasaporte)
+        public Boolean ExisteRechazado(String pPasaporte)
         {
             Boolean mResultados;
             using (var mConexionMySoccer = new MY_SOCCER_CONEXION())

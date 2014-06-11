@@ -1,12 +1,9 @@
-﻿using MySoccer.Datos;
-using MySoccer.Dominio.GestionarUsuarios;
-using MySoccer.EjeTransversal;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MySoccer.Presentacion.GestionarUsuarios
+namespace MySoccer.EjeTransversal.GestionarUsuarios
 {
     public sealed class guiModeloUsuarioFactory
     {
@@ -24,7 +21,7 @@ namespace MySoccer.Presentacion.GestionarUsuarios
             }
         }
 
-        public static guiModeloUsuario GetModeloVacio(int pTipoUsuario)
+        public static guiModeloUsuario CrearModelo(int pTipoUsuario)
         {
             guiModeloUsuario mNuevoUsuario = null;
             switch (pTipoUsuario)
@@ -37,14 +34,12 @@ namespace MySoccer.Presentacion.GestionarUsuarios
                     break;
                 case ConstantesGestionarUsuarios.kUsuarioFantatico:
                     mNuevoUsuario = new guiModeloFanatico();
-                    ((guiModeloFanatico)mNuevoUsuario).cPaises = ConsultorPaisBase.GetPaises();
-                    ((guiModeloFanatico)mNuevoUsuario).cEquipos = ConsultorEquipoBase.GetEquipos();
                     break;
             }
             return mNuevoUsuario;
         }
 
-        public static guiModeloUsuario RecuperarModelo(Dictionary<String, String> mDatosModelo, int pTipoUsuario)
+        public static guiModeloUsuario CrearModelo(Dictionary<String, String> mDatosModelo, int pTipoUsuario)
         {
             guiModeloUsuario mNuevoUsuario = null;
             switch (pTipoUsuario)
@@ -73,9 +68,7 @@ namespace MySoccer.Presentacion.GestionarUsuarios
                         cCorreoElectronico = mDatosModelo[ConstantesGestionarUsuarios.kStringCorreoElectronico],
                         cEquipo = mDatosModelo[ConstantesGestionarUsuarios.kStringEquipoFavorito],
                         cPais = mDatosModelo[ConstantesGestionarUsuarios.kStringPais]
-                    };
-                    ((guiModeloFanatico)mNuevoUsuario).cPaises = ConsultorPaisBase.GetPaises();
-                    ((guiModeloFanatico)mNuevoUsuario).cEquipos = ConsultorEquipoBase.GetEquipos();                    break;
+                    };                   break;
                 default:
                     mNuevoUsuario = new guiModeloUsuarioNull();
                     break;

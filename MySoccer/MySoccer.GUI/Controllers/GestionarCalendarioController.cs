@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using MySoccer.Presentacion.GestionarCalendario;
 using MySoccer.EjeTransversal;
+using MySoccer.EjeTransversal.GestionarCalendario;
 
 namespace MySoccer.GUI.Controllers
 {

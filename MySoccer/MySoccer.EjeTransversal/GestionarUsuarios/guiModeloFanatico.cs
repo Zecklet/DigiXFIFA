@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MySoccer.Presentacion.GestionarUsuarios
+namespace MySoccer.EjeTransversal.GestionarUsuarios
 {
     public class guiModeloFanatico:guiModeloUsuario
     {

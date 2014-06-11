@@ -8,6 +8,7 @@ using MySoccer.EjeTransversal;
 using MySoccer.Dominio.GestionarUsuarios;
 using System.Web;
 using MySoccer.Servicio;
+using MySoccer.EjeTransversal.GestionarUsuarios;
 
 namespace MySoccer.Presentacion.GestionarUsuarios
 {
@@ -36,7 +37,7 @@ namespace MySoccer.Presentacion.GestionarUsuarios
         }
         public guiModeloUsuario GetModeloUsuario(int pTipoUsuario)
         {
-            return guiModeloUsuarioFactory.GetModeloVacio(pTipoUsuario);
+            return guiModeloUsuarioFactory.CrearModelo(pTipoUsuario);
         }
 
         public ParametrosUsuario CrearParametrosDatos(guiModeloUsuario pModel)
@@ -113,18 +114,14 @@ namespace MySoccer.Presentacion.GestionarUsuarios
 
         public ContenedorError AgregarAdministrador(guiModeloAdministrador pModel)
         {
-            ParametrosUsuario mParametro = CrearParametrosDatos(pModel);
-            mParametro.DatosAdministrador(pModel.cCorreoElectronico);
-            int mResultado = this.cAdmiUsuarios.AgregarNuevoUsuario(mParametro,
+            int mResultado = this.cAdmiUsuarios.AgregarNuevoUsuario(pModel,
                 ConstantesGestionarUsuarios.kUsuarioAdministrador);
             return CrearContenedor(mResultado);
         }
 
         public ContenedorError ActualizarAdministrador(guiModeloAdministrador pModel)
         {
-            ParametrosUsuario mParametro = CrearParametrosDatos(pModel);
-            mParametro.DatosAdministrador(pModel.cCorreoElectronico);
-            int mResultado = this.cAdmiUsuarios.ActualizarUsuario(mParametro);
+            int mResultado = this.cAdmiUsuarios.ActualizarUsuario(pModel);
             return CrearContenedor(mResultado);
         }
 
@@ -134,20 +131,14 @@ namespace MySoccer.Presentacion.GestionarUsuarios
 
         public ContenedorError AgregarNarrador(guiModeloNarrador pModel)
         {
-            ParametrosUsuario mParametro = CrearParametrosDatos(pModel);
-            mParametro.DatosNarrador(pModel.cGenero, pModel.cDescripcion,
-                   pModel.cAnosExperiencia, pModel.cRutaImagen);
-            int mResultado = this.cAdmiUsuarios.AgregarNuevoUsuario(mParametro,
+            int mResultado = this.cAdmiUsuarios.AgregarNuevoUsuario(pModel,
                 ConstantesGestionarUsuarios.kUsuarioNarrador);
             return CrearContenedor(mResultado);
         }
 
         public ContenedorError ActualizarNarrador(guiModeloNarrador pModel)
         {
-            ParametrosUsuario mParametro = CrearParametrosDatos(pModel);
-            mParametro.DatosNarrador(pModel.cGenero, pModel.cDescripcion,
-                   pModel.cAnosExperiencia, pModel.cRutaImagen);
-            int mResultado = this.cAdmiUsuarios.ActualizarUsuario(mParametro);
+            int mResultado = this.cAdmiUsuarios.ActualizarUsuario(pModel);
             return CrearContenedor(mResultado);
         }
 
@@ -162,20 +153,15 @@ namespace MySoccer.Presentacion.GestionarUsuarios
 
         public ContenedorError AgregarFanatico(guiModeloFanatico pModel)
         {
-            ParametrosUsuario mParametro = CrearParametrosDatos(pModel);
-            mParametro.DatosFanatico(pModel.cGenero, pModel.cDescripcion, pModel.cCorreoElectronico,
-                pModel.cPais, pModel.cEquipo, pModel.cRutaImagen);
-            int mResultado = this.cAdmiUsuarios.AgregarNuevoUsuario(mParametro, ConstantesGestionarUsuarios.kUsuarioFantatico);
+            int mResultado = this.cAdmiUsuarios.AgregarNuevoUsuario(pModel, 
+                ConstantesGestionarUsuarios.kUsuarioFantatico);
             ContenedorError mError = new ContenedorError(mResultado);
             return CrearContenedor(mResultado);
         }
 
         public ContenedorError ActualizarFanatico(guiModeloFanatico pModel)
         {
-            ParametrosUsuario mParametro = CrearParametrosDatos(pModel);
-            mParametro.DatosFanatico(pModel.cGenero, pModel.cDescripcion, pModel.cCorreoElectronico,
-                pModel.cPais, pModel.cEquipo, pModel.cRutaImagen);
-            int mResultado = this.cAdmiUsuarios.ActualizarUsuario(mParametro);
+            int mResultado = this.cAdmiUsuarios.ActualizarUsuario(pModel);
             return CrearContenedor(mResultado);
         }
 

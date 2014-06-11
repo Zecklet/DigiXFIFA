@@ -11,12 +11,7 @@ namespace MySoccer.Pruebas
     {
         static void Main2(string[] args)
         {
-            ParametrosUsuario mParametros = new ParametrosUsuario("Ney","Rojas","neyrojas","1234","1993-02-07");
-            mParametros.DatosAdministrador("neyrojas@outlook.com");
-            Usuario mNuevoUsuario = UsuariosFactory.CrearUsuario(mParametros, 0);
 
-            System.Console.WriteLine(((Administrador) mNuevoUsuario).cCorreoElectronico);
-            Console.ReadLine();
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySoccer.Datos.AdministrarListaRechazados;
 using MySoccer.EjeTransversal;
+using MySoccer.EjeTransversal.AdministrarListaRechazados;
 
 namespace MySoccer.Presentacion.AdministrarListaRechazados
 {
@@ -14,9 +15,9 @@ namespace MySoccer.Presentacion.AdministrarListaRechazados
         {
             ListaRechazadosBaseDatos mConexionBase = new ListaRechazadosBaseDatos();
             ContenedorError mResultado = new ContenedorError();
-            if (!mConexionBase.ExisteRechazado(Convert.ToInt32(pPasaporte)))
+            if (!mConexionBase.ExisteRechazado(pPasaporte))
             {
-                mConexionBase.AgregarRechazado(Convert.ToInt32(pPasaporte), pNombre, pApellido);        
+                mConexionBase.AgregarRechazado(pPasaporte, pNombre, pApellido);        
             }
             else
             {
@@ -36,7 +37,7 @@ namespace MySoccer.Presentacion.AdministrarListaRechazados
         public void EliminarRechazado(String pPasaporte)
         {
             ListaRechazadosBaseDatos mConexionBase = new ListaRechazadosBaseDatos();
-            mConexionBase.EliminarRechazado(Convert.ToInt32(pPasaporte));
+            mConexionBase.EliminarRechazado(pPasaporte);
         }
 
         public void SetRechazados(ref ModeloListaRechazados pModelo)

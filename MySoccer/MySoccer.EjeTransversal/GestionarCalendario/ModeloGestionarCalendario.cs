@@ -1,11 +1,11 @@
-﻿using MySoccer.Datos.GestionarCalendario;
+﻿using MySoccer.EjeTransversal.GestionarCalendario;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySoccer.Presentacion.GestionarCalendario
+namespace MySoccer.EjeTransversal.GestionarCalendario
 {
     public class ModeloGestionarCalendario
     {

@@ -1,6 +1,7 @@
 ﻿using MySoccer.Datos.GestionarCalendario;
 using MySoccer.Dominio.GestionarUsuarios;
 using MySoccer.EjeTransversal;
+using MySoccer.EjeTransversal.GestionarCalendario;
 using System;
 using System.Collections.Generic;
 using System.Linq;

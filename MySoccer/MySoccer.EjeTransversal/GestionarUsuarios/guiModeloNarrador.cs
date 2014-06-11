@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace MySoccer.Presentacion.GestionarUsuarios
+namespace MySoccer.EjeTransversal.GestionarUsuarios
 {
     public class guiModeloNarrador:guiModeloUsuario
     {

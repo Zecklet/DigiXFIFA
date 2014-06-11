@@ -7,8 +7,9 @@ using MySoccer.Dominio;
 using MySoccer.Datos;
 using System.IO;
 using MySoccer.Presentacion.GestionarUsuarios;
-using MySoccer.Presentacion.IniciarSesion;
 using MySoccer.EjeTransversal;
+using MySoccer.EjeTransversal.IniciarSesion;
+using MySoccer.EjeTransversal.GestionarUsuarios;
 
 namespace MySoccer.GUI.Controllers
 {
@@ -17,20 +18,6 @@ namespace MySoccer.GUI.Controllers
         //
         // GET: /Home/
 
-        [HttpPost]
-        public ActionResult Index(guiModelInicioSesion pModel)
-        {
-
-            HttpPostedFileBase file = pModel.cImagen;
-            if (file.ContentLength > 0)
-            {
-                var fileName = Path.GetFileName(file.FileName);
-                var path = Path.Combine(Server.MapPath("~/App_Data/ImagenesUsuarios"), fileName);
-                file.SaveAs(path);
-            }
-
-            return RedirectToAction("Index");
-        }
 
         public ActionResult Index()
         {
@@ -55,7 +42,7 @@ namespace MySoccer.GUI.Controllers
 
                     Dictionary<String, String> mDatos = mPresentador.GetDatos();
 
-                    guiModeloUsuario mModeloUsuario = guiModeloUsuarioFactory.RecuperarModelo(mDatos, mPresentador.GetTipoUsuario());
+                    guiModeloUsuario mModeloUsuario = guiModeloUsuarioFactory.CrearModelo(mDatos, mPresentador.GetTipoUsuario());
                     mModeloUsuario.cNombreUsuario = mPresentador.GetNombreUsuario();
                     Session["Modelo"] = mModeloUsuario;
                     Session["Usuario"] = mPresentador;
@@ -71,69 +58,5 @@ namespace MySoccer.GUI.Controllers
             }
             return View("Index", pModel);
         }
-
-
-        public ActionResult Administrador_Calendario()
-        {
-            return View();
-        }
-
-        public ActionResult Administrador_Equipo()
-        {
-            return View();
-        }
-
-        public ActionResult Administrador_ListaRechazados()
-        {
-            return View();
-        }
-
-        public ActionResult Administrador_Partido()
-        {
-            return View();
-        }
-
-        public ActionResult Administrador_Torneo()
-        {
-            return View();
-        }
-
-
-        public ActionResult Narrador_Calendario()
-        {
-            return View();
-        }
-
-        public ActionResult Narrador_Jugadores()
-        {
-            return View();
-        }
-
-        public ActionResult Narrador_Partido()
-        {
-            return View();
-        }
-
-
-        public ActionResult Narrador_Jugador()
-        {
-            return View();
-        }
-
-        public ActionResult Fanatico_Calendario()
-        {
-            return View();
-        }
-
-        public ActionResult Fanatico_Partido()
-        {
-            return View();
-        }
-
-        public ActionResult Fanatico_Jugador()
-        {
-            return View();
-        }
-
     }
 }

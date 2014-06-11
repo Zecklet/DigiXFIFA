@@ -12,11 +12,9 @@ namespace MySoccer.Datos.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class RECHAZADO
+    public partial class TORNEO
     {
-        public string Pasaporte_XFIFA { get; set; }
+        public int PK_Torneo { get; set; }
         public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public Nullable<int> Intentos_Ingreso { get; set; }
     }
 }

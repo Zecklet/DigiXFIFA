@@ -14,8 +14,8 @@ namespace MySoccer.Datos.Entity
     
     public partial class FOTO_EQUIPO
     {
-        public int PK_Torneo { get; set; }
         public int PK_FK_Equipo { get; set; }
         public string Foto { get; set; }
+        public int PK_FK_Torneo { get; set; }
     }
 }

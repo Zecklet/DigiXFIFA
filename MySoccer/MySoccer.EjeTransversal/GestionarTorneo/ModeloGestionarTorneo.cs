@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySoccer.Presentacion.GestionarTorneo
+namespace MySoccer.EjeTransversal.GestionarTorneo
 {
     public class ModeloGestionarTorneo
     {

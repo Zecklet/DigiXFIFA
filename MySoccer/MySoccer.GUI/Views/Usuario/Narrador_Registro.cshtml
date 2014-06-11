@@ -1,4 +1,4 @@
-﻿@model MySoccer.Presentacion.GestionarUsuarios.guiModeloNarrador
+﻿@model MySoccer.EjeTransversal.GestionarUsuarios.guiModeloNarrador
 @{
     ViewBag.Title = @Model.cNombrePagina;
     Layout = "~/Views/Layouts/" + @Model.cNombreLayout + ".cshtml";
@@ -46,6 +46,6 @@
     </div>
 </div>
 <div class="uk-form-row">
-    <label class="uk-form-label"">Foto</label>
+    <label class="uk-form-label">Foto</label>
     @Html.TextBoxFor(model => model.cImagen, new { type = "file", accept = "image/*"})
 </div>

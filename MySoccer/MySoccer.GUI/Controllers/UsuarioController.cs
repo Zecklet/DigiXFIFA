@@ -7,8 +7,9 @@ using MySoccer.Presentacion.GestionarUsuarios;
 using MySoccer.Dominio;
 using MySoccer.Datos;
 using System.IO;
-using MySoccer.Presentacion.IniciarSesion;
 using MySoccer.EjeTransversal;
+using MySoccer.EjeTransversal.GestionarUsuarios;
+using MySoccer.EjeTransversal.IniciarSesion;
 
 namespace MySoccer.GUI.Controllers
 {
@@ -62,6 +63,12 @@ namespace MySoccer.GUI.Controllers
         public void SetError(ContenedorError pError)
         {
             ModelState.AddModelError(ConstantesGestionarUsuarios.kStringCodigoError, pError.GetMensajeError());
+        }
+
+        public guiModeloUsuario Colocar_Pais_Equipos(guiModeloFanatico pModelo)
+        {
+            this.cPresentadorUsuarios.SetPaisesEquios(ref pModelo);
+            return pModelo;
         }
 
         //-----------------------------------------------------------------\\
@@ -147,9 +154,11 @@ namespace MySoccer.GUI.Controllers
         public ActionResult Fanatico_Registro()
         {
             guiModeloUsuario mContenedorUsuario = cPresentadorUsuarios.GetModeloUsuario(ConstantesGestionarUsuarios.kUsuarioFantatico);
+            mContenedorUsuario = this.Colocar_Pais_Equipos((guiModeloFanatico) mContenedorUsuario);
             mContenedorUsuario.cNombreSeccion = "Registrar fanático";
             mContenedorUsuario.cAccion = "Fanatico_Nuevo_Registro";
             EnviarRegistro(ref mContenedorUsuario);
+
             return View(mContenedorUsuario);
         }
 
@@ -170,13 +179,14 @@ namespace MySoccer.GUI.Controllers
                     SetError(mResultado);
                 }
             }
-            this.cPresentadorUsuarios.SetPaisesEquios(ref pModel);
+            pModel = (guiModeloFanatico) this.Colocar_Pais_Equipos(pModel);
             return View("Fanatico_Registro", pModel);
         }
 
         public ActionResult Fanatico_Editar_Perfil()
         {
             guiModeloUsuario mModelo = (guiModeloUsuario)Session["Modelo"];
+            mModelo = this.Colocar_Pais_Equipos((guiModeloFanatico) mModelo);
             EnviarEditarPerfil(ref mModelo);
             return View("Fanatico_Registro", mModelo);
         }
@@ -196,7 +206,7 @@ namespace MySoccer.GUI.Controllers
 
                 pModel.cRutaImagen = mNuevaFoto;
                 ContenedorError mResultado = mPresentador.ActualizarFanatico(pModel);
-                if (mResultado.HayError())
+                if (!mResultado.HayError())
                 {
                     pModel.cContrasena = ""; //Para que la contrasena no se guarde en el modelo que almaceno en la sesion
                     pModel.cFechaInscripcion = ((guiModeloUsuario)Session["Modelo"]).cFechaInscripcion;
@@ -209,9 +219,7 @@ namespace MySoccer.GUI.Controllers
                     SetError(mResultado);
                 }
             }
-            guiModeloFanatico mModelo = (guiModeloFanatico)Session["Modelo"];
-            pModel.cPaises = mModelo.cPaises;
-            pModel.cEquipos = mModelo.cEquipos;
+            pModel = (guiModeloFanatico)this.Colocar_Pais_Equipos(pModel);
             return View("Fanatico_Registro", pModel);
         }
 

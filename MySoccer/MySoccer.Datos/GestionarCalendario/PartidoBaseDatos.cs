@@ -1,5 +1,6 @@
 ﻿using MySoccer.Datos.Entity;
 using MySoccer.EjeTransversal;
+using MySoccer.EjeTransversal.GestionarCalendario;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -25,7 +26,7 @@ namespace MySoccer.Datos.GestionarCalendario
                 FK_Equipo_2 = pIdEquipo2,
                 FK_Sede = pIdSede,
                 Hora = pHora,
-                Torneo = pTorneo,
+                PK_Partido = pTorneo,
                 Estado = ConstantesGestionarCalendario.kCodigoPartidoNoJugado
 
             }; //Se crea el nuevo Partido con todos sus atributos
@@ -53,7 +54,7 @@ namespace MySoccer.Datos.GestionarCalendario
                 FK_Equipo_2 = pIdEquipo2,
                 FK_Sede = pIdSede,
                 Hora = pHora,
-                Torneo = pTorneo,
+                PK_Partido = pTorneo,
                 Estado = ConstantesGestionarCalendario.kCodigoPartidoNoJugado
 
             }; //Se crea el nuevo Partido con todos sus atributos
@@ -98,7 +99,7 @@ namespace MySoccer.Datos.GestionarCalendario
                             join ResultadoPartido in mConexionMySoccer.RESULTADO_PARTIDO
                                 on Partido.PK_Partido equals ResultadoPartido.PK_FK_Resultado_Partido
                                 into PartidosRegistrados orderby Partido.Fecha descending
-                                where Partido.Torneo==pTorneo 
+                                where Partido.FK_Torneo==pTorneo 
                                 from Partidos in PartidosRegistrados.DefaultIfEmpty()
                             select new
                             {
@@ -150,7 +151,7 @@ namespace MySoccer.Datos.GestionarCalendario
                 cIDSede = mPartido.FK_Sede,
                 cFase = mPartido.Fase,
                 cHora = mPartido.Hora.ToString(),
-                cIDTorneo = mPartido.Torneo,
+                cIDTorneo = mPartido.FK_Torneo,
                 cIdPartido = mPartido.PK_Partido
             };
         }

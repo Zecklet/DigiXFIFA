@@ -18,5 +18,6 @@ namespace MySoccer.Datos.Entity
         public int Tiempo { get; set; }
         public int FK_Usuario { get; set; }
         public int FK_Partido { get; set; }
+        public bool TipoComentario { get; set; }
     }
 }
