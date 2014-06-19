@@ -1,6 +1,7 @@
 ﻿using MySoccer.Datos;
 using MySoccer.Datos.Entity;
 using MySoccer.EjeTransversal;
+using MySoccer.EjeTransversal.GestionarUsuarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,6 @@ namespace MySoccer.Dominio
 {
     public class Administrador : Usuario
     {
-        public Administrador(String pCorreoElectronico)
-        {
-            this.cCorreoElectronico = pCorreoElectronico;
-            this.cIDTipo = ConstantesGestionarUsuarios.kUsuarioAdministrador;
-        }
 
         public Administrador()
         {
@@ -46,15 +42,15 @@ namespace MySoccer.Dominio
             return mDatosRetorno;
         }
 
-        public void CambiarDatosAdministrador(String pCorrecoElectronico)
+        private void CambiarDatosAdministrador(String pCorrecoElectronico)
         {
             this.cCorreoElectronico = pCorrecoElectronico;
         }
 
-        public override void ActualizarDatos(Dictionary<String, String> pNuevoDatos)
-        {
-            this.cCorreoElectronico = pNuevoDatos[ConstantesGestionarUsuarios.kStringCorreoElectronico];
-        }
+        //public override void ActualizarDatos(Dictionary<String, String> pNuevoDatos)
+        //{
+        //    this.cCorreoElectronico = pNuevoDatos[ConstantesGestionarUsuarios.kStringCorreoElectronico];
+        //}
 
         public override void ActualizarDatosBaseDatos()
         {
@@ -64,6 +60,14 @@ namespace MySoccer.Dominio
             datUsuariosBaseDatos mConexionBaseDatos = new datAdministradorBaseDatos();
             ((datAdministradorBaseDatos)mConexionBaseDatos).ActualizarDatosAdministrador(this.cIdentificador,
                 this.cCorreoElectronico);
+        }
+
+        public override void ColocarTodosDatosUsuario(guiModeloUsuario pModelo)
+        {
+            guiModeloAdministrador mModeloFanatico = (guiModeloAdministrador)pModelo;
+            CambiarDatosCuenta(mModeloFanatico.cNombreUsuario, mModeloFanatico.cContrasena);
+            CambiarDatosUsuario(mModeloFanatico.cNombre, mModeloFanatico.cApellido, mModeloFanatico.cFechaNacimiento);
+            CambiarDatosAdministrador(mModeloFanatico.cCorreoElectronico);
         }
     }
 }

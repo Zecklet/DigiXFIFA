@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/06/2014 01:29:33 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.myhistory.datos.tablas.Jugador" table="JUGADOR" schema="dbo" catalog="MY_HISTORY">
+        <id name="pkPasaporteXfifa" type="int">
+            <column name="PK_Pasaporte_XFIFA" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pais" class="com.myhistory.datos.tablas.Pais" fetch="select">
+            <column name="FK_Pais" not-null="true" />
+        </many-to-one>
+        <many-to-one name="posicion" class="com.myhistory.datos.tablas.Posicion" fetch="select">
+            <column name="FK_Posicion" not-null="true" />
+        </many-to-one>
+        <many-to-one name="equipo" class="com.myhistory.datos.tablas.Equipo" fetch="select">
+            <column name="FK_Equipo_Actual" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="30" not-null="true" />
+        </property>
+        <property name="fechaNacimiento" type="date">
+            <column name="Fecha_Nacimiento" length="10" not-null="true" />
+        </property>
+        <property name="altura" type="int">
+            <column name="Altura" not-null="true" />
+        </property>
+        <property name="peso" type="int">
+            <column name="Peso" not-null="true" />
+        </property>
+        <property name="estado" type="boolean">
+            <column name="Estado" not-null="true" />
+        </property>
+        <property name="foto" type="string">
+            <column name="Foto" length="50" />
+        </property>
+        <set name="perfilEstadisticos" table="PERFIL_ESTADISTICO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PK_FK_Pasaporte_XFIFA" not-null="true" />
+            </key>
+            <one-to-many class="com.myhistory.datos.tablas.PerfilEstadistico" />
+        </set>
+    </class>
+</hibernate-mapping>

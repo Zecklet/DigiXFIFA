@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/06/2014 01:29:33 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.myhistory.datos.tablas.Cuenta" table="CUENTA" schema="dbo" catalog="MY_HISTORY">
+        <id name="pkCuenta" type="int">
+            <column name="PK_Cuenta" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreUsuario" type="string">
+            <column name="Nombre_Usuario" length="12" not-null="true" />
+        </property>
+        <property name="contrasena" type="string">
+            <column name="Contrasena" length="500" not-null="true" />
+        </property>
+        <property name="fechaInscripcion" type="date">
+            <column name="Fecha_Inscripcion" length="10" not-null="true" />
+        </property>
+        <property name="estado" type="boolean">
+            <column name="Estado" not-null="true" />
+        </property>
+        <one-to-one name="administrador" class="com.myhistory.datos.tablas.Administrador"></one-to-one>
+    </class>
+</hibernate-mapping>

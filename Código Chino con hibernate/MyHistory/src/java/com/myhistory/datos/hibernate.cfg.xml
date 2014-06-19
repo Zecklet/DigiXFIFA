@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+    <property name="hibernate.connection.url">jdbc:sqlserver://localhost\ZECK:1433;databaseName=MY_HISTORY</property>
+    <property name="hibernate.connection.username">Kuribohs</property>
+    <property name="hibernate.connection.password">123asd</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.bytecode.use_reflection_optimizer">true</property>
+    <property name="javax.persistence.validation.mode">none</property>
+    <mapping resource="com/myhistory/datos/tablas/Torneo.hbm.xml"/>
+    <mapping resource="com/myhistory/datos/tablas/Posicion.hbm.xml"/>
+    <mapping resource="com/myhistory/datos/tablas/Equipo.hbm.xml"/>
+    <mapping resource="com/myhistory/datos/tablas/Jugador.hbm.xml"/>
+    <mapping resource="com/myhistory/datos/tablas/Administrador.hbm.xml"/>
+    <mapping resource="com/myhistory/datos/tablas/PerfilEstadistico.hbm.xml"/>
+    <mapping resource="com/myhistory/datos/tablas/Pais.hbm.xml"/>
+    <mapping resource="com/myhistory/datos/tablas/Cuenta.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

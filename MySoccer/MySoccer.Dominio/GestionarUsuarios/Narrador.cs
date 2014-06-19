@@ -1,6 +1,7 @@
 ﻿using MySoccer.Datos;
 using MySoccer.Datos.Entity;
 using MySoccer.EjeTransversal;
+using MySoccer.EjeTransversal.GestionarUsuarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,7 +60,7 @@ namespace MySoccer.Dominio
             return mDatosRetorno;
 
         }
-        public void CambiarDatosNarrador(String pRutaFoto, String pDescripcion,
+        private void CambiarDatosNarrador(String pRutaFoto, String pDescripcion,
             int pAnosExperiencia, int pGenero)
         {
             this.cRutaFoto = pRutaFoto;
@@ -68,13 +69,13 @@ namespace MySoccer.Dominio
             this.cAnosExperiencia = pAnosExperiencia;
         }
 
-        public override void ActualizarDatos(Dictionary<String, String> pNuevoDatos)
-        {
-            this.cRutaFoto = pNuevoDatos[ConstantesGestionarUsuarios.kStringRutaFoto];
-            this.cDescripcion = pNuevoDatos[ConstantesGestionarUsuarios.kStringDescripcion];
-            this.cGenero = Convert.ToInt32(pNuevoDatos[ConstantesGestionarUsuarios.kStringGenero]);
-            this.cAnosExperiencia = Convert.ToInt32(pNuevoDatos[ConstantesGestionarUsuarios.kStringAnosExperiencia]);
-        }
+        //public override void ActualizarDatos(Dictionary<String, String> pNuevoDatos)
+        //{
+        //    this.cRutaFoto = pNuevoDatos[ConstantesGestionarUsuarios.kStringRutaFoto];
+        //    this.cDescripcion = pNuevoDatos[ConstantesGestionarUsuarios.kStringDescripcion];
+        //    this.cGenero = Convert.ToInt32(pNuevoDatos[ConstantesGestionarUsuarios.kStringGenero]);
+        //    this.cAnosExperiencia = Convert.ToInt32(pNuevoDatos[ConstantesGestionarUsuarios.kStringAnosExperiencia]);
+        //}
 
         public override void ActualizarDatosBaseDatos()
         {
@@ -84,6 +85,15 @@ namespace MySoccer.Dominio
             datUsuariosBaseDatos mConexionBaseDatos = new datNarradorBaseDatos();
             ((datNarradorBaseDatos)mConexionBaseDatos).ActualizarDatosNarrador(this.cIdentificador,
                 this.cDescripcion, this.cRutaFoto, this.cGenero, this.cAnosExperiencia);
+        }
+
+        public override void ColocarTodosDatosUsuario(guiModeloUsuario pModelo)
+        {
+            guiModeloNarrador mModeloNarrador = (guiModeloNarrador) pModelo;
+            CambiarDatosCuenta(mModeloNarrador.cNombreUsuario, mModeloNarrador.cContrasena);
+            CambiarDatosUsuario(mModeloNarrador.cNombre, mModeloNarrador.cApellido, mModeloNarrador.cFechaNacimiento);
+            CambiarDatosNarrador(mModeloNarrador.cRutaImagen, mModeloNarrador.cDescripcion, 
+                Convert.ToInt32(mModeloNarrador.cAnosExperiencia), Convert.ToInt32(mModeloNarrador.cGenero));
         }
     }
 }

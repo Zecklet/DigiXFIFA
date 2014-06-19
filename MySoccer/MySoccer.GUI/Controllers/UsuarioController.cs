@@ -48,13 +48,13 @@ namespace MySoccer.GUI.Controllers
 
         public ActionResult Desactivar_Usuario()
         {
-            this.cPresentadorUsuarios = (PresentadorGestionarUsuarios)Session["Usuario"];
+            //this.cPresentadorUsuarios = (PresentadorGestionarUsuarios)Session["Usuario"];
             this.cPresentadorUsuarios.DesactivarUsuario();
             return RedirectToAction("Index", "Home");
         }
         public ActionResult Activar_Usuario()
         {
-            this.cPresentadorUsuarios = (PresentadorGestionarUsuarios)Session["Usuario"];
+            //this.cPresentadorUsuarios = (PresentadorGestionarUsuarios)Session["Usuario"];
             this.cPresentadorUsuarios.ActivarUsuario();
             Session["EstadoUsuario"] = true;
             return RedirectToAction(((guiModeloUsuario) Session["Modelo"]).cTipoUsuario + "_Perfil", "Usuario");
@@ -120,10 +120,10 @@ namespace MySoccer.GUI.Controllers
         [HttpPost]
         public ActionResult Administrador_Guardar_Cambios(guiModeloAdministrador pModel)
         {
-            PresentadorGestionarUsuarios mPresentador = (PresentadorGestionarUsuarios)Session["Usuario"];
+            //PresentadorGestionarUsuarios mPresentador = (PresentadorGestionarUsuarios)Session["Usuario"];
             if (ModelState.IsValid)
             {
-                ContenedorError mResultado = mPresentador.ActualizarAdministrador(pModel);
+                ContenedorError mResultado = this.cPresentadorUsuarios.ActualizarAdministrador(pModel);
                 if (!mResultado.HayError())
                 {
                     pModel.cContrasena = "";
@@ -195,17 +195,17 @@ namespace MySoccer.GUI.Controllers
         public ActionResult Fanatico_Guardar_Cambios(guiModeloFanatico pModel)
         {
             String mNuevaFoto = "";
-            PresentadorGestionarUsuarios mPresentador = (PresentadorGestionarUsuarios)Session["Usuario"];
+            //PresentadorGestionarUsuarios mPresentador = (PresentadorGestionarUsuarios)Session["Usuario"];
             if (ModelState.IsValid)
             {
                 mNuevaFoto = this.cPresentadorUsuarios.GuardarImagen(pModel.cNombreUsuario, pModel.cImagen);
                 if (mNuevaFoto == "")
                 {
-                    mNuevaFoto = mPresentador.GetRutaFotoFanatico();
+                    mNuevaFoto = this.cPresentadorUsuarios.GetRutaFotoFanatico();
                 }
 
                 pModel.cRutaImagen = mNuevaFoto;
-                ContenedorError mResultado = mPresentador.ActualizarFanatico(pModel);
+                ContenedorError mResultado = this.cPresentadorUsuarios.ActualizarFanatico(pModel);
                 if (!mResultado.HayError())
                 {
                     pModel.cContrasena = ""; //Para que la contrasena no se guarde en el modelo que almaceno en la sesion
@@ -274,19 +274,19 @@ namespace MySoccer.GUI.Controllers
         public ActionResult Narrador_Guardar_Cambios(guiModeloNarrador pModel)
         {
             String mNuevaFoto = ""; //donde se almacena la nueva ruta de la imagen
-            PresentadorGestionarUsuarios mPresentador = (PresentadorGestionarUsuarios)Session["Usuario"];
+            //PresentadorGestionarUsuarios mPresentador = (PresentadorGestionarUsuarios)Session["Usuario"];
 
             if (ModelState.IsValid)
             {
                 mNuevaFoto = this.cPresentadorUsuarios.GuardarImagen(pModel.cNombreUsuario, pModel.cImagen);
                 if (mNuevaFoto == "")
                 {
-                    mNuevaFoto = mPresentador.GetRutaFotoNarrador();
+                    mNuevaFoto = this.cPresentadorUsuarios.GetRutaFotoNarrador();
                 }
 
                 pModel.cRutaImagen = mNuevaFoto;
 
-                ContenedorError mResultado = mPresentador.ActualizarNarrador(pModel);
+                ContenedorError mResultado = this.cPresentadorUsuarios.ActualizarNarrador(pModel);
                 if (!mResultado.HayError())
                 {
                     pModel.cContrasena = ""; //Para que la contrasena no se guarde en el modelo que almaceno en la sesion

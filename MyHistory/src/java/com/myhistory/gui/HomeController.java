@@ -28,11 +28,6 @@ public class HomeController {
     public String Inicio(ModelMap pMap){
         return "inicio";
     }
-	
-    @RequestMapping(value = "/Administrador_Registro")
-    public String RegistrarAdmin(ModelMap model) {
-        return "administrador_registro";
-    }
      
     @RequestMapping(value = "/Administrador_Perfil")
     public String VerPerfilAdmin(ModelMap model) {

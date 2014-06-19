@@ -45,7 +45,7 @@ namespace MySoccer.GUI.Controllers
                     guiModeloUsuario mModeloUsuario = guiModeloUsuarioFactory.CrearModelo(mDatos, mPresentador.GetTipoUsuario());
                     mModeloUsuario.cNombreUsuario = mPresentador.GetNombreUsuario();
                     Session["Modelo"] = mModeloUsuario;
-                    Session["Usuario"] = mPresentador;
+                    //Session["Usuario"] = mPresentador;
                     Session["Nombre"] = mPresentador.GetNombre();
                     Session["EstadoUsuario"] = mModeloUsuario.cEstado;
                     return RedirectToAction(mModeloUsuario.cTipoUsuario + "_Perfil", "Usuario");

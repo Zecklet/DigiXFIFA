@@ -14,15 +14,28 @@ namespace MySoccer.Dominio
     {
         private Usuario cUsuarioActual;
         private ContenedorError cContenedorError;
-        public AdministrarUsuario()
-        {
+        private static AdministrarUsuario cInstancia;
 
+        private AdministrarUsuario() { }
+
+        public static AdministrarUsuario Instance
+        {
+            get
+            {
+                if (cInstancia == null)
+                {
+                    cInstancia = new AdministrarUsuario();
+                }
+                return cInstancia;
+            }
         }
+
 
         //Este metodo crea un administrador 
         public int AgregarNuevoUsuario(guiModeloUsuario pDatosUsuario, int pTipoUsuario)
         {
-            Usuario mNuevoUsuario = UsuariosFactory.CrearUsuario(pDatosUsuario, pTipoUsuario);
+            Usuario mNuevoUsuario = UsuariosFactory.Instance.CrearUsuario(pTipoUsuario);
+            mNuevoUsuario.ColocarTodosDatosUsuario(pDatosUsuario);
             if (mNuevoUsuario.ExisteNombreUsuario(pDatosUsuario.cNombreUsuario))
             {
                 return ConstantesGestionarUsuarios.kCodigoNombreUsuarioExiste; //existe el usuario y no se debe de crear, falta mandar un mensaje de error
@@ -32,7 +45,7 @@ namespace MySoccer.Dominio
                 mNuevoUsuario.CrearUsuarioBaseDatos();
                 mNuevoUsuario.CrearCuentaBaseDatos();
                 mNuevoUsuario.CrearTipoUsuarioBaseDatos();
-                return 0; 
+                return 0;
             }
         }
 
@@ -46,8 +59,9 @@ namespace MySoccer.Dominio
             if (!this.cUsuarioActual.ExisteNombreUsuario(pDatosUsuario.cNombreUsuario)
                 || pDatosUsuario.cNombreUsuario == this.cUsuarioActual.GetNombreUsuario())
             {
-                Usuario mNuevoUsuario = UsuariosFactory.ActualizarUsuarios(pDatosUsuario, this.cUsuarioActual);
-                mNuevoUsuario.ActualizarDatosBaseDatos();
+                //Usuario mNuevoUsuario = UsuariosFactory.Instance.CrearUsuario(pDatosUsuario, this.cUsuarioActual);
+                this.cUsuarioActual.ColocarTodosDatosUsuario(pDatosUsuario);
+                this.cUsuarioActual.ActualizarDatosBaseDatos();
                 return 0;
             }
             else
@@ -62,9 +76,12 @@ namespace MySoccer.Dominio
         public ContenedorError UsuarioCorrecto(String pNombreUsuario, String pContrasena)
         {
             cContenedorError = new ContenedorError(0); //inicializa un contenedor de error, sin error alguno
-            Usuario mUsuario = UsuariosFactory.CrearUsuario(pNombreUsuario); //usando el factory de usuarios, se  recontruye el usuario completo de la base de datos
 
-            this.cUsuarioActual = mUsuario;
+            Usuario mUsuario = new Administrador();
+            mUsuario = UsuariosFactory.Instance.CrearUsuario(mUsuario.RecuperarTipoUsuario(pNombreUsuario)); //usando el factory de usuarios, se  recontruye el usuario completo de la base de datos
+            mUsuario.RecuperarCuentaBaseDatos(pNombreUsuario);
+
+            
             if (mUsuario == null) //Se comprueba que el usuario exista 
             {
                 cContenedorError = new ContenedorError(ConstantesGestionarUsuarios.kCodigoNombreUsuarioNoExiste);
@@ -72,6 +89,12 @@ namespace MySoccer.Dominio
             else if (!mUsuario.CompararContrasena(pContrasena)) //Se comprueba la contrase del usuario
             {
                 cContenedorError = new ContenedorError(ConstantesGestionarUsuarios.kCodigoContrasenaIncorrecta);
+            }
+            else
+            {
+                this.cUsuarioActual = mUsuario;
+                this.cUsuarioActual.RecuperarUsuarioBaseDatos();
+                this.cUsuarioActual.RecuperarDatosBaseDatos();
             }
             return cContenedorError; //devuelve el valor de la consulta 
         }

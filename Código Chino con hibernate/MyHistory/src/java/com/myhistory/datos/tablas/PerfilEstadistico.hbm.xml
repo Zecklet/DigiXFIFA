@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16/06/2014 01:29:33 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.myhistory.datos.tablas.PerfilEstadistico" table="PERFIL_ESTADISTICO" schema="dbo" catalog="MY_HISTORY">
+        <composite-id name="id" class="com.myhistory.datos.tablas.PerfilEstadisticoId">
+            <key-property name="pkFkPasaporteXfifa" type="int">
+                <column name="PK_FK_Pasaporte_XFIFA" />
+            </key-property>
+            <key-property name="pkFkEquipo" type="int">
+                <column name="PK_FK_Equipo" />
+            </key-property>
+            <key-property name="pkFkTorneo" type="int">
+                <column name="PK_FK_Torneo" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="equipo" class="com.myhistory.datos.tablas.Equipo" update="false" insert="false" fetch="select">
+            <column name="PK_FK_Equipo" not-null="true" />
+        </many-to-one>
+        <many-to-one name="jugador" class="com.myhistory.datos.tablas.Jugador" update="false" insert="false" fetch="select">
+            <column name="PK_FK_Pasaporte_XFIFA" not-null="true" />
+        </many-to-one>
+        <many-to-one name="torneo" class="com.myhistory.datos.tablas.Torneo" update="false" insert="false" fetch="select">
+            <column name="PK_FK_Torneo" not-null="true" />
+        </many-to-one>
+        <property name="juegosGanados" type="int">
+            <column name="Juegos_Ganados" not-null="true" />
+        </property>
+        <property name="juegosPerdidos" type="int">
+            <column name="Juegos_Perdidos" not-null="true" />
+        </property>
+        <property name="juegosEmpatados" type="int">
+            <column name="Juegos_Empatados" not-null="true" />
+        </property>
+        <property name="goles" type="int">
+            <column name="Goles" not-null="true" />
+        </property>
+        <property name="tirosMarco" type="int">
+            <column name="Tiros_Marco" not-null="true" />
+        </property>
+        <property name="asistencias" type="int">
+            <column name="Asistencias" not-null="true" />
+        </property>
+        <property name="recuperaciones" type="int">
+            <column name="Recuperaciones" not-null="true" />
+        </property>
+        <property name="tarjetasAmarillas" type="int">
+            <column name="Tarjetas_Amarillas" not-null="true" />
+        </property>
+        <property name="tarjetasRojas" type="int">
+            <column name="Tarjetas_Rojas" not-null="true" />
+        </property>
+        <property name="penalesDetenidos" type="int">
+            <column name="Penales_Detenidos" not-null="true" />
+        </property>
+        <property name="penalesCometidos" type="int">
+            <column name="Penales_Cometidos" not-null="true" />
+        </property>
+        <property name="ramatesSalvados" type="int">
+            <column name="Ramates_Salvados" not-null="true" />
+        </property>
+        <property name="notaXfifa" type="double">
+            <column name="Nota_XFIFA" precision="53" scale="0" not-null="true" />
+        </property>
+        <property name="ano" type="int">
+            <column name="Ano" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

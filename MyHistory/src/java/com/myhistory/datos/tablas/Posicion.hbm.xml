@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/06/2014 09:46:48 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.myhistory.datos.tablas.Posicion" table="POSICION" schema="dbo" catalog="MY_HISTORY">
+        <id name="pkPosicion" type="int">
+            <column name="PK_Posicion" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombrePosicion" type="string">
+            <column name="Nombre_Posicion" length="45" not-null="true" />
+        </property>
+        <set name="jugadors" table="JUGADOR" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FK_Posicion" not-null="true" />
+            </key>
+            <one-to-many class="com.myhistory.datos.tablas.Jugador" />
+        </set>
+    </class>
+</hibernate-mapping>

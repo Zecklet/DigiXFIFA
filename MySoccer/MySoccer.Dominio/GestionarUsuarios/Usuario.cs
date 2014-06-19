@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySoccer.Datos;
 using MySoccer.EjeTransversal;
 using MySoccer.Datos.Entity;
+using MySoccer.EjeTransversal.GestionarUsuarios;
 
 namespace MySoccer.Dominio
 {
@@ -104,7 +105,12 @@ namespace MySoccer.Dominio
             return this.cNombre;
         }
 
-        public Dictionary<String, String> GetDatosUsuario()
+        public int GetIdUsuario()
+        {
+            return this.cIdentificador;
+        }
+
+        protected Dictionary<String, String> GetDatosUsuario()
         {
             Dictionary<String, String> mDatosRetorno = new Dictionary<String, String>();
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringNombre, this.cNombre);
@@ -115,13 +121,20 @@ namespace MySoccer.Dominio
             return mDatosRetorno;
         }
 
-        public void CambiarDatosCuenta(String pNombreUsuario, String pContrasena)
+        protected void CambiarDatosCuenta(String pNombreUsuario, String pContrasena)
         {
-            this.cCuenta.CambiarUsuario(pNombreUsuario);
-            this.cCuenta.CambiarContrasena(pContrasena);
+            if (cCuenta == null)
+            {
+                cCuenta = new Cuenta(pNombreUsuario, pContrasena);
+            }
+            else
+            {
+                this.cCuenta.CambiarUsuario(pNombreUsuario);
+                this.cCuenta.CambiarContrasena(pContrasena);
+            }
         }
 
-        public void CambiarDatosUsuario(String pNombre, String pApellido, String pFechaNacimiento)
+        protected void CambiarDatosUsuario(String pNombre, String pApellido, String pFechaNacimiento)
         {
             this.cNombre = pNombre;
             this.cApellido = pApellido;
@@ -145,8 +158,8 @@ namespace MySoccer.Dominio
         abstract public Dictionary<String, String> GetDatos();
 
         //Esta funcion solamente recibe los datos especificos de cada usuario
-        abstract public void ActualizarDatos(Dictionary<String, String> pNuevoDatos);
-
+        //abstract public void ActualizarDatos(Dictionary<String, String> pNuevoDatos);
+        abstract public void ColocarTodosDatosUsuario(guiModeloUsuario pModelo);
         //Este metodo actualiza los datos del usuario el la base de datos 
         abstract public void ActualizarDatosBaseDatos();
 

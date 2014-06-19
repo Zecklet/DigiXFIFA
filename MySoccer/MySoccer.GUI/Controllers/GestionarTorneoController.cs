@@ -23,7 +23,7 @@ namespace MySoccer.GUI.Controllers
 
         public ActionResult Administrador_Torneo()
         {
-            return View(this.cGestionarUsuario.GetModeloTorneo(((PresentadorGestionarUsuarios) Session["Usuario"]).GetNombre()));
+            return View();
         }
 
     }

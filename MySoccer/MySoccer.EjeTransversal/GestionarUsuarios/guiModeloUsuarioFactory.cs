@@ -21,7 +21,7 @@ namespace MySoccer.EjeTransversal.GestionarUsuarios
             }
         }
 
-        public static guiModeloUsuario CrearModelo(int pTipoUsuario)
+        public guiModeloUsuario CrearModelo(int pTipoUsuario)
         {
             guiModeloUsuario mNuevoUsuario = null;
             switch (pTipoUsuario)

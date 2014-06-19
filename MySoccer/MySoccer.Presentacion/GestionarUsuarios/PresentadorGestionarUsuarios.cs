@@ -14,11 +14,11 @@ namespace MySoccer.Presentacion.GestionarUsuarios
 {
     public class PresentadorGestionarUsuarios
     {
-        private AdministrarUsuario cAdmiUsuarios;
+        //private AdministrarUsuario cAdmiUsuarios;
 
         public PresentadorGestionarUsuarios()
         {
-            this.cAdmiUsuarios = new AdministrarUsuario();
+            //this.cAdmiUsuarios = new AdministrarUsuario();
         }
 
         //-----------------------------------------------------------------\\
@@ -28,16 +28,19 @@ namespace MySoccer.Presentacion.GestionarUsuarios
 
         public void DesactivarUsuario()
         {
-            this.cAdmiUsuarios.DesactivarUsuario();
+            //this.cAdmiUsuarios.DesactivarUsuario();
+            AdministrarUsuario.Instance.DesactivarUsuario();
+
         }
 
         public void ActivarUsuario()
         {
-            this.cAdmiUsuarios.ActivarUsuario();
+            //this.cAdmiUsuarios.ActivarUsuario();
+            AdministrarUsuario.Instance.ActivarUsuario();
         }
         public guiModeloUsuario GetModeloUsuario(int pTipoUsuario)
         {
-            return guiModeloUsuarioFactory.CrearModelo(pTipoUsuario);
+            return guiModeloUsuarioFactory.Instance.CrearModelo(pTipoUsuario);
         }
 
         public ParametrosUsuario CrearParametrosDatos(guiModeloUsuario pModel)
@@ -50,25 +53,25 @@ namespace MySoccer.Presentacion.GestionarUsuarios
         //Funcion que devuel true si el nombre de usuario y la contrasenas son correctas
         public ContenedorError UsuarioCorrecto(String pNombreUsuario, String pContrasena)
         {
-            return this.cAdmiUsuarios.UsuarioCorrecto(pNombreUsuario, pContrasena);
+            return AdministrarUsuario.Instance.UsuarioCorrecto(pNombreUsuario, pContrasena);
         }
 
         //Obtiene el nombre de usuario del usuario que inicio sesion
         public String GetNombreUsuario()
         {
-            return this.cAdmiUsuarios.GetNombreUsuario();
+            return AdministrarUsuario.Instance.GetNombreUsuario();
         }
 
         //obtiene los datos del usuario que se encuentra almacenado en el administrador de usuarios 
         public Dictionary<String, String> GetDatos()
         {
-            return this.cAdmiUsuarios.GetDatos();
+            return AdministrarUsuario.Instance.GetDatos();
         }
 
         //se devuelve el tipo de usuario que inicio sesion 
         public int GetTipoUsuario()
         {
-            return this.cAdmiUsuarios.GetUsuarioActual().cIDTipo;
+            return AdministrarUsuario.Instance.GetUsuarioActual().cIDTipo;
         }
 
         //esta funcion settea los equipos y los paises a un modelo de tipo fanatico, pues son eliminados cuando
@@ -81,7 +84,7 @@ namespace MySoccer.Presentacion.GestionarUsuarios
 
         public String GetFechaInscripcion()
         {
-            return this.cAdmiUsuarios.GetUsuarioActual().cCuenta.cFechaInscripcion.ToString();
+            return AdministrarUsuario.Instance.GetUsuarioActual().cCuenta.cFechaInscripcion.ToString();
         }
 
         //funcion que utilizan los metodos que agregan o actualizan datos
@@ -105,7 +108,7 @@ namespace MySoccer.Presentacion.GestionarUsuarios
 
         public String GetNombre()
         {
-            return this.cAdmiUsuarios.GetNombre();
+            return AdministrarUsuario.Instance.GetNombre();
         }
 
         //-----------------------------------------------------------------\\
@@ -114,14 +117,14 @@ namespace MySoccer.Presentacion.GestionarUsuarios
 
         public ContenedorError AgregarAdministrador(guiModeloAdministrador pModel)
         {
-            int mResultado = this.cAdmiUsuarios.AgregarNuevoUsuario(pModel,
+            int mResultado = AdministrarUsuario.Instance.AgregarNuevoUsuario(pModel,
                 ConstantesGestionarUsuarios.kUsuarioAdministrador);
             return CrearContenedor(mResultado);
         }
 
         public ContenedorError ActualizarAdministrador(guiModeloAdministrador pModel)
         {
-            int mResultado = this.cAdmiUsuarios.ActualizarUsuario(pModel);
+            int mResultado = AdministrarUsuario.Instance.ActualizarUsuario(pModel);
             return CrearContenedor(mResultado);
         }
 
@@ -131,20 +134,20 @@ namespace MySoccer.Presentacion.GestionarUsuarios
 
         public ContenedorError AgregarNarrador(guiModeloNarrador pModel)
         {
-            int mResultado = this.cAdmiUsuarios.AgregarNuevoUsuario(pModel,
+            int mResultado = AdministrarUsuario.Instance.AgregarNuevoUsuario(pModel,
                 ConstantesGestionarUsuarios.kUsuarioNarrador);
             return CrearContenedor(mResultado);
         }
 
         public ContenedorError ActualizarNarrador(guiModeloNarrador pModel)
         {
-            int mResultado = this.cAdmiUsuarios.ActualizarUsuario(pModel);
+            int mResultado = AdministrarUsuario.Instance.ActualizarUsuario(pModel);
             return CrearContenedor(mResultado);
         }
 
         public String GetRutaFotoNarrador()
         {
-            return ((Narrador)this.cAdmiUsuarios.GetUsuarioActual()).cRutaFoto;
+            return ((Narrador)AdministrarUsuario.Instance.GetUsuarioActual()).cRutaFoto;
         }
         
         //-----------------------------------------------------------------\\
@@ -153,7 +156,7 @@ namespace MySoccer.Presentacion.GestionarUsuarios
 
         public ContenedorError AgregarFanatico(guiModeloFanatico pModel)
         {
-            int mResultado = this.cAdmiUsuarios.AgregarNuevoUsuario(pModel, 
+            int mResultado = AdministrarUsuario.Instance.AgregarNuevoUsuario(pModel, 
                 ConstantesGestionarUsuarios.kUsuarioFantatico);
             ContenedorError mError = new ContenedorError(mResultado);
             return CrearContenedor(mResultado);
@@ -161,13 +164,13 @@ namespace MySoccer.Presentacion.GestionarUsuarios
 
         public ContenedorError ActualizarFanatico(guiModeloFanatico pModel)
         {
-            int mResultado = this.cAdmiUsuarios.ActualizarUsuario(pModel);
+            int mResultado = AdministrarUsuario.Instance.ActualizarUsuario(pModel);
             return CrearContenedor(mResultado);
         }
 
         public String GetRutaFotoFanatico()
         {
-            return ((Fanatico)this.cAdmiUsuarios.GetUsuarioActual()).cRutaFoto;
+            return ((Fanatico)AdministrarUsuario.Instance.GetUsuarioActual()).cRutaFoto;
         }
     }
 }
