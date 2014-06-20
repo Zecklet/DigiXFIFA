@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySoccer.GestionarCalendario
+namespace MySoccer.Datos.GestionarCalendario
 {
     public class datSedeBaseDatos
     {

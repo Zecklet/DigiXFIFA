@@ -51,6 +51,10 @@ public class ModeloAgregarTorneo {
     public String getcCantidadJugadores() {
         return cCantidadJugadores;
     }
+    
+    public int getNumeroJugadores(){
+        return Integer.parseInt(this.cCantidadJugadores);
+    }
 
     public void setcCantidadJugadores(String cCantidadJugadores) {
         this.cCantidadJugadores = cCantidadJugadores;
@@ -74,6 +78,10 @@ public class ModeloAgregarTorneo {
 
     public String getcIdentificador() {
         return cIdentificador;
+    }
+    
+    public int getIdTorneo(){
+        return Integer.parseInt(this.cIdentificador);
     }
 
     public void setcIdentificador(String cIdentificador) {

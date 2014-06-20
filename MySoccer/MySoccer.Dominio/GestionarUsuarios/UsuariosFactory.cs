@@ -7,7 +7,7 @@ using MySoccer.Datos;
 using MySoccer.EjeTransversal;
 using MySoccer.EjeTransversal.GestionarUsuarios;
 
-namespace MySoccer.Dominio
+namespace MySoccer.Dominio.GestionarUsuarios
 {
 
     public sealed class UsuariosFactory

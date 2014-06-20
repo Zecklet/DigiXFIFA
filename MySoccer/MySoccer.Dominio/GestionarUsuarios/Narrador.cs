@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySoccer.Dominio
+namespace MySoccer.Dominio.GestionarUsuarios
 {
     public class Narrador : Usuario
     {
@@ -55,7 +55,7 @@ namespace MySoccer.Dominio
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringDescripcion, this.cDescripcion);
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringAnosExperiencia, this.cAnosExperiencia + "");
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringGenero, ConstantesGestionarUsuarios.kSexos[this.cGenero]);
-            mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringRutaFoto, this.cRutaFoto);
+            mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringRutaFoto, this.cRutaFoto =="" ? ConstantesGestionarUsuarios.kRutaImagenGenerica:this.cRutaFoto);
 
             return mDatosRetorno;
 

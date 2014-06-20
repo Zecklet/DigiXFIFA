@@ -13,8 +13,12 @@ import com.myhistory.ejetransversal.Constantes;
  */
 public class ModeloUsuarioFactory {
 
+    //Constructor privado
     private static ModeloUsuarioFactory cInstancia = null;
 
+    //Entrada: ningua
+    //Salida: Comprobador de error
+    //Descripcion: singleton de la fabrica de usuarios 
     public static ModeloUsuarioFactory getInstance() {
         if (cInstancia == null) {
             cInstancia = new ModeloUsuarioFactory();
@@ -22,6 +26,9 @@ public class ModeloUsuarioFactory {
         return cInstancia;
     }
 
+    //Entrada: pTipoUsuario=> int del modelo deseado
+    //Salida: objeto de tipo usuari
+    //Descripcion: Crea un modelo de usuario especifico segun el tipo de usuario seleccionado
     public ModeloUsuario CrearModeloUsuario(int pTipoUsuario) {
         ModeloUsuario mResultado;
         switch (pTipoUsuario) {

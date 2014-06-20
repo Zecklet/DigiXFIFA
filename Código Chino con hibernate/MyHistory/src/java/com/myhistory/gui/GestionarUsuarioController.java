@@ -72,6 +72,7 @@ public class GestionarUsuarioController {
         return "administrador_registro";
     }
 
+    //Salida: String con la siguiente vista
     //Descripcion: Lo que hace es el controlodor de agregar un nuevo usuario
     @RequestMapping(value = "/Administrador_Registro_Nuevo", method = RequestMethod.POST)
     public String RegistrarAdminNuevo(@ModelAttribute("Modelo") ModeloAdministrador pModeloUsuario,
@@ -86,7 +87,8 @@ public class GestionarUsuarioController {
         return mSalida; //retorna la salida de la pagina a la cual tiene que ir
     }
 
-    //Controlador encargado de iniciar sesion en el sistema 
+    //Salida: String con la siguiente vista
+    //Descripcion: Controlador encargado de iniciar sesion en el sistema 
     @RequestMapping(value = "/Iniciar_Sesion", method = RequestMethod.POST)
     public String Iniciar_Sesion(@ModelAttribute("Modelo") ModeloAdministrador pModelo,
             BindingResult pResultado, ModelMap pModeloMapa) {
@@ -102,6 +104,8 @@ public class GestionarUsuarioController {
         return "redirect:Administrador_Perfil"; //ingresa a la pagina de perfiles
     }
 
+    //Salida: String con la siguiente vista
+    //Descripcion: Controlador que muestra el perfil del usuario que inicio sesion
     @RequestMapping(value = "/Administrador_Perfil", method = RequestMethod.GET)
     public String Administrador_Perfil(ModelMap pModeloMapa) {
         ModeloUsuario mModelo = this.cPresentador.RecuperarModeloCompleto();
@@ -110,12 +114,16 @@ public class GestionarUsuarioController {
         return "administrador_perfil";
     }
 
+    //Salida: String con la siguiente vista
+    //Descripcion: Controlador que muestra la vista de editar el perfil del administrador 
     @RequestMapping(value = "/Administrador_Perfil_Editar", method = RequestMethod.GET)
     public String Administrador_Perfil_Editar(ModelMap pModeloMapa) {
         pModeloMapa.addAttribute("Modelo", this.cPresentador.RecuperarModeloCompleto());
         return "administrador_registro";
     }
 
+    //Salida: String con la siguiente vista
+    //Descripcion: Controlador que toma el modelo de agregar usuario de la vista y le solicita al presentador que actualice los datos en la base
     @RequestMapping(value = "/Administrador_Perfil_Guardar", method = RequestMethod.POST)
     public String Administrador_Perfil_Guardar(@ModelAttribute("Modelo") ModeloAdministrador pModeloUsuario,
             BindingResult pResultado, HttpSession pSession) {
@@ -128,12 +136,17 @@ public class GestionarUsuarioController {
         }
     }
 
+    //Salida: String con la siguiente vista
+    //Descripcion: Controlador que le solicita al presentador que desactive el usuario que esta iniciado,
+    //y luego redirige la pagina al inicio
     @RequestMapping(value = "/Administrador_Desactivar", method = RequestMethod.POST)
     public String Administrador_Desactivar() {
         cPresentador.DesactivarUsuario();
         return "redirect:Inicio";
     }
 
+    //Salida: String con la siguiente vista
+    //Descripcion: Controlador que le solicita al presentador que active el usuario actual
     @RequestMapping(value = "/Administrador_Activar", method = RequestMethod.POST)
     public String Administrador_Activar() {
         cPresentador.ActivarUsuario();

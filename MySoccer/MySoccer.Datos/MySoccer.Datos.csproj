@@ -107,6 +107,9 @@
     <Compile Include="Entity\COMENTARIO_LIBRE.cs">
       <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\COMENTARIO_TIEMPO.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\CUENTA.cs">
       <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>
@@ -135,6 +138,9 @@
       <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\JUGADOR.cs">
+      <DependentUpon>datMySoccerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\JUGADOR_X_EQUIPO.cs">
       <DependentUpon>datMySoccerEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\NARRADOR.cs">

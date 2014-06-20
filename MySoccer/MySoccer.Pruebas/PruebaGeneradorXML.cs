@@ -1,4 +1,5 @@
 ﻿using MySoccer.Dominio;
+using MySoccer.Dominio.GestionarUsuarios;
 using MySoccer.Servicio;
 using System;
 using System.Collections.Generic;

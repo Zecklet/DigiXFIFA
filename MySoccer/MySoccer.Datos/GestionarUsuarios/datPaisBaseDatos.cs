@@ -21,8 +21,14 @@ namespace MySoccer.Datos
             mConexionMySoccer.Database.Connection.Open(); //Abre la conexion con sqlserver 
 
             mConexionMySoccer.PAIS.Add(mNuevoPais); //Agrega un nuevo pais
-            mConexionMySoccer.SaveChanges(); //guarda los cambios que se le hicieron a la base de datos 
-
+            try
+            {
+                mConexionMySoccer.SaveChanges(); //guarda los cambios que se le hicieron a la base de datos 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error:" + e);
+            }
             mConexionMySoccer.Database.Connection.Close(); //Cierra la conexion 
         }
 

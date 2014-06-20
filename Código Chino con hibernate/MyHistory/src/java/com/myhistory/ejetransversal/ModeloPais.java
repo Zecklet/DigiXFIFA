@@ -14,11 +14,12 @@ public class ModeloPais {
     private String cNombrePais = "0";
     private String cIdentificador = "";
 
+    //-------------Constructores----------------------\\
     public ModeloPais(int pPkPais, String pNombre) {
         this.cIdentificador = "" + pPkPais;
         this.cNombrePais = pNombre;
     }
-
+    //----------------Setters y Getters----------------------\\
     public String getcNombrePais() {
         return cNombrePais;
     }

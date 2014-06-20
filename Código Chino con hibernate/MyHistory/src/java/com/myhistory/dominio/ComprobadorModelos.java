@@ -23,6 +23,9 @@ public class ComprobadorModelos {
 
     }
 
+    //Entrada: ningua
+    //Salida: Comprobador de error
+    //Descripcion: singleton de comprabador de modelos 
     public static ComprobadorModelos getInstance() {
         if (cInstancia == null) {
             cInstancia = new ComprobadorModelos();
@@ -30,26 +33,31 @@ public class ComprobadorModelos {
         return cInstancia;
     }
 
+    //Entrada: modelo con la informacion de un usuario
     //Salida: ContenedorError = contiene el error generado en caso de algun problema
     //Descripcion: Funcion que corrobora que si el modelo tiene los datos ingresados completos y distintos de nulo 
     public ContenedorError ComprobarModelo(ModeloUsuario pModelo) {
-        ContenedorError mResultado = new ContenedorError(Constantes.kErrorCodigoNoHayError); //Contenedor de no error
-        if (!pModelo.CombrobarModelo()) { //si e modelo tiene algo vacio, crea su respectivo error
-            mResultado = new ContenedorError(Constantes.kErrorCodigoLlenarTodosCampos); //crea un error
-        }
-        return mResultado;
+        return CrearErrorLlenarTodosCampos(!pModelo.CombrobarModelo());
     }
 
+//Entrada: ningua
+    //Salida: Contenedor errror que contiene algun error si falla la comprobacion
+    //Descripcion: Retorna un error en caso de que el modelo no tenga los datos correctos
     public ContenedorError ComprobarModelo(ModeloAgregarTorneo pModelo) {
-        if (pModelo.getcNombreSede().isEmpty() || pModelo.getcNombreTorneo().isEmpty()) {
-            return new ContenedorError(Constantes.kErrorCodigoLlenarTodosCampos);
-        } else {
-            return new ContenedorError(Constantes.kErrorCodigoNoHayError);
-        }
+        return CrearErrorLlenarTodosCampos(pModelo.getcNombreSede().isEmpty() || pModelo.getcNombreTorneo().isEmpty());
     }
 
+//Entrada: ningua
+    //Salida: Contenedor errror que contiene algun error si falla la comprobacion
+    //Descripcion: Retorna un error en caso de que el modelo no tenga los datos correctos
     public ContenedorError ComprobarModelo(ModeloAgregarEquipo pModelo) {
-        if (pModelo.getcNombreEquipo().isEmpty()) {
+        return CrearErrorLlenarTodosCampos(pModelo.getcNombreEquipo().isEmpty());
+    }
+    //Entrada: condicion de error
+    //Salida: Contenedor errror que contiene algun error si falla la comprobacion
+    //Descripcion: si es true=> que hay un error y faltan datos en el modelo, false=>todos los datos estan llenos
+    private ContenedorError CrearErrorLlenarTodosCampos(boolean pDesicion) {
+        if (pDesicion) {
             return new ContenedorError(Constantes.kErrorCodigoLlenarTodosCampos);
         } else {
             return new ContenedorError(Constantes.kErrorCodigoNoHayError);

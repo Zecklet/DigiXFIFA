@@ -15,8 +15,6 @@ namespace MySoccer.Datos.Entity
     public partial class JUGADOR
     {
         public int PK_Jugador { get; set; }
-        public int Jugador_MyHistory { get; set; }
-        public int FK_Equipo { get; set; }
         public string Nombre { get; set; }
         public string Pasaporte { get; set; }
     }

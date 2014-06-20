@@ -18,5 +18,6 @@ namespace MySoccer.Datos.Entity
         public Nullable<int> Asistencia { get; set; }
         public Nullable<int> Marcador_Equipo_1 { get; set; }
         public Nullable<int> Marcador_Equipo_2 { get; set; }
+        public int FK_Narrador { get; set; }
     }
 }

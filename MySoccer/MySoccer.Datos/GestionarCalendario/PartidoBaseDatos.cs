@@ -125,8 +125,8 @@ namespace MySoccer.Datos.GestionarCalendario
                     cNombreEquipo1 = Partido.NombreEquipo1,
                     cNombreEquipo2 = Partido.NombreEquipo2,
                     cNombreSede = Partido.NomrbreSede,
-                    cEstado = ConstantesGestionarCalendario.kStringEstadosPartido[Partido.Estado.Value],
-                    cPartidoJugado = Partido.Estado.Value,
+                    cEstado = ConstantesGestionarCalendario.kStringEstadosPartido[Partido.Estado],
+                    cPartidoJugado = Partido.Estado,
                     cAsistencia = Partido.Asistencia,
                     cMarcador = Partido.Marcador,
                     cIdPartido = Partido.IdPartido

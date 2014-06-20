@@ -77,9 +77,9 @@
                                 <button class="uk-button uk-button-primary" type="submit">
                                     <i class="uk-icon-plus"></i>${mNombreBoton}
                                 </button>
-                                <button class="uk-button uk-button-primary" href="Torneo_Catalogo">
-                                    Cancelar
-                                </button>
+                                <a class="uk-button uk-button-primary" href="Torneo_Catalogo">
+                                    Cancelarjkjk
+                                </a>
                             </div>
                         </form:form>
                     </div>

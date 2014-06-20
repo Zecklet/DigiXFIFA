@@ -23,13 +23,20 @@ namespace MySoccer.Datos
                 Foto = pRutaFoto
             };
 
-            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion(); //crea una nueva conexion con sql server
-            mConexionMySoccer.Database.Connection.Open(); //Abre la conexion con sqlserver 
+            try
+            {
+                MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion(); //crea una nueva conexion con sql server
+                mConexionMySoccer.Database.Connection.Open(); //Abre la conexion con sqlserver 
 
-            mConexionMySoccer.NARRADOR.Add(mNuevoUsuario); //Agrega el usuario de tipo narrador
-            mConexionMySoccer.SaveChanges(); //guarda los cambios que se le hicieron a la base de datos 
+                mConexionMySoccer.NARRADOR.Add(mNuevoUsuario); //Agrega el usuario de tipo narrador
+                mConexionMySoccer.SaveChanges(); //guarda los cambios que se le hicieron a la base de datos 
 
-            mConexionMySoccer.Database.Connection.Close(); //Cierra la conexion 
+                mConexionMySoccer.Database.Connection.Close(); //Cierra la conexion 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error:" + e);
+            }
         }
         public NARRADOR ObtenerNarrador(int pPKUsuario)
         {

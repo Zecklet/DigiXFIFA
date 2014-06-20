@@ -10,8 +10,12 @@ namespace MySoccer.Datos.AdministrarListaRechazados
 {
     public class ListaRechazadosBaseDatos
     {
-        public void AgregarRechazado(String pPasaporte, String pNombre, String pApellido)
+        public Boolean AgregarRechazado(String pPasaporte, String pNombre, String pApellido)
         {
+            if (ExisteRechazado(pPasaporte))
+            {
+                return false;
+            }
             using (var mConexion = new MY_SOCCER_CONEXION())
             {
                 RECHAZADO mNuevoRechazado = new RECHAZADO()
@@ -25,6 +29,7 @@ namespace MySoccer.Datos.AdministrarListaRechazados
                 mConexion.RECHAZADO.Add(mNuevoRechazado);
                 mConexion.SaveChanges();
             }
+            return true;
         }
 
         public List<ContenedorRechazado> GetListaRechazados()

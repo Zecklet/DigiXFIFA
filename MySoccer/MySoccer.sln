@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySoccer.EjeTransversal", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySoccer.Presentacion", "MySoccer.Presentacion\MySoccer.Presentacion.csproj", "{3663317B-E775-4A7B-8422-559165DF067B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySoccer.PruebaUnitaria", "MySoccer.PruebaUnitaria\MySoccer.PruebaUnitaria.csproj", "{12FE3569-D07F-421B-A60D-44FAB5FB475E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{3663317B-E775-4A7B-8422-559165DF067B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3663317B-E775-4A7B-8422-559165DF067B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3663317B-E775-4A7B-8422-559165DF067B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12FE3569-D07F-421B-A60D-44FAB5FB475E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12FE3569-D07F-421B-A60D-44FAB5FB475E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12FE3569-D07F-421B-A60D-44FAB5FB475E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12FE3569-D07F-421B-A60D-44FAB5FB475E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

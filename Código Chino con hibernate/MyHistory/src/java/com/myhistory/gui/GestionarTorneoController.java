@@ -26,29 +26,33 @@ public class GestionarTorneoController {
 
     PresentadorGestionarTorneo cPresentador;
 
-    public GestionarTorneoController() {
 
-    }
-
+    //Entrada: ningua
+    //Salida: PresentadorGestionarTorneo
+    //Descripcion: Instanciacion perezosa del presentador de gestionar torneos
     public PresentadorGestionarTorneo GetPresentador() {
         if (this.cPresentador == null) {
             this.cPresentador = new PresentadorGestionarTorneo();
         }
         return this.cPresentador;
     }
-
+    
+    //Salida: String con la siguiente vista
+    //Descripcion: Controlador que muestra todos los torneos registrados en myhistory
     @RequestMapping(value = "/Torneo_Catalogo", method = RequestMethod.GET)
     public String TorneoCatalogo(ModelMap pMapaModelo) {
         pMapaModelo.addAttribute("Modelo", GetPresentador().GetModeloCalendarioTorneo());
         return "torneo_catalogo";
     }
-
+    //Salida: String con la siguiente vista
+    //Descripcion: Controlador que muestra la vista de agregar torneos
     @RequestMapping(value = "/Agregar_Torneo", method = RequestMethod.GET)
     public String AgregarPaginaTorneo(ModelMap pMapaModelo) {
         pMapaModelo.addAttribute("Modelo", GetPresentador().GetModeloAgregarTorneo());
         return "torneo";
     }
-
+    //Salida: String con la siguiente vista
+    //Descripcion: Controlador que toma los datos del modelo de la vista y le solicita al presentador que cree un torneo
     @RequestMapping(value = "/Agregar_Torneo_Nuevo", method = RequestMethod.POST)
     public String AgregarNuevoTorneo(@ModelAttribute("Modelo") ModeloAgregarTorneo pModeloNuevo,
             ModelMap pMapaModelo) {
@@ -60,7 +64,8 @@ public class GestionarTorneoController {
         }
         return "redirect:Torneo_Catalogo";
     }
-
+    //Salida: String con la siguiente vista
+    //Descripcion: Controlador que muestra la vista para editar un equipo con los datos ya guardados en la base de datos
     @RequestMapping(value = "/Editar_Torneo", method = RequestMethod.GET)
     public String EditarPaginaTorneo(@ModelAttribute("Modelo") ModeloCatalogoTorneo pModeloCalendario,
             ModelMap pMapaModelo) {
@@ -68,7 +73,8 @@ public class GestionarTorneoController {
                 pModeloCalendario.getcTorneoSeleccionado()));
         return "torneo";
     }
-
+    //Salida: String con la siguiente vista
+    //Descripcion: Controlador que toma los datos del modelo de agregar equipo y le solicita al presentador que actualice los datos
     @RequestMapping(value = "/Editar_Torneo_Guardar", method = RequestMethod.POST)
     public String EditarPaginaTorneo(@ModelAttribute("Modelo") ModeloAgregarTorneo pModelo,
             ModelMap pMapaModelo) {

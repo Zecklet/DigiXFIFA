@@ -14,12 +14,12 @@ import java.util.Map;
  */
 public class ModeloAgregarEquipo {
 
-    private String cNombreEquipo;
-    private List<ModeloPais> cListaPaises;
-    private String cIdentificadorPais;
-    private String cNombrePais;
-    private boolean cEsSeleccion;
-    private String cIdentificador;
+    private String cNombreEquipo;   //nombre del equipo
+    private List<ModeloPais> cListaPaises; //lista de equipos que se muestran cuando se agrega un equipo
+    private String cIdentificadorPais; //identificador del pais 
+    private String cNombrePais;     //nombre del pais asociado al equipo
+    private boolean cEsSeleccion;   //Si un equipo es de seleccion o no
+    private String cIdentificador;  //identificador del equipo en la base de datos
 
     public ModeloAgregarEquipo() {
         this.cEsSeleccion = false;
@@ -29,6 +29,7 @@ public class ModeloAgregarEquipo {
         this.cNombrePais = "";
     }
 
+    //----------------Construcctores-------------------\\
     public ModeloAgregarEquipo(List<ModeloPais> cListaPaises) {
         this.cListaPaises = cListaPaises;
     }
@@ -49,7 +50,7 @@ public class ModeloAgregarEquipo {
         this.cEsSeleccion = cEsSeleccion;
         this.cIdentificador = cIdentificador + "";
     }
-
+    //------------Setters y Getters---------------\\
     public String getcNombreEquipo() {
         return cNombreEquipo;
     }

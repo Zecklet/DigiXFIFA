@@ -18,14 +18,21 @@ namespace MySoccer.Datos
                 PK_FK_Administrador = pPKUsuario,
                 Correo_Electronico = pCorreoElectronico
             };
+            try
+            {
 
-            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion(); //Crea un nueva conexion con la base de  datos 
-            mConexionMySoccer.Database.Connection.Open(); //abre la conexion a la base de datos 
+                MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion(); //Crea un nueva conexion con la base de  datos 
+                mConexionMySoccer.Database.Connection.Open(); //abre la conexion a la base de datos 
 
-            mConexionMySoccer.ADMINISTRADOR.Add(mNuevoUsuario); //Agrega el usuario a la base de datos 
-            mConexionMySoccer.SaveChanges(); //Guarda los cambios de la base de datos
+                mConexionMySoccer.ADMINISTRADOR.Add(mNuevoUsuario); //Agrega el usuario a la base de datos 
+                mConexionMySoccer.SaveChanges(); //Guarda los cambios de la base de datos
 
-            mConexionMySoccer.Database.Connection.Close(); //cierra la conexion con la base de datos 
+                mConexionMySoccer.Database.Connection.Close(); //cierra la conexion con la base de datos 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error:" + e);
+            }
         }
         public ADMINISTRADOR ObtenerAdministrador(int pPKUsuario)
         {

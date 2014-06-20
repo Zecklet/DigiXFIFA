@@ -1,5 +1,6 @@
 ﻿using MySoccer.Datos.Entity;
 using MySoccer.EjeTransversal;
+using MySoccer.EjeTransversal.GestionarUsuarios;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -23,6 +24,7 @@ namespace MySoccer.Datos
         //Cuando crea un nuevo usuario devuelve el id del usaurio
         public int AgregarUsuario(String pNombre, String pApellido, DateTime pFechaNacmiento)
         {
+            int mResultado = 0;
             USUARIO mNuevoUsuario = new USUARIO
             {
                 Nombre = pNombre,
@@ -31,21 +33,29 @@ namespace MySoccer.Datos
                 //Fecha_Nacimiento = Convert.ToDateTime(pFechaNacmiento)
             };
 
-            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
+            try
+            {
+                MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
 
-            mConexionMySoccer.Database.Connection.Open();
+                mConexionMySoccer.Database.Connection.Open();
 
-            mConexionMySoccer.USUARIO.Add(mNuevoUsuario);
-            mConexionMySoccer.SaveChanges();
+                mConexionMySoccer.USUARIO.Add(mNuevoUsuario);
+                mConexionMySoccer.SaveChanges();
 
-            mConexionMySoccer.Database.Connection.Close();
-
-            return mNuevoUsuario.PK_Usuario;
+                mResultado = mNuevoUsuario.PK_Usuario;
+                mConexionMySoccer.Database.Connection.Close();
+            }
+            catch (Exception e)
+            {
+                mResultado = -1;
+            }
+            return mResultado;
         }
 
         public void AgregarCuenta(int pPKUsuario, String pNombreUsuario, String pContrasena, DateTime pFechaInscripcion
             , Boolean pEstado)
         {
+
             CUENTA mNuevoCuenta = new CUENTA
             {
                 PK_FK_Cuenta = pPKUsuario,
@@ -54,15 +64,21 @@ namespace MySoccer.Datos
                 Fecha_Inscripcion = pFechaInscripcion,
                 Estado = pEstado
             };
-            // Fecha_Nacimiento = DateTime.Now.Date };
-            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
+            try
+            {
+                MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
 
-            mConexionMySoccer.Database.Connection.Open();
+                mConexionMySoccer.Database.Connection.Open();
 
-            mConexionMySoccer.CUENTA.Add(mNuevoCuenta);
-            mConexionMySoccer.SaveChanges();
+                mConexionMySoccer.CUENTA.Add(mNuevoCuenta);
+                mConexionMySoccer.SaveChanges();
 
-            mConexionMySoccer.Database.Connection.Close();
+                mConexionMySoccer.Database.Connection.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
         }
 
         public Boolean ExisteUsuario(String pNombreUsuario)
@@ -92,8 +108,9 @@ namespace MySoccer.Datos
 
             mConexionMySoccer.Database.Connection.Open();
             IQueryable<CUENTA> mResultado = mConexionMySoccer.CUENTA.Where(cuenta => cuenta.Nombre_Usuario == pNombreUsuario);
-            
-            if (mResultado.Count()!=0){
+
+            if (mResultado.Count() != 0)
+            {
                 mSalida = mResultado.First();
             }
 
@@ -124,7 +141,7 @@ namespace MySoccer.Datos
             MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion();
             mConexionMySoccer.Database.Connection.Open();
 
-            CUENTA mCuentaUsuario = ObtenerCuenta(pNombreUsuario) ;
+            CUENTA mCuentaUsuario = ObtenerCuenta(pNombreUsuario);
 
             if (mCuentaUsuario != null)
             {
@@ -207,5 +224,10 @@ namespace MySoccer.Datos
                 mConexion.SaveChanges();
             }
         }
+
+        //abstract public void AgregarUsuarioEspecifico(guiModeloUsuario pModelo);
+        //abstract public guiModeloUsuario RecuperarUsuarioEspecifico(int pPkUsuario);
+        //abstract public void ActualizarUsuarioEspecifico(guiModeloUsuario pModelo);
+
     }
 }

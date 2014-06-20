@@ -52,12 +52,14 @@ namespace MySoccer.EjeTransversal
 
         //--------------------------Usuarios-------------------------
 
+        public const String kRutaImagenGenerica = "~/ImagenesUsuarios/Generico/null.jpg";
         public static readonly string[] kSexos = {"Desconocido","Masculino","Femenino"};
         public const String kStringNombre = "Nombre";
         public const String kStringApellido = "Apellido";
         public const String kStringFechaNacimiento = "FechaNacimiento";
         public const String kStringFechaInscripcion = "FechaInscripcion";
         public const String kStringEstado = "Estado";
+
 
         //------------------ Admnistrador y Fanatico ------------------------
 

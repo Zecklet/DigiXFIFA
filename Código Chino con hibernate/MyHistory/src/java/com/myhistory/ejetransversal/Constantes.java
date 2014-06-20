@@ -5,12 +5,13 @@
  */
 package com.myhistory.ejetransversal;
 
-/**
- *
+import java.io.File;
+
+/**Descripcion:
+ * Esta clase se encarga de las constantes que se tiene que utilizar a lo largo del sistema MyHistory
  * @author Ney Rojas
  */
 public final class Constantes {
-    
 
     private Constantes() {
         // Se restringe la creacion 
@@ -35,7 +36,7 @@ public final class Constantes {
 
     //Contenedor de mensajes de error
     public static final String[] kContenedorMensajesError = {kErrorMensajeNoHayError, kErrorMensajeUsuarioExiste,
-        kErrorMensajeUsuarioNoExiste, kErrorMensajeContrasenaIncorrecta,kErrorMensajeLlenarTodosCampos};
+        kErrorMensajeUsuarioNoExiste, kErrorMensajeContrasenaIncorrecta, kErrorMensajeLlenarTodosCampos};
 
     //Queries para la base de datos 
     public static final String kQueryConsultarCuentNombreUsuario = "from Cuenta s where s.nombreUsuario = :NombreUsuario";
@@ -43,7 +44,10 @@ public final class Constantes {
     public static final String kQueryConsultarAdministradorIdentificador = "from Administrador s where s.pkFkCuenta = :Identificador";
 
     //Variables de los parametros 
-    
-    public static final String kQueryVariableNombreUsuario="NombreUsuario";
-    public static final String kQueryVariableIdentificador="Identificador";    
+    public static final String kQueryVariableNombreUsuario = "NombreUsuario";
+    public static final String kQueryVariableIdentificador = "Identificador";
+
+    //Direccion de las llaves de encriptacion
+    public static final String kRutaLlavePublica = new File("src\\java\\com\\myhistory\\llaves\\publicKeyMH").getAbsolutePath();
+    public static final String kRutaLlavePrivada = new File("src\\java\\com\\myhistory\\llaves\\privateKeyMH").getAbsolutePath();
 }

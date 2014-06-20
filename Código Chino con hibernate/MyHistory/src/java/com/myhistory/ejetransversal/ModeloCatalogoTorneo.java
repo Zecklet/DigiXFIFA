@@ -15,7 +15,8 @@ public class ModeloCatalogoTorneo {
 
     private List<ModeloAgregarTorneo> cTorneos;
     private String cTorneoSeleccionado;
-
+    
+    //-------------Constructores----------------------\\
     public ModeloCatalogoTorneo(){
         
     }
@@ -25,7 +26,7 @@ public class ModeloCatalogoTorneo {
     }
 
     
-    //Setters y Getters 
+    //---------------Setters y Getters ---------------------\\
     public String getcTorneoSeleccionado() {
         return cTorneoSeleccionado;
     }

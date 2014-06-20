@@ -8,7 +8,11 @@
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/datos/BaseDatosGestionarTorneo.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/gui/GestionarUsuarioController.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/datos/tablas/Cuenta.hbm.xml</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/test/com/myhistory/datos/BaseDatosUsuariosTest.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/presentacion/PresentadorGestionarUsuarios.java</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/test/com/myhistory/datos/BaseDatosGestionarEquiposTest.java</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/dominio/Encriptador.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/styles/js/ModificarForm.js</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/gui/GestionarTorneoController.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/ejetransversal/ModeloAgregarEquipo.java</file>
@@ -18,14 +22,17 @@
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/ejetransversal/ModeloAgregarTorneo.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/styles/js/uikit.js</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/test/com/myhistory/dominio/ComprobadorModelosTest.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/dominio/AdministrarGestionarEquipos.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/ejetransversal/ModeloCatalogoTorneo.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/datos/tablas/Torneo.hbm.xml</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/datos/tablas/Equipo.hbm.xml</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/dominio/ComprobadorModelos.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/datos/BaseDatosAdministrador.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/styles/js/jquery.js</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/WEB-INF/views/equipo_catalogo.jsp</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/gui/HomeController.java</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/test/com/myhistory/dominio/EncriptadorTest.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/datos/hibernate.reveng.xml</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/styles/js/calendario.js</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/META-INF/context.xml</file>
@@ -34,6 +41,7 @@
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/presentacion/PresentadorGestionarEquipo.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/datos/hibernate.cfg.xml</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/datos/tablas/Pais.java</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/test/com/myhistory/dominio/CuentaTest.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/WEB-INF/views/torneo.jsp</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/datos/tablas/Equipo.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/ejetransversal/Constantes.java</file>
@@ -45,13 +53,20 @@
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/WEB-INF/views/partido_registro.jsp</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/dominio/Cuenta.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/WEB-INF/views/administrador_registro.jsp</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/ejetransversal/ContenedorError.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/ejetransversal/ModeloPais.java</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/ejetransversal/ModeloUsuarioFactory.java</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/dominio/UsuariosFactory.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/dominio/AdministrarUsuarios.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/dominio/Administrador.java</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/WEB-INF/views/mostrar_error.jsp</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/gui/GestionarEquiposController.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/WEB-INF/applicationContext.xml</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/ejetransversal/ModeloAdministrador.java</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/test/com/myhistory/datos/BaseDatosGestionarTorneoTest.java</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/WEB-INF/views/inicio.jsp</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/datos/BaseDatosUsuarios.java</file>
+            <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/ejetransversal/ModeloUsuario.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/presentacion/PresentadorGestionarTorneo.java</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/web/WEB-INF/views/barra.jsp</file>
             <file>file:/C:/Users/Ney%20Rojas/Documents/GitHub/DigiXFIFA/Código%20Chino%20con%20hibernate/MyHistory/src/java/com/myhistory/dominio/AdministrarGestionarTorneo.java</file>

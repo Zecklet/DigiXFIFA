@@ -27,12 +27,15 @@ public abstract class Usuario {
     protected Cuenta cCuenta;
     protected int cIdentificador;
 
+    //Entrada: datos de un usuario
+    //salida:ninguan
+    //Descripcion: coloca los datos de un usuario
     protected void ColocarDatosComunes(String pNombre, String pApellido, String pFechaNacimiento,
             String pNombreUsuario, String pConstrasena) {
         this.cApellido = pApellido;
-        DateFormat mFormatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat mFormatoFecha = new SimpleDateFormat("dd/MM/yyyy"); //formato para la fecha
         try {
-            this.cFechaNacimiento = mFormatoFecha.parse(pFechaNacimiento);
+            this.cFechaNacimiento = mFormatoFecha.parse(pFechaNacimiento); //convierte la fecha string a date
         } catch (ParseException ex) {
             Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -40,6 +43,9 @@ public abstract class Usuario {
         ColocarDatosCuenta(pNombreUsuario, pConstrasena);
 
     }
+//Entrada: datos de una cuenta (nombre de usuario y contrena)
+    //salida:ninguan
+    //Descripcion: coloca los datos de una cuenta, este metodo tambien es utilizado para actualizar la cuenta 
 
     public void ColocarDatosCuenta(String pNombreUsuario, String pConstrasena) {
         if (this.cCuenta == null) {
@@ -50,18 +56,27 @@ public abstract class Usuario {
         }
     }
 
+    //Entrada: ningua
+    //salida:ninguan
+    //Descripcion: toma todos los datos de la cuenta y los envia a la base de datos para que cree un nuevo usuario
     public void CrearCuenta() {
         BaseDatosUsuarios mConexion = new BaseDatosAdministrador();
         cIdentificador = mConexion.CrearCuenta(this.cCuenta.getcNombreUsuario(),
                 this.cCuenta.getcContrasena(), this.cCuenta.getcFechaInscripcion());
     }
 
+    //Entrada: Nombre de usuario
+    //salida:ninguan
+    //Descripcion: consulta la informacion de la cuenta a la base de datos 
     public void RecuperarCuentaBaseDatos(String pNombreUsuario) {
         BaseDatosUsuarios mConexion = new BaseDatosAdministrador();
         ModeloUsuario mModeloDatos = mConexion.RecuperarDatosCuenta(pNombreUsuario);
         ColocarDatosCuenta(mModeloDatos.getcNombreUsuario(), mModeloDatos.getcContrasena());
     }
 
+    //Entrada: pContrasena del usuario
+    //salida: true => contrasena igual, false=> contrasena incorrecta
+    //Descripcion: le solicita a la cuenta que compare las contrasenas ingresadas 
     public boolean CompararContrasena(String pConstrasena) {
         return this.cCuenta.CompararContrasena(pConstrasena);
     }
@@ -127,15 +142,23 @@ public abstract class Usuario {
         return this.cCuenta.getcNombreUsuario();
     }
 
+    //Entrada: pEstado => nuevo estado que tendra la cuenta 
+    //salida:ninguan
+    //Descripcion: Cambia el estado de la cuenta y le solicitea a la base de datos que cambie el estado de la cuenta 
+    //para que quede almacenado
     public void CambiarEstado(boolean pEstado) {
         this.cCuenta.setcEstado(pEstado);
         BaseDatosUsuarios mConexion = new BaseDatosAdministrador();
         mConexion.CambiarEstadoUsuario(cIdentificador, pEstado);
     }
-
-    protected void CambiarEstadoUsuarioBaseDatos(){
-        BaseDatosUsuarios mConexion = new BaseDatosAdministrador();
-        mConexion.CambiarEstadoUsuario(this.cIdentificador,this.cCuenta.iscEstado());
-    }
+    
+//    //Entrada: ninguna
+//    //salida:ninguan
+//    //Descripcion: Cambia el estado de la cuenta y le solicitea a la base de datos que cambie el estado de la cuenta 
+//    //para que quede almacenado
+//    protected void CambiarEstadoUsuarioBaseDatos() {
+//        BaseDatosUsuarios mConexion = new BaseDatosAdministrador();
+//        mConexion.CambiarEstadoUsuario(this.cIdentificador, this.cCuenta.iscEstado());
+//    }
 
 }

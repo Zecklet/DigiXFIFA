@@ -26,6 +26,8 @@
         <EntityTypeShape EntityType="MY_SOCCER_CON.TITULAR" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MY_SOCCER_CON.USUARIO" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MY_SOCCER_CON.TORNEO" Width="1.5" PointX="7.375" PointY="10.75" />
+        <EntityTypeShape EntityType="MY_SOCCER_CON.COMENTARIO_TIEMPO" Width="1.5" PointX="9.375" PointY="10.75" />
+        <EntityTypeShape EntityType="MY_SOCCER_CON.JUGADOR_X_EQUIPO" Width="1.5" PointX="11.375" PointY="10.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

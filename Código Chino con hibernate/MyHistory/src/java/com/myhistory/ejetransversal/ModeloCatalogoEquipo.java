@@ -16,6 +16,7 @@ public class ModeloCatalogoEquipo {
     private List<ModeloAgregarEquipo> cEquipos;
     private String cEquipoSeleccionado;
 
+    //-------------Constructores----------------------\\
     public ModeloCatalogoEquipo(){
         
     }

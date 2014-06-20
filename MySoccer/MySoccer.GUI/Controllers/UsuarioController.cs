@@ -147,7 +147,7 @@ namespace MySoccer.GUI.Controllers
         public ActionResult Fanatico_Perfil()
         {
             guiModeloFanatico mModelo = (guiModeloFanatico)Session["Modelo"]; //se saca la informacion del modelo para no modificar el original
-            this.cPresentadorUsuarios.ColocarPaisEquipo(ref mModelo);  //se le coloca el nombre del pais y el equipo favorito
+            //this.cPresentadorUsuarios.ColocarPaisEquipo(ref mModelo);  //se le coloca el nombre del pais y el equipo favorito
             return View(mModelo); //Se le agrega el modelo a la vista del perfil del fanatico
         }
 

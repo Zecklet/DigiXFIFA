@@ -7,11 +7,8 @@
 package com.myhistory.dominio;
 
 import com.myhistory.datos.BaseDatosGestionarTorneo;
-import com.myhistory.datos.tablas.Torneo;
 import com.myhistory.ejetransversal.ModeloAgregarTorneo;
 import com.myhistory.ejetransversal.ModeloCatalogoTorneo;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -19,50 +16,49 @@ import java.util.List;
  */
 public class AdministrarGestionarTorneo {
     
-    private BaseDatosGestionarTorneo CrearConexionBaseDatos(){
-        return new BaseDatosGestionarTorneo();
-    }
-    
-    //Funcion que se encarga de crear un modelo con los datos de una torneo apartir de sus datos en la tabla de la base de datos
-    private ModeloAgregarTorneo CrearModeloTorneo(Torneo pTablaTorneo){
-        return  new ModeloAgregarTorneo(pTablaTorneo.getNombre(),
-                    pTablaTorneo.getNombreSede(), ""+pTablaTorneo.getCantidadJugadores(),
-                    pTablaTorneo.isDeSeleccion(), pTablaTorneo.isDeCopa(),pTablaTorneo.getPkTorneo()+"");
-    }
-    
-    public void ActualizarTorneo(ModeloAgregarTorneo pModelo){
-        BaseDatosGestionarTorneo mConexion = CrearConexionBaseDatos();
-        mConexion.ActualizarTorneo(Integer.parseInt(pModelo.getcIdentificador()),
-                pModelo.getcNombreTorneo(), pModelo.getcNombreSede(),
-                Integer.parseInt(pModelo.getcCantidadJugadores()),
-                pModelo.getcEsSeleccion(),
-                pModelo.getcEsCopa());
-    }
-    
-    public ModeloCatalogoTorneo GetModeloCalendarioTorneo(){
-        BaseDatosGestionarTorneo mConexionBaseDatos = CrearConexionBaseDatos();
-        List<Torneo> mResultado = mConexionBaseDatos.GetTorneos();
-        List<ModeloAgregarTorneo> mListaModelos = new ArrayList<ModeloAgregarTorneo>();
-        ModeloAgregarTorneo mModelo;
-        for(int i=0; i< mResultado.size(); i++){
-            Torneo mTemporal = mResultado.get(i);
-            mModelo = CrearModeloTorneo(mTemporal);
-            mListaModelos.add(mModelo);
+    private BaseDatosGestionarTorneo cBaseDatosTorneos = null;
+
+    //Entrada: ningua
+    //Salida: Base datos gestionar equipos con la conexion a la clase que se comunica con la base de datos para admnistrar los datos del torneo
+    //Descripcion:inicializacion perezosa del objeto que conecta con la base de datos para los torneos
+    public BaseDatosGestionarTorneo GetBaseDatosToreno() {
+        if (cBaseDatosTorneos == null) {
+            this.cBaseDatosTorneos = new BaseDatosGestionarTorneo();
         }
-        return new ModeloCatalogoTorneo(mListaModelos);
+        return this.cBaseDatosTorneos;
     }
     
-    public void CrearTorneo(ModeloAgregarTorneo pModelo){
-        BaseDatosGestionarTorneo mConexion = CrearConexionBaseDatos();
-        mConexion.AgregarTorneo(pModelo.getcNombreTorneo(), pModelo.getcNombreSede(),
-                Integer.parseInt(pModelo.getcCantidadJugadores()),
+    //Entrada: Modelo con la informacion de un torneo a agregar
+    //Salida: ninguna 
+    //Descripcion:delega la actualizacion de un torneo a la clase de base de datos 
+    public void ActualizarTorneo(ModeloAgregarTorneo pModelo){
+        GetBaseDatosToreno().ActualizarTorneo(pModelo.getIdTorneo(),
+                pModelo.getcNombreTorneo(), pModelo.getcNombreSede(),
+                pModelo.getNumeroJugadores(),
                 pModelo.getcEsSeleccion(),
                 pModelo.getcEsCopa());
     }
-    
+    //Entrada: ningua
+    //Salida: Modelo con la infomracion del catalogo de tornetos
+    //Descripcion: Crear un nuevo catalgo con la lista de todos los equipos registrados 
+    public ModeloCatalogoTorneo GetModeloCalendarioTorneo(){
+        return new ModeloCatalogoTorneo(GetBaseDatosToreno().GetTorneos());
+    }
+    //Entrada: modelo agregar torneo con la infomracion de un torneo a ser agregado
+    //Salida: ninguna
+    //Descripcion:Delega creacion de un nuevo torneo
+    public void CrearTorneo(ModeloAgregarTorneo pModelo){
+        GetBaseDatosToreno().AgregarTorneo(pModelo.getcNombreTorneo(), pModelo.getcNombreSede(),
+                pModelo.getNumeroJugadores(),
+                pModelo.getcEsSeleccion(),
+                pModelo.getcEsCopa());
+    }
+
+    //Entrada: identificador de un torneo
+    //Salida: Modelo de agregar torneo con la informacion del torneo
+    //Descripcion: Delega la accion de crear un nuevo torneo
     public ModeloAgregarTorneo GetModelo(String pIdentificador){
-        BaseDatosGestionarTorneo mConexion = new BaseDatosGestionarTorneo();
-        return CrearModeloTorneo(mConexion.GetTorneo(Integer.parseInt(pIdentificador)));
+        return GetBaseDatosToreno().GetInformacionTorneo(Integer.parseInt(pIdentificador));
     }
     
 }

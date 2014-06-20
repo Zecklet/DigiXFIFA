@@ -8,7 +8,7 @@ using MySoccer.EjeTransversal;
 using MySoccer.Datos.Entity;
 using MySoccer.EjeTransversal.GestionarUsuarios;
 
-namespace MySoccer.Dominio
+namespace MySoccer.Dominio.GestionarUsuarios
 {
     public abstract class Usuario
     {

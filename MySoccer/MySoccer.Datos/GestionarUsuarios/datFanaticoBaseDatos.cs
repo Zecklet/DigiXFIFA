@@ -23,14 +23,21 @@ namespace MySoccer.Datos
              Correo_Electronico = pCorreoElectronico,
              FK_Pais = pPais 
          };
+            try
+            {
+                MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion(); //crea una nueva conexion con sql server
+                mConexionMySoccer.Database.Connection.Open(); //Abre la conexion con sqlserver 
 
-            MY_SOCCER_CONEXION mConexionMySoccer = CrearConexion(); //crea una nueva conexion con sql server
-            mConexionMySoccer.Database.Connection.Open(); //Abre la conexion con sqlserver 
+                mConexionMySoccer.FANATICO.Add(mNuevoUsuario); //Agrega el usuario de tipo Fanatico
+                mConexionMySoccer.SaveChanges(); //guarda los cambios que se le hicieron a la base de datos 
 
-            mConexionMySoccer.FANATICO.Add(mNuevoUsuario); //Agrega el usuario de tipo Fanatico
-            mConexionMySoccer.SaveChanges(); //guarda los cambios que se le hicieron a la base de datos 
-
-            mConexionMySoccer.Database.Connection.Close(); //Cierra la conexion 
+                mConexionMySoccer.Database.Connection.Close(); //Cierra la conexion
+                Console.WriteLine("agregado");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error:" + e);
+            }
         }
         public FANATICO ObtenerFanatico(int pPKUsuario)
         {

@@ -8,7 +8,7 @@ using MySoccer.EjeTransversal;
 using MySoccer.EjeTransversal.GestionarUsuarios;
 
 
-namespace MySoccer.Dominio
+namespace MySoccer.Dominio.GestionarUsuarios
 {
     public class AdministrarUsuario
     {
@@ -79,22 +79,26 @@ namespace MySoccer.Dominio
 
             Usuario mUsuario = new Administrador();
             mUsuario = UsuariosFactory.Instance.CrearUsuario(mUsuario.RecuperarTipoUsuario(pNombreUsuario)); //usando el factory de usuarios, se  recontruye el usuario completo de la base de datos
-            mUsuario.RecuperarCuentaBaseDatos(pNombreUsuario);
 
-            
+
+
             if (mUsuario == null) //Se comprueba que el usuario exista 
             {
                 cContenedorError = new ContenedorError(ConstantesGestionarUsuarios.kCodigoNombreUsuarioNoExiste);
             }
-            else if (!mUsuario.CompararContrasena(pContrasena)) //Se comprueba la contrase del usuario
-            {
-                cContenedorError = new ContenedorError(ConstantesGestionarUsuarios.kCodigoContrasenaIncorrecta);
-            }
             else
             {
-                this.cUsuarioActual = mUsuario;
-                this.cUsuarioActual.RecuperarUsuarioBaseDatos();
-                this.cUsuarioActual.RecuperarDatosBaseDatos();
+                mUsuario.RecuperarCuentaBaseDatos(pNombreUsuario);
+                if (!mUsuario.CompararContrasena(pContrasena)) //Se comprueba la contrase del usuario
+                {
+                    cContenedorError = new ContenedorError(ConstantesGestionarUsuarios.kCodigoContrasenaIncorrecta);
+                }
+                else
+                {
+                    this.cUsuarioActual = mUsuario;
+                    this.cUsuarioActual.RecuperarUsuarioBaseDatos();
+                    this.cUsuarioActual.RecuperarDatosBaseDatos();
+                }
             }
             return cContenedorError; //devuelve el valor de la consulta 
         }

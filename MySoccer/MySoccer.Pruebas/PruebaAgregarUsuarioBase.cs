@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySoccer.Datos;
-using MySoccer.GestionarCalendario;
+using MySoccer.Datos.GestionarCalendario;
 
 namespace MySoccer.Pruebas
 {
@@ -30,10 +30,10 @@ namespace MySoccer.Pruebas
 
 //            Pruebas para agregar equipos 
             datEquipoBaseDatos mPruebaEquipo = new datEquipoBaseDatos();
-            mPruebaEquipo.AgregarEquipo(1, "", DateTime.Now, "COSTARRICENSE");
-            mPruebaEquipo.AgregarEquipo(2, "", DateTime.Now, "NIPPON");
-            mPruebaEquipo.AgregarEquipo(3, "", DateTime.Now, "BRAILEÑO");
-            mPruebaEquipo.AgregarEquipo(4, "", DateTime.Now, "URUGUAYO");
+            mPruebaEquipo.AgregarEquipo(1,1, "", DateTime.Now, "COSTARRICENSE");
+            mPruebaEquipo.AgregarEquipo(2,2, "", DateTime.Now, "NIPPON");
+            mPruebaEquipo.AgregarEquipo(3,3, "", DateTime.Now, "BRAILEÑO");
+            mPruebaEquipo.AgregarEquipo(4,4, "", DateTime.Now, "URUGUAYO");
             mPruebaEquipo.GetEquipos();
 
             //Pruebas para agregar sedes

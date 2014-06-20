@@ -68,7 +68,8 @@ namespace MySoccer.EjeTransversal.GestionarUsuarios
                         cCorreoElectronico = mDatosModelo[ConstantesGestionarUsuarios.kStringCorreoElectronico],
                         cEquipo = mDatosModelo[ConstantesGestionarUsuarios.kStringEquipoFavorito],
                         cPais = mDatosModelo[ConstantesGestionarUsuarios.kStringPais]
-                    };                   break;
+                    }; 
+                    break;
                 default:
                     mNuevoUsuario = new guiModeloUsuarioNull();
                     break;

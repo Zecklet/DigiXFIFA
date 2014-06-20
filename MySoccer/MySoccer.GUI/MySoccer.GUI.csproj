@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="ImagenesUsuarios\Generico\null.jpg" />
     <Content Include="ImagenesUsuarios\xxx.jpg" />
     <Content Include="Global.asax" />
     <Content Include="JavaScript\jsAdministrarListaRechazados.js" />

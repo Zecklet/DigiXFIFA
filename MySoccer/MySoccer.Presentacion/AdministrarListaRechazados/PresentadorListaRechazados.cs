@@ -15,13 +15,9 @@ namespace MySoccer.Presentacion.AdministrarListaRechazados
         {
             ListaRechazadosBaseDatos mConexionBase = new ListaRechazadosBaseDatos();
             ContenedorError mResultado = new ContenedorError();
-            if (!mConexionBase.ExisteRechazado(pPasaporte))
+            if (!mConexionBase.AgregarRechazado(pPasaporte, pNombre, pApellido))
             {
-                mConexionBase.AgregarRechazado(pPasaporte, pNombre, pApellido);        
-            }
-            else
-            {
-                mResultado = new ContenedorError(ConstantesGestionarUsuarios.kCodigoRechazadoYaExiste);
+                mResultado = new ContenedorError(ConstantesGestionarUsuarios.kCodigoRechazadoYaExiste);        
             }
             return mResultado;
         }

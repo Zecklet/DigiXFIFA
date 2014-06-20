@@ -23,6 +23,9 @@ import org.hibernate.Session;
  */
 public abstract class BaseDatosUsuarios {
 
+    //Entrada: nombre de usuario
+    //Salida: true=> existe usuario false => no existe
+    //Descripcion:Realiza una consulta a la base de datos para saber si el usuario ingresdao existe
     public boolean ExisteUsuario(String pNombreUsuario) {
         Session mSesion = com.myhistory.datos.HibernateUtil.getSessionFactory().getCurrentSession();
         mSesion.beginTransaction();
@@ -31,6 +34,9 @@ public abstract class BaseDatosUsuarios {
                 .list().isEmpty();
     }
 
+    //Entrada: informacion de un usuario, pPKCuenta es el identificador de la cuenta asociada
+    //Salida: int 0 => no inserto, 1=> inserto
+    //Descripcion:Crea un nuevo usuario de tipo administrador en la base de datos
     public int CrearUsuario(int pPKCuenta, String pNombre, String pApellido,
             Date pFechaNacimiento, String pCorreoElectronio) {
         int mResultado = 0;
@@ -55,6 +61,9 @@ public abstract class BaseDatosUsuarios {
         return mResultado;
     }
 
+    //Entrada: informacion para la creacion de una nueva cuenta 
+    //Salida: int 0 => no inserto, 1=> inserto
+    //Descripcion:Crea en la base de datos una nueva cuenta usuado los datos de entrada y hibernate
     public int CrearCuenta(String pNombreUsuario, String pContrasena, Date pFechaInscripcion) {
         int mResultado = 0;
         Session mSesion = com.myhistory.datos.HibernateUtil.getSessionFactory().getCurrentSession();
@@ -69,11 +78,13 @@ public abstract class BaseDatosUsuarios {
             }
         } catch (HibernateException ex) {
         } finally {
-            //mSesion.close();
         }
         return mResultado;
     }
 
+    //Entrada: cIdentificador => identificador de la cuenta, cEstado => estado al cual va a cambiar la cuenta 
+    //Salida: ninguna
+    //Descripcion:Cambia el esta de una cuenta en la base de datos, dependiendo de la entrada de la funcion
     public void CambiarEstadoUsuario(int cIdentificador, boolean cEstado) {
         Session mSesion = com.myhistory.datos.HibernateUtil.getSessionFactory().getCurrentSession();
         try {
@@ -88,10 +99,12 @@ public abstract class BaseDatosUsuarios {
             }
         } catch (HibernateException ex) {
         } finally {
-            //mSesion.close();
         }
     }
 
+    //Entrada: informacion para actualizar un usuario administrador 
+    //Salida: ninguna
+    //Descripcion:Crea en la base de datos una nueva cuenta usuado los datos de entrada y hibernate
     public void ActualizarUsuario(int pIdentificador, String pNombre, String pApellido,
             Date pFechaNacimiento, String pCorreo) {
         Session mSesion = com.myhistory.datos.HibernateUtil.getSessionFactory().getCurrentSession();
@@ -114,6 +127,9 @@ public abstract class BaseDatosUsuarios {
         }
     }
 
+    //Entrada: informacion para la actualizacion de una nueva cuenta 
+    //Salida: ninguna
+    //Descripcion:actualiza en la base de datos una cuenta usuado los datos de entrada y hibernate
     public void ActualizarCuenta(int pPKUsuario, String pNombreUsuario, String pContrasena) {
         Session mSesion = com.myhistory.datos.HibernateUtil.getSessionFactory().getCurrentSession();
         try {
@@ -132,7 +148,10 @@ public abstract class BaseDatosUsuarios {
             //mSesion.close();
         }
     }
-
+    
+    //Entrada: nombre de usuario
+    //Salida: modelo de usuario con la informacion del usuario consultado
+    //Descripcion:Recupera los datos de la cuenta de la base de datos usando el nombre de usuario de la entrada
     public ModeloUsuario RecuperarDatosCuenta(String pNombreUsuario) {
         ModeloUsuario mResultado = new ModeloAdministrador();
         Session mSesion = com.myhistory.datos.HibernateUtil.getSessionFactory().getCurrentSession();
@@ -155,6 +174,7 @@ public abstract class BaseDatosUsuarios {
         return mResultado;
     }
 
+    //funcion que implementan las clases hijas para recuperar los datos especificos de cada usuario
     abstract public ModeloUsuario RecuperarDatosUsuario(String pNombreUsuario);
 
 }

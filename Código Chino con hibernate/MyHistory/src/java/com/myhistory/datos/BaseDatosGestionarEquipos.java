@@ -10,7 +10,6 @@ import com.myhistory.datos.tablas.Pais;
 import com.myhistory.ejetransversal.Constantes;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import com.myhistory.datos.HibernateUtil;
 import com.myhistory.ejetransversal.ModeloAgregarEquipo;
 import com.myhistory.ejetransversal.ModeloPais;
 import java.util.ArrayList;
@@ -23,9 +22,10 @@ import java.util.List;
 public class BaseDatosGestionarEquipos {
 
     //Entrada: pdatosEquipo= contiene toda la informacion del equipo que se agrego 
-    //Salida: ninguna
+    //Salida: true=> inserto, false => no inserto
     //Descripcion: toma la lista de paises de la base y los transforma en un lista de modelos de pais
-    public void AgregarEquipos(ModeloAgregarEquipo pDatosEquipo) {
+    public boolean AgregarEquipos(ModeloAgregarEquipo pDatosEquipo) {
+        boolean mResultado = false;
         Session mSesion = HibernateUtil.getSessionFactory().getCurrentSession(); //Se obtiene la session
         try {
             if (mSesion.isOpen()) { //si la conexion esta abierta procede con la insercion 
@@ -36,18 +36,21 @@ public class BaseDatosGestionarEquipos {
 
                 mSesion.save(mNuevaFila); //guarda el nuevo equipo en memoria 
                 mSesion.getTransaction().commit(); //Escribe el nuevo equipo en la base de datos 
+                mResultado = true;
             }
         } catch (HibernateException e) {
             System.out.println("Error:" + e.getMessage());
         }
         CerrarConexion(mSesion);// si la conexion con la base de datos no ha sido cerrada, la cierra
+        return mResultado;
     }
 
     //Entrada: pdatosEquipo= contiene toda la informacion del equipo que se agrego 
-    //Salida: ninguna
+    //Salida: boolean true=> inserto , false=> hubo error
     //Descripcion: toma la lista de paises de la base y los transforma en un lista de modelos de pais
-    public void ActualizarEquipos(ModeloAgregarEquipo pDatosEquipo) {
+    public boolean ActualizarEquipos(ModeloAgregarEquipo pDatosEquipo) {
         Session mSesion = HibernateUtil.getSessionFactory().getCurrentSession(); //obtiene la sesion 
+        boolean mResultado = false;
         try {
             if (mSesion.isOpen()) { //si la conexion esta abierta procede con la actualizacion 
                 mSesion.beginTransaction(); //comienza la transaccion 
@@ -61,12 +64,14 @@ public class BaseDatosGestionarEquipos {
 
                 mSesion.update(mActulizarFila); //se guarda temporalmente
                 mSesion.getTransaction().commit(); //se actualiza permanentemente en a base de datos 
+                mResultado = true;
             }
         } catch (HibernateException e) {
             System.out.println("Error:" + e.getMessage());
         } finally {
             CerrarConexion(mSesion);// si la conexion con la base de datos no ha sido cerrada, la cierra
         }
+        return mResultado;
     }
 
     //Entrada: ninguno
@@ -87,11 +92,11 @@ public class BaseDatosGestionarEquipos {
         } finally {
             CerrarConexion(mSesion);// si la conexion con la base de datos no ha sido cerrada, la cierra
         }
-        for (Equipo mEquipo : mResultadoConsultado) {
-            mResultado.add(CrearModeloAgregarEquipo(mEquipo));
+        for (Equipo mEquipo : mResultadoConsultado) { //se genera la lista de modelos
+            mResultado.add(CrearModeloAgregarEquipo(mEquipo)); //se agrega un elemento a lista 
         }
-
         return mResultado;
+        
     }
 
     //Entrada: identificador en equipo

@@ -15,24 +15,32 @@ namespace MySoccer.Datos
         //pFederacion:Nombre de la federacion a la cual pertenece el equipo
         //Salida: ninguna
         //Descripcion: Agrega un nuevo Equippo a la base de datos de equipos de mysoccer 
-        public void AgregarEquipo(int pIdPais, String pRutaFoto, DateTime pFechaAsociacion, String pFederacion)
+        public void AgregarEquipo(int pIdEquipo,int pIdPais, String pNombreEquipo, DateTime pFechaAsociacion, String pFederacion)
         {
             EQUIPO mNuevoEquipo = new EQUIPO()
             {
-                PK_Equipo = pIdPais,
+                PK_Equipo = pIdEquipo,
                 FK_Pais = pIdPais, //Crea un nuevo partido con todos sus atributos
-                //Foto = pRutaFoto,
+                Nombre_Equipo = pNombreEquipo,
                 Fecha_Asociacion_XFIFA = pFechaAsociacion,
                 Nombre_Federacion = pFederacion
             }; //Se crea el nuevo pais con todos sus atributos
 
-            MY_SOCCER_CONEXION mConexionMySoccer = new MY_SOCCER_CONEXION(); //crea una nueva conexion con sql server
-            mConexionMySoccer.Database.Connection.Open(); //Abre la conexion con sqlserver 
+            try
+            {
+                MY_SOCCER_CONEXION mConexionMySoccer = new MY_SOCCER_CONEXION(); //crea una nueva conexion con sql server
+                mConexionMySoccer.Database.Connection.Open(); //Abre la conexion con sqlserver 
 
-            mConexionMySoccer.EQUIPO.Add(mNuevoEquipo); //Agrega un nuevo pais
-            mConexionMySoccer.SaveChanges(); //guarda los cambios que se le hicieron a la base de datos 
+                mConexionMySoccer.EQUIPO.Add(mNuevoEquipo); //Agrega un nuevo pais
 
-            mConexionMySoccer.Database.Connection.Close(); //Cierra la conexion 
+                mConexionMySoccer.SaveChanges(); //guarda los cambios que se le hicieron a la base de datos 
+
+                mConexionMySoccer.Database.Connection.Close(); //Cierra la conexion 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error:" + e);
+            }
         }
 
 
@@ -74,9 +82,7 @@ namespace MySoccer.Datos
             mConexionMySoccer.Database.Connection.Open(); //Abre la conexion con sqlserver 
 
             var Equipos = from Equipo in mConexionMySoccer.EQUIPO //Se realiza un join con la tabla de paises par saber el nombre del equipo
-                          join Pais in mConexionMySoccer.PAIS
-                              on Equipo.FK_Pais equals Pais.PK_Pais where Equipo
-                              .FK_Pais == pIdEquipo select Pais.Nombre;
+                          where Equipo.PK_Equipo == pIdEquipo select Equipo.Nombre_Equipo;
             mResultado = Equipos.First();
             
             mConexionMySoccer.Database.Connection.Close(); //Cierra la conexion 

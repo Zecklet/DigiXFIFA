@@ -15,9 +15,8 @@ namespace MySoccer.Datos.Entity
     public partial class COMENTARIO
     {
         public int PK_Comentario { get; set; }
-        public int Tiempo { get; set; }
         public int FK_Usuario { get; set; }
         public int FK_Partido { get; set; }
-        public bool TipoComentario { get; set; }
+        public int TipoComentario { get; set; }
     }
 }

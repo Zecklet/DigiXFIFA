@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MySoccer.Dominio
+namespace MySoccer.Dominio.GestionarUsuarios
 {
     public class Fanatico : Usuario
     {
@@ -50,7 +50,7 @@ namespace MySoccer.Dominio
 
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringDescripcion, this.cDescripcion);
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringGenero, ConstantesGestionarUsuarios.kSexos[this.cGenero]);
-            mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringRutaFoto, this.cRutaFoto);
+            mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringRutaFoto, this.cRutaFoto == "" ? ConstantesGestionarUsuarios.kRutaImagenGenerica : this.cRutaFoto);
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringEquipoFavorito, this.cIDEquipoFavorito + "");
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringPais, this.cIDPais + "");
             mDatosRetorno.Add(ConstantesGestionarUsuarios.kStringCorreoElectronico, this.cCorreoElectronico);
